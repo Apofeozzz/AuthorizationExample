@@ -21,11 +21,19 @@
                                 <color key="textColor" red="0.92156862750000001" green="0.2901960784" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Denis Grishchenko" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUc-2R-9De">
+                                <rect key="frame" x="138" y="838.5" width="138.5" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.062745098040000002" green="0.094117647060000004" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mG0-KF-GSP" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ETg-R0-KI8"/>
+                            <constraint firstItem="mUc-2R-9De" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LWa-Fs-oga"/>
                             <constraint firstItem="mG0-KF-GSP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oXr-S7-w0U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mUc-2R-9De" secondAttribute="bottom" constant="5" id="wu1-4p-CWy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

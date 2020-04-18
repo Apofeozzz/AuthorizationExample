@@ -12,7 +12,13 @@ class Builder {
 	
 	static func launchBuilder() -> LaunchBuilder {
 		
-		return LaunchBuilder()
+		LaunchBuilder()
+		
+	}
+	
+	static func loginBuilder() -> LoginBuilder {
+		
+		LoginBuilder()
 		
 	}
 	

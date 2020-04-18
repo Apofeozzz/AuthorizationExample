@@ -20,6 +20,8 @@ protocol LaunchViewPresenterProtocol: class {
 	
 	init(view: LaunchViewProtocol)
 	
+	func checkLoggedUser()
+	
 }
 
 // MARK: - PRESENTER -
@@ -39,6 +41,20 @@ class LaunchViewPresenter: LaunchViewPresenterProtocol {
 	}
 	
 	// MARK: - ACTION -
+	
+	func checkLoggedUser() {
+		
+		loginController()
+		
+	}
+	
+	func loginController() {
+		
+		let login = Builder.loginBuilder().loginController()
+		
+		view?.presentController(login)
+		
+	}
 	
 }
 
