@@ -50,9 +50,9 @@ class LaunchViewPresenter: LaunchViewPresenterProtocol {
 	
 	func loginController() {
 		
-		let login = Builder.loginBuilder().loginController()
+        let signIn = Builder.loginBuilder().signInController()
 		
-		view?.presentController(login)
+		view?.presentController(signIn)
 		
 	}
 	

@@ -89,6 +89,9 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 	
 	@objc func loginButtonAction() {
 		
+		presenter.login(email: mainView.emailTextField.text,
+						password: mainView.passwordTextField.text)
+		
 	}
 	
 	// MARK: - TEXT FIELDS ACTION -
@@ -141,6 +144,18 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 		mainView.loginButton.backgroundColor = .hexStringToUIColor(hex: "#1D2D31")
 	
 		mainView.loginButton.isUserInteractionEnabled = false
+		
+	}
+	
+	// MARK: - HANDLE ALERTS -
+	
+	func showAlert(title: String, message: String) {
+		
+		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+		
+		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+		
+		present(alert, animated: true, completion: nil)
 		
 	}
 	

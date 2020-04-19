@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BA455AC244C4C0D004D7F06 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA455AB244C4C0D004D7F06 /* SignInPresenter.swift */; };
+		4BA455AE244C4CF9004D7F06 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA455AD244C4CF9004D7F06 /* SignInViewController.swift */; };
+		4BA455B0244C4DAD004D7F06 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA455AF244C4DAD004D7F06 /* SignInView.swift */; };
+		9202F596244B9D240024F277 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202F595244B9D240024F277 /* String+Extension.swift */; };
 		92CD9D0B244ADBAB000EF227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD9D0A244ADBAB000EF227 /* AppDelegate.swift */; };
 		92CD9D0D244ADBAB000EF227 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD9D0C244ADBAB000EF227 /* SceneDelegate.swift */; };
 		92CD9D15244ADBAB000EF227 /* AuthorizationExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92CD9D13244ADBAB000EF227 /* AuthorizationExample.xcdatamodeld */; };
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BA455AB244C4C0D004D7F06 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		4BA455AD244C4CF9004D7F06 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		4BA455AF244C4DAD004D7F06 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		9202F595244B9D240024F277 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		92CD9D07244ADBAB000EF227 /* AuthorizationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthorizationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CD9D0A244ADBAB000EF227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92CD9D0C244ADBAB000EF227 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +92,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BA455A8244C4BD9004D7F06 /* Sign in */ = {
+			isa = PBXGroup;
+			children = (
+				4BA455AA244C4BF8004D7F06 /* View */,
+				4BA455A9244C4BF3004D7F06 /* Presenter */,
+			);
+			path = "Sign in";
+			sourceTree = "<group>";
+		};
+		4BA455A9244C4BF3004D7F06 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4BA455AB244C4C0D004D7F06 /* SignInPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4BA455AA244C4BF8004D7F06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4BA455AF244C4DAD004D7F06 /* SignInView.swift */,
+				4BA455AD244C4CF9004D7F06 /* SignInViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		92CD9CFE244ADBAB000EF227 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +172,7 @@
 			children = (
 				92CD9D3A244ADE30000EF227 /* Navigation Protocol */,
 				92CD9D35244ADDA1000EF227 /* Launch */,
+				4BA455A8244C4BD9004D7F06 /* Sign in */,
 				92F02092244AF66600B1D6AC /* Login */,
 			);
 			path = Module;
@@ -218,6 +253,7 @@
 				92CD9D44244AE2DF000EF227 /* UIColor+Extension.swift */,
 				92CD9D46244AE345000EF227 /* UITextField+Extension.swift */,
 				92F0208A244AE75400B1D6AC /* UIFont+Extension.swift */,
+				9202F595244B9D240024F277 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -364,12 +400,16 @@
 				92CD9D43244AE18A000EF227 /* LaunchView.swift in Sources */,
 				92F02098244AF74300B1D6AC /* LoginView.swift in Sources */,
 				92CD9D41244AE0AC000EF227 /* UIView+Extension.swift in Sources */,
+				4BA455AC244C4C0D004D7F06 /* SignInPresenter.swift in Sources */,
 				92CD9D47244AE345000EF227 /* UITextField+Extension.swift in Sources */,
+				4BA455AE244C4CF9004D7F06 /* SignInViewController.swift in Sources */,
 				92CD9D45244AE2DF000EF227 /* UIColor+Extension.swift in Sources */,
 				92F02091244AE9F500B1D6AC /* LaunchBuilder.swift in Sources */,
 				92CD9D3E244ADF87000EF227 /* LaunchViewController.swift in Sources */,
+				9202F596244B9D240024F277 /* String+Extension.swift in Sources */,
 				92CD9D39244ADDDD000EF227 /* LaunchScreenPresenter.swift in Sources */,
 				92CD9D15244ADBAB000EF227 /* AuthorizationExample.xcdatamodeld in Sources */,
+				4BA455B0244C4DAD004D7F06 /* SignInView.swift in Sources */,
 				92CD9D0D244ADBAB000EF227 /* SceneDelegate.swift in Sources */,
 				92CD9D3C244ADE3F000EF227 /* NavigationProtocol.swift in Sources */,
 				92F0208B244AE75400B1D6AC /* UIFont+Extension.swift in Sources */,

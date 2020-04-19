@@ -9,6 +9,20 @@
 import UIKit
 
 class LoginBuilder {
+    
+    func signInController() -> UIViewController {
+        
+        let view = SignInViewController()
+        
+        let presenter = SignInPresenter(view: view)
+        
+        let navigationController = UINavigationController(rootViewController: view)
+        
+        navigationController.modalPresentationStyle = .fullScreen
+        
+        return navigationController
+        
+    }
 	
 	func loginController() -> UIViewController {
 		
@@ -18,11 +32,7 @@ class LoginBuilder {
 		
 		view.presenter = presenter
 		
-		let navigationController = UINavigationController(rootViewController: view)
-		
-		navigationController.modalPresentationStyle = .fullScreen
-		
-		return navigationController
+		return view
 		
 	}
 	
