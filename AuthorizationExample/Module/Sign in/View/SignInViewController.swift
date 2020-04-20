@@ -10,9 +10,11 @@ import UIKit
 
 class SignInViewController: UIViewController, SignInViewProtocol {
     
-    // MARK: - PRESENTER -
+    // MARK: - DATA SOURCE -
     
     var presenter: SignInPresenterProtocol!
+    
+    let config: SignInConfiguratorProtocol = SignInConfigurator()
     
     // MARK: - UIVIEW -
     
@@ -25,9 +27,17 @@ class SignInViewController: UIViewController, SignInViewProtocol {
         
         setupView()
         
+        config.configure(with: self)
+        
     }
 
     // MARK: - ACTION -
+    
+    @objc private func signInButtonAction() {
+        
+        presenter.signIn()
+        
+    }
 
     // MARK: - SETUP VIEW -
     
@@ -51,6 +61,8 @@ class SignInViewController: UIViewController, SignInViewProtocol {
         
         navBar.barTintColor = .mainGreen()
         
+        navBar.tintColor = UIColor.hexStringToUIColor(hex: "#4D7E8D")
+        
         let attributes = [NSAttributedString.Key.font: UIFont.futuraBoldWithSize(24),
                           NSAttributedString.Key.foregroundColor: UIColor.mainPink()]
         
@@ -69,6 +81,10 @@ class SignInViewController: UIViewController, SignInViewProtocol {
         mainView = SignInView()
         
         view.addSubview(mainView)
+        
+        mainView.signInButton.addTarget(self,
+                                        action: #selector(signInButtonAction),
+                                        for: .touchUpInside)
         
     }
     

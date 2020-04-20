@@ -13,6 +13,8 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 	// MARK: - PRESENTER -
 	
 	var presenter: LoginPresenterProtocol!
+    
+    var config: LoginConfiguratorProtocol = LoginConfigurator()
 	
 	// MARK: - UIVIEW -
 	
@@ -24,6 +26,9 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 		super.viewDidLoad()
 		
 		setupView()
+        
+        config.configure(with: self)
+        
 	}
 	
 	// MARK: - SETUP VIEW -
@@ -144,18 +149,6 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 		mainView.loginButton.backgroundColor = .hexStringToUIColor(hex: "#1D2D31")
 	
 		mainView.loginButton.isUserInteractionEnabled = false
-		
-	}
-	
-	// MARK: - HANDLE ALERTS -
-	
-	func showAlert(title: String, message: String) {
-		
-		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-		
-		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-		
-		present(alert, animated: true, completion: nil)
 		
 	}
 	

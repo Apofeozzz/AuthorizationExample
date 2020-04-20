@@ -12,11 +12,9 @@ class LoginBuilder {
     
     func signInController() -> UIViewController {
         
-        let view = SignInViewController()
+        let signInController = SignInViewController()
         
-        let presenter = SignInPresenter(view: view)
-        
-        let navigationController = UINavigationController(rootViewController: view)
+        let navigationController = UINavigationController(rootViewController: signInController)
         
         navigationController.modalPresentationStyle = .fullScreen
         
@@ -25,15 +23,11 @@ class LoginBuilder {
     }
 	
 	func loginController() -> UIViewController {
-		
+
 		let view = LoginViewController()
-		
-		let presenter = LoginPresenter(view: view)
-		
-		view.presenter = presenter
-		
+
 		return view
-		
+
 	}
 	
 }

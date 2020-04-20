@@ -8,29 +8,17 @@
 
 import UIKit
 
-// MARK: - UIVIEW PROTOCOL -
-
-protocol LaunchViewProtocol: NavigationProtocol {
-	
-}
-
-// MARK: - PRESENTER PROTOCOL -
-
-protocol LaunchViewPresenterProtocol: class {
-	
-	init(view: LaunchViewProtocol)
-	
-	func checkLoggedUser()
-	
-}
-
 // MARK: - PRESENTER -
 
 class LaunchViewPresenter: LaunchViewPresenterProtocol {
 	
 	// MARK: - DATA SOURCE -
 	
-	weak var view: LaunchViewProtocol?
+	weak var view: LaunchViewProtocol!
+    
+    var interactor: LaunchInteractorProtocol!
+    
+    var router: LaunchRouterProtocol!
 	
 	// MARK: - INIT -
 	
@@ -49,10 +37,18 @@ class LaunchViewPresenter: LaunchViewPresenterProtocol {
 	}
 	
 	func loginController() {
-		
-        let signIn = Builder.loginBuilder().signInController()
-		
-		view?.presentController(signIn)
+        
+        if interactor.checkIfUserLoggedIn() {
+            
+            // move to home module
+            
+        } else {
+            
+            let signIn = Builder.loginBuilder().signInController()
+            
+            router.presentController(signIn)
+            
+        }
 		
 	}
 	

@@ -14,10 +14,6 @@ class LaunchBuilder {
 		
 		let view = LaunchViewController()
 		
-		let presenter = LaunchViewPresenter(view: view)
-		
-		view.presenter = presenter
-		
 		return view
 		
 	}

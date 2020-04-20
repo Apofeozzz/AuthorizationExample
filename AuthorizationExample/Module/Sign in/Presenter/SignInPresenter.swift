@@ -8,33 +8,33 @@
 
 import UIKit
 
-// MARK: - VIEW PROTOCOL -
-
-protocol SignInViewProtocol: NavigationProtocol {
-    
-}
-
-// MARK: - PRESENTER PROTOCOL -
-
-protocol SignInPresenterProtocol: class {
-    
-    init(view: SignInViewProtocol)
-    
-}
-
 // MARK: - PRESENTER -
 
 class SignInPresenter: SignInPresenterProtocol {
     
     // MARK: - DATA SOURCE -
     
-    weak var view: SignInViewProtocol?
+    weak var view: SignInViewProtocol!
+    
+    var interactor: SignInInteractorProtocol!
+    
+    var router: SignInRouterProtocol!
     
     // MARK: - INIT -
     
     required init(view: SignInViewProtocol) {
         
         self.view = view
+        
+    }
+    
+    // MARK: - ACTION -
+    
+    func signIn() {
+        
+        let logInController = Builder.loginBuilder().loginController()
+        
+        router.pushController(logInController)
         
     }
     
