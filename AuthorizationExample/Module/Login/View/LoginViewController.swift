@@ -103,22 +103,8 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 	
 	@objc private func textFieldDidChangeValue(_ textField: UITextField) {
 		
-		checkTextFields()
-		
-	}
-	
-	func checkTextFields() {
-		
-		guard
-			let email = mainView.emailTextField.text,
-			let password = mainView.passwordTextField.text
-			else { return }
-		
-		if !email.isEmpty && !password.isEmpty && password.count > 5 {
-			
-			activateLoginButton()
-			
-		} else { disactivateLoginButton() }
+        presenter.checkTextFields(email: mainView.emailTextField.text,
+                                  password: mainView.passwordTextField.text)
 		
 	}
 	

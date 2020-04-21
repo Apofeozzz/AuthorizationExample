@@ -6,8 +6,6 @@
 //  Copyright © 2020 Denis Grishchenko. All rights reserved.
 //
 
-import UIKit
-
 // MARK: - PRESENTER -
 
 class LoginPresenter: LoginPresenterProtocol {
@@ -51,5 +49,20 @@ class LoginPresenter: LoginPresenterProtocol {
         }
 		
 	}
+    
+    func checkTextFields(email: String?, password: String?) {
+        
+        guard
+            let email = email,
+            let password = password
+            else { return }
+        
+        if !email.isEmpty && !password.isEmpty && password.count > 5 {
+            
+            view?.activateLoginButton()
+            
+        } else { view?.disactivateLoginButton() }
+        
+    }
 	
 }

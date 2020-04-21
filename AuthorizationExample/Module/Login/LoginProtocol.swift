@@ -18,7 +18,13 @@ protocol LoginConfiguratorProtocol: class {
 
 // MARK: - VIEW -
 
-protocol LoginViewProtocol: class { }
+protocol LoginViewProtocol: class {
+    
+    func activateLoginButton()
+    
+    func disactivateLoginButton()
+    
+}
 
 // MARK: - INTERACTOR -
 
@@ -39,6 +45,8 @@ protocol LoginPresenterProtocol: class {
     init(view: LoginViewProtocol)
     
     func login(email: String?, password: String?)
+    
+    func checkTextFields(email: String?, password: String?)
     
 }
 

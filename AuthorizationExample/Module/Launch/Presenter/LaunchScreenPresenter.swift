@@ -6,8 +6,6 @@
 //  Copyright © 2020 Denis Grishchenko. All rights reserved.
 //
 
-import UIKit
-
 // MARK: - PRESENTER -
 
 class LaunchViewPresenter: LaunchViewPresenterProtocol {
