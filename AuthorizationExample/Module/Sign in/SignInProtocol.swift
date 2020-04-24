@@ -6,6 +6,8 @@
 //  Copyright © 2020 Denis Grishchenko. All rights reserved.
 //
 
+import UIKit
+
 // MARK: - CONFIGURATOR -
 
 protocol SignInConfiguratorProtocol: class {
@@ -18,6 +20,8 @@ protocol SignInConfiguratorProtocol: class {
 
 protocol SignInViewProtocol: class {
     
+    func hideGoogleSignInButton()
+    
 }
 
 // MARK: - INTERACTOR -
@@ -28,6 +32,8 @@ protocol SignInInteractorProtocol: class {
     
     init(presenter: SignInPresenterProtocol)
     
+    func signInWithGoogle(router: NavigationProtocol)
+    
 }
 
 // MARK: - PRESENTER -
@@ -37,6 +43,10 @@ protocol SignInPresenterProtocol: class {
     init(view: SignInViewProtocol)
     
     func signIn()
+    
+    func signInWithGoogle()
+    
+    func signedInWithGoogle(error: Error?)
     
 }
 

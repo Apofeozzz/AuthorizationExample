@@ -12,9 +12,7 @@ class LaunchBuilder {
 	
 	func launchController() -> UIViewController {
 		
-		let view = LaunchViewController()
-		
-		return view
+		return LaunchViewController()
 		
 	}
 	

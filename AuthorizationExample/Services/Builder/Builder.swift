@@ -22,4 +22,10 @@ class Builder {
 		
 	}
 	
+    static func homeBuilder() -> HomeBuilder {
+        
+        HomeBuilder()
+        
+    }
+    
 }

@@ -24,9 +24,7 @@ class LoginBuilder {
 	
 	func loginController() -> UIViewController {
 
-		let view = LoginViewController()
-
-		return view
+		LoginViewController()
 
 	}
 	

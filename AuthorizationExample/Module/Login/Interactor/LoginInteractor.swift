@@ -14,6 +14,8 @@ class LoginInteractor: LoginInteractorProtocol {
     
     weak var presenter: LoginPresenterProtocol!
     
+    var firebaseSignInService: FirebaseSignInService?
+    
     // MARK: - INIT -
     
     required init(presenter: LoginPresenterProtocol) {
@@ -53,6 +55,20 @@ class LoginInteractor: LoginInteractorProtocol {
         }
         
         return CheckEmailResult()
+        
+    }
+    
+    func loginWith(email: String, and password: String) {
+        
+        firebaseSignInService = FirebaseSignInService()
+        
+        firebaseSignInService?.signInResponse = {[weak self] (error) in
+            
+            self?.presenter.userLoggedIn(error: error)
+            
+        }
+        
+        firebaseSignInService?.signInWith(email: email, and: password)
         
     }
     

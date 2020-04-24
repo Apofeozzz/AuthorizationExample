@@ -14,9 +14,9 @@ class LoginPresenter: LoginPresenterProtocol {
 	
 	weak var view: LoginViewProtocol?
     
-    var interactor: LoginInteractor!
+    var interactor: LoginInteractorProtocol!
     
-    var router: LoginRouter!
+    var router: LoginRouterProtocol!
 	
 	// MARK: - INIT -
 	
@@ -34,15 +34,14 @@ class LoginPresenter: LoginPresenterProtocol {
         
         if checkInput.result {
             
-            //        guard let email = email, let password = password else { return }
-            
-            // Login action
+            interactor.loginWith(email: email!, and: password!)
             
         } else {
             
             if let message = checkInput.message {
              
-                router.showAlert(title: checkInput.title, message: message)
+                router.showAlert(title: checkInput.title,
+                                 message: message)
                 
             }
 
@@ -65,4 +64,27 @@ class LoginPresenter: LoginPresenterProtocol {
         
     }
 	
+    func userLoggedIn(error: Error?) {
+        
+        if let err = error {
+            
+            router.showAlert(title: "Error",
+                             message: err.localizedDescription)
+            
+            return
+            
+        }
+        
+        homeController()
+        
+    }
+    
+    func homeController() {
+        
+        let home = Builder.homeBuilder().homeController()
+        
+        router.presentController(home)
+        
+    }
+    
 }

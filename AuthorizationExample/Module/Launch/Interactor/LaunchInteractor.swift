@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 class LaunchInteractor: LaunchInteractorProtocol {
     
@@ -25,6 +26,10 @@ class LaunchInteractor: LaunchInteractorProtocol {
     // MARK: - ACTION -
     
     func checkIfUserLoggedIn() -> Bool {
+        
+        if let _ = Auth.auth().currentUser {
+            return true
+        }
         
         return false
         

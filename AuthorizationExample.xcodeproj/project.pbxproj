@@ -3,10 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B007A2E2452FC660063939B /* GoogleSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A2D2452FC660063939B /* GoogleSignInService.swift */; };
+		4B007A3824530F6A0063939B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A3724530F6A0063939B /* HomeViewController.swift */; };
+		4B007A3A24530FC70063939B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A3924530FC70063939B /* HomeView.swift */; };
+		4B007A3C245310EA0063939B /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A3B245310EA0063939B /* HomeBuilder.swift */; };
+		4B007A3E245312BD0063939B /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A3D245312BD0063939B /* HomeProtocol.swift */; };
+		4B007A40245314CC0063939B /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A3F245314CC0063939B /* HomeConfigurator.swift */; };
+		4B007A422453151F0063939B /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A412453151F0063939B /* HomeInteractor.swift */; };
+		4B007A442453152B0063939B /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A432453152B0063939B /* HomePresenter.swift */; };
+		4B007A462453177C0063939B /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A452453177C0063939B /* HomeRouter.swift */; };
 		4B84AD01244DDCA30040B4BD /* LaunchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84AD00244DDCA30040B4BD /* LaunchProtocol.swift */; };
 		4B84AD04244DDD7F0040B4BD /* LaunchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84AD03244DDD7F0040B4BD /* LaunchConfigurator.swift */; };
 		4B84AD07244DDEF10040B4BD /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84AD06244DDEF10040B4BD /* LaunchInteractor.swift */; };
@@ -23,6 +32,9 @@
 		4BCBFCC1244E3C7200BA6244 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC0244E3C7200BA6244 /* LoginRouter.swift */; };
 		4BCBFCC3244E3CBB00BA6244 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC2244E3CBA00BA6244 /* LoginConfigurator.swift */; };
 		4BCBFCC6244E3FCF00BA6244 /* CheckEmailResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC5244E3FCF00BA6244 /* CheckEmailResult.swift */; };
+		4BDFFBDC24519E9B007753B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFFBDB24519E9B007753B0 /* GoogleService-Info.plist */; };
+		4BFC5B9424538E3F003DBD57 /* FirebaseSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC5B9324538E3F003DBD57 /* FirebaseSignInService.swift */; };
+		58DE7B38315F533116DE89D6 /* Pods_AuthorizationExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659E05A092CB5604A0818C7A /* Pods_AuthorizationExampleTests.framework */; };
 		9202F596244B9D240024F277 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9202F595244B9D240024F277 /* String+Extension.swift */; };
 		92CD9D0B244ADBAB000EF227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD9D0A244ADBAB000EF227 /* AppDelegate.swift */; };
 		92CD9D0D244ADBAB000EF227 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CD9D0C244ADBAB000EF227 /* SceneDelegate.swift */; };
@@ -44,6 +56,7 @@
 		92F02098244AF74300B1D6AC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F02097244AF74300B1D6AC /* LoginView.swift */; };
 		92F0209A244AF91900B1D6AC /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F02099244AF91900B1D6AC /* LoginPresenter.swift */; };
 		92F0209C244AF9F700B1D6AC /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F0209B244AF9F700B1D6AC /* LoginBuilder.swift */; };
+		DD6B234D22AE9F54408AA2D8 /* Pods_AuthorizationExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 683C0A7093DD07EB7598B4CA /* Pods_AuthorizationExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +70,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B65C72F62C374DB5852B716 /* Pods-AuthorizationExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationExample.debug.xcconfig"; path = "Target Support Files/Pods-AuthorizationExample/Pods-AuthorizationExample.debug.xcconfig"; sourceTree = "<group>"; };
+		2CBC98F6E68039E085175EB7 /* Pods-AuthorizationExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationExampleTests.release.xcconfig"; path = "Target Support Files/Pods-AuthorizationExampleTests/Pods-AuthorizationExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		4B007A2D2452FC660063939B /* GoogleSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInService.swift; sourceTree = "<group>"; };
+		4B007A3724530F6A0063939B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4B007A3924530FC70063939B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4B007A3B245310EA0063939B /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		4B007A3D245312BD0063939B /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
+		4B007A3F245314CC0063939B /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
+		4B007A412453151F0063939B /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		4B007A432453152B0063939B /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		4B007A452453177C0063939B /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		4B84AD00244DDCA30040B4BD /* LaunchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchProtocol.swift; sourceTree = "<group>"; };
 		4B84AD03244DDD7F0040B4BD /* LaunchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchConfigurator.swift; sourceTree = "<group>"; };
 		4B84AD06244DDEF10040B4BD /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
@@ -73,6 +97,11 @@
 		4BCBFCC0244E3C7200BA6244 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		4BCBFCC2244E3CBA00BA6244 /* LoginConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfigurator.swift; sourceTree = "<group>"; };
 		4BCBFCC5244E3FCF00BA6244 /* CheckEmailResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailResult.swift; sourceTree = "<group>"; };
+		4BDFFBDB24519E9B007753B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4BFC5B9324538E3F003DBD57 /* FirebaseSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSignInService.swift; sourceTree = "<group>"; };
+		659E05A092CB5604A0818C7A /* Pods_AuthorizationExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorizationExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		683C0A7093DD07EB7598B4CA /* Pods_AuthorizationExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuthorizationExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CF38324A2A703BC5C98667B /* Pods-AuthorizationExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationExample.release.xcconfig"; path = "Target Support Files/Pods-AuthorizationExample/Pods-AuthorizationExample.release.xcconfig"; sourceTree = "<group>"; };
 		9202F595244B9D240024F277 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		92CD9D07244ADBAB000EF227 /* AuthorizationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthorizationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CD9D0A244ADBAB000EF227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +127,7 @@
 		92F02097244AF74300B1D6AC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		92F02099244AF91900B1D6AC /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		92F0209B244AF9F700B1D6AC /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
+		F3045DA5B21C2D73AEE9BA10 /* Pods-AuthorizationExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuthorizationExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-AuthorizationExampleTests/Pods-AuthorizationExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD6B234D22AE9F54408AA2D8 /* Pods_AuthorizationExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,12 +143,68 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58DE7B38315F533116DE89D6 /* Pods_AuthorizationExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		078DE2667CF62E13C7A2242E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				683C0A7093DD07EB7598B4CA /* Pods_AuthorizationExample.framework */,
+				659E05A092CB5604A0818C7A /* Pods_AuthorizationExampleTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B007A3224530F210063939B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4B007A3D245312BD0063939B /* HomeProtocol.swift */,
+				4B007A3624530F410063939B /* View */,
+				4B007A3524530F3B0063939B /* Interactor */,
+				4B007A3424530F360063939B /* Presenter */,
+				4B007A3324530F2E0063939B /* Router */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4B007A3324530F2E0063939B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				4B007A3F245314CC0063939B /* HomeConfigurator.swift */,
+				4B007A452453177C0063939B /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		4B007A3424530F360063939B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4B007A432453152B0063939B /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4B007A3524530F3B0063939B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4B007A412453151F0063939B /* HomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4B007A3624530F410063939B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B007A3924530FC70063939B /* HomeView.swift */,
+				4B007A3724530F6A0063939B /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4B84AD02244DDD710040B4BD /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				4BCBFCB3244E345200BA6244 /* SignInInteractor.swift */,
+				4B007A2D2452FC660063939B /* GoogleSignInService.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -185,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				4BCBFCBD244E3B9F00BA6244 /* LoginInteractor.swift */,
+				4BFC5B9324538E3F003DBD57 /* FirebaseSignInService.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -206,12 +295,25 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		4BF434FC5844E834688F572E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B65C72F62C374DB5852B716 /* Pods-AuthorizationExample.debug.xcconfig */,
+				6CF38324A2A703BC5C98667B /* Pods-AuthorizationExample.release.xcconfig */,
+				F3045DA5B21C2D73AEE9BA10 /* Pods-AuthorizationExampleTests.debug.xcconfig */,
+				2CBC98F6E68039E085175EB7 /* Pods-AuthorizationExampleTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		92CD9CFE244ADBAB000EF227 = {
 			isa = PBXGroup;
 			children = (
 				92CD9D09244ADBAB000EF227 /* AuthorizationExample */,
 				92CD9D23244ADBAC000EF227 /* AuthorizationExampleTests */,
 				92CD9D08244ADBAB000EF227 /* Products */,
+				4BF434FC5844E834688F572E /* Pods */,
+				078DE2667CF62E13C7A2242E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,6 +335,7 @@
 				92CD9D33244ADD85000EF227 /* Resources */,
 				92CD9D34244ADD91000EF227 /* Storyboard */,
 				92CD9D1B244ADBAC000EF227 /* Info.plist */,
+				4BDFFBDB24519E9B007753B0 /* GoogleService-Info.plist */,
 			);
 			path = AuthorizationExample;
 			sourceTree = "<group>";
@@ -262,6 +365,7 @@
 				92CD9D35244ADDA1000EF227 /* Launch */,
 				4BA455A8244C4BD9004D7F06 /* Sign in */,
 				92F02092244AF66600B1D6AC /* Login */,
+				4B007A3224530F210063939B /* Home */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -355,6 +459,7 @@
 				92F0208D244AE97700B1D6AC /* Builder.swift */,
 				92F02090244AE9F500B1D6AC /* LaunchBuilder.swift */,
 				92F0209B244AF9F700B1D6AC /* LoginBuilder.swift */,
+				4B007A3B245310EA0063939B /* HomeBuilder.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -396,9 +501,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92CD9D29244ADBAC000EF227 /* Build configuration list for PBXNativeTarget "AuthorizationExample" */;
 			buildPhases = (
+				09D23DB08D9575139559A224 /* [CP] Check Pods Manifest.lock */,
 				92CD9D03244ADBAB000EF227 /* Sources */,
 				92CD9D04244ADBAB000EF227 /* Frameworks */,
 				92CD9D05244ADBAB000EF227 /* Resources */,
+				090A9D2F965B0CFDA5A53643 /* [CP] Embed Pods Frameworks */,
+				6958C8ABBC09B0BF21211AFC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -413,6 +521,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92CD9D2C244ADBAC000EF227 /* Build configuration list for PBXNativeTarget "AuthorizationExampleTests" */;
 			buildPhases = (
+				C99B102B2BAE6EF3924DED3C /* [CP] Check Pods Manifest.lock */,
 				92CD9D1C244ADBAC000EF227 /* Sources */,
 				92CD9D1D244ADBAC000EF227 /* Frameworks */,
 				92CD9D1E244ADBAC000EF227 /* Resources */,
@@ -472,6 +581,7 @@
 			files = (
 				92CD9D1A244ADBAC000EF227 /* LaunchScreen.storyboard in Resources */,
 				92CD9D17244ADBAC000EF227 /* Assets.xcassets in Resources */,
+				4BDFFBDC24519E9B007753B0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +594,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		090A9D2F965B0CFDA5A53643 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuthorizationExample/Pods-AuthorizationExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuthorizationExample/Pods-AuthorizationExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AuthorizationExample/Pods-AuthorizationExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		09D23DB08D9575139559A224 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AuthorizationExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6958C8ABBC09B0BF21211AFC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuthorizationExample/Pods-AuthorizationExample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuthorizationExample/Pods-AuthorizationExample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AuthorizationExample/Pods-AuthorizationExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C99B102B2BAE6EF3924DED3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AuthorizationExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		92CD9D03244ADBAB000EF227 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -495,6 +686,9 @@
 				92F02096244AF6BA00B1D6AC /* LoginViewController.swift in Sources */,
 				4B84AD01244DDCA30040B4BD /* LaunchProtocol.swift in Sources */,
 				92CD9D0B244ADBAB000EF227 /* AppDelegate.swift in Sources */,
+				4BFC5B9424538E3F003DBD57 /* FirebaseSignInService.swift in Sources */,
+				4B007A3C245310EA0063939B /* HomeBuilder.swift in Sources */,
+				4B007A2E2452FC660063939B /* GoogleSignInService.swift in Sources */,
 				4BCBFCC1244E3C7200BA6244 /* LoginRouter.swift in Sources */,
 				4BCBFCB7244E35BD00BA6244 /* SignInConfigurator.swift in Sources */,
 				4BCBFCB9244E362300BA6244 /* SignInRouter.swift in Sources */,
@@ -508,15 +702,22 @@
 				4BCBFCC6244E3FCF00BA6244 /* CheckEmailResult.swift in Sources */,
 				92CD9D45244AE2DF000EF227 /* UIColor+Extension.swift in Sources */,
 				92F02091244AE9F500B1D6AC /* LaunchBuilder.swift in Sources */,
+				4B007A442453152B0063939B /* HomePresenter.swift in Sources */,
 				92CD9D3E244ADF87000EF227 /* LaunchViewController.swift in Sources */,
+				4B007A3E245312BD0063939B /* HomeProtocol.swift in Sources */,
 				9202F596244B9D240024F277 /* String+Extension.swift in Sources */,
+				4B007A422453151F0063939B /* HomeInteractor.swift in Sources */,
 				4B84AD07244DDEF10040B4BD /* LaunchInteractor.swift in Sources */,
+				4B007A3A24530FC70063939B /* HomeView.swift in Sources */,
+				4B007A3824530F6A0063939B /* HomeViewController.swift in Sources */,
 				92CD9D39244ADDDD000EF227 /* LaunchScreenPresenter.swift in Sources */,
 				4B84AD09244DE1940040B4BD /* LaunchRouter.swift in Sources */,
+				4B007A40245314CC0063939B /* HomeConfigurator.swift in Sources */,
 				92CD9D15244ADBAB000EF227 /* AuthorizationExample.xcdatamodeld in Sources */,
 				4BCBFCC3244E3CBB00BA6244 /* LoginConfigurator.swift in Sources */,
 				4BA455B0244C4DAD004D7F06 /* SignInView.swift in Sources */,
 				92CD9D0D244ADBAB000EF227 /* SceneDelegate.swift in Sources */,
+				4B007A462453177C0063939B /* HomeRouter.swift in Sources */,
 				92CD9D3C244ADE3F000EF227 /* NavigationProtocol.swift in Sources */,
 				92F0208B244AE75400B1D6AC /* UIFont+Extension.swift in Sources */,
 				4BCBFCBB244E39E000BA6244 /* LoginProtocol.swift in Sources */,
@@ -672,6 +873,7 @@
 		};
 		92CD9D2A244ADBAC000EF227 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B65C72F62C374DB5852B716 /* Pods-AuthorizationExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -689,6 +891,7 @@
 		};
 		92CD9D2B244ADBAC000EF227 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CF38324A2A703BC5C98667B /* Pods-AuthorizationExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -706,6 +909,7 @@
 		};
 		92CD9D2D244ADBAC000EF227 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3045DA5B21C2D73AEE9BA10 /* Pods-AuthorizationExampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -727,6 +931,7 @@
 		};
 		92CD9D2E244ADBAC000EF227 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CBC98F6E68039E085175EB7 /* Pods-AuthorizationExampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

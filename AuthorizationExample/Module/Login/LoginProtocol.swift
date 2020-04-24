@@ -36,6 +36,8 @@ protocol LoginInteractorProtocol: class {
     
     func checkEmailAndPassword(email: String?, password: String?) -> CheckEmailResult
     
+    func loginWith(email: String, and password: String)
+    
 }
 
 // MARK: - PRESENTER -
@@ -47,6 +49,8 @@ protocol LoginPresenterProtocol: class {
     func login(email: String?, password: String?)
     
     func checkTextFields(email: String?, password: String?)
+    
+    func userLoggedIn(error: Error?)
     
 }
 

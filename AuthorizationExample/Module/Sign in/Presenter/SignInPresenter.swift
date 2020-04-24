@@ -36,4 +36,29 @@ class SignInPresenter: SignInPresenterProtocol {
         
     }
     
+    func signInWithGoogle() {
+        
+        interactor.signInWithGoogle(router: router)
+        
+    }
+    
+    func signedInWithGoogle(error: Error?) {
+        
+        if let err = error {
+            print(err.localizedDescription)
+            return
+        }
+        
+        homeController()
+        
+    }
+    
+    func homeController() {
+        
+        let home = Builder.homeBuilder().homeController()
+        
+        router.presentController(home)
+        
+    }
+    
 }

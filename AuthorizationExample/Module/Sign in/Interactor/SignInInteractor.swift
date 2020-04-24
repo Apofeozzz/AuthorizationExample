@@ -14,11 +14,27 @@ class SignInInteractor: SignInInteractorProtocol {
     
     weak var presenter: SignInPresenterProtocol!
     
+    var googleService: GoogleSignInService?
+    
     // MARK: - INIT -
     
     required init(presenter: SignInPresenterProtocol) {
         
         self.presenter = presenter
+        
+    }
+    
+    // MARK: - SIGN IN WITH GOOGLE -
+    
+    func signInWithGoogle(router: NavigationProtocol) {
+        
+        googleService = GoogleSignInService(controller: router.controller) { [weak self] in
+            
+            self?.presenter.signedInWithGoogle(error: nil)
+            
+        }
+        
+        googleService?.signIn()
         
     }
     

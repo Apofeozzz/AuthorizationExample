@@ -28,27 +28,31 @@ class LaunchViewPresenter: LaunchViewPresenterProtocol {
 	
 	// MARK: - ACTION -
 	
-	func checkLoggedUser() {
-		
-		loginController()
-		
-	}
+	func checkLoggedUser() { loginController() }
 	
 	func loginController() {
         
-        if interactor.checkIfUserLoggedIn() {
-            
-            // move to home module
-            
-        } else {
-            
-            let signIn = Builder.loginBuilder().signInController()
-            
-            router.presentController(signIn)
-            
-        }
+        if interactor.checkIfUserLoggedIn() { homeController() }
+        
+        else { signInController() }
 		
 	}
+    
+    func signInController() {
+        
+        let signIn = Builder.loginBuilder().signInController()
+        
+        router.presentController(signIn)
+        
+    }
+    
+    func homeController() {
+        
+        let home = Builder.homeBuilder().homeController()
+        
+        router.presentController(home)
+        
+    }
 	
 }
 

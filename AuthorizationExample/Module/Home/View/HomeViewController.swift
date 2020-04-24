@@ -1,24 +1,24 @@
 //
-//  SignInViewController.swift
+//  HomeViewController.swift
 //  AuthorizationExample
 //
-//  Created by Denis Grishchenko on 4/19/20.
+//  Created by Denis Grishchenko on 4/24/20.
 //  Copyright © 2020 Denis Grishchenko. All rights reserved.
 //
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class HomeViewController: UIViewController {
     
-    // MARK: - DATA SOURCE -
+    // MARK: - PRESENTER -
     
-    var presenter: SignInPresenterProtocol!
+    var presenter: HomePresenterProtocol!
     
-    let config: SignInConfiguratorProtocol = SignInConfigurator()
+    var configurator = HomeConfigurator()
     
     // MARK: - UIVIEW -
     
-    var mainView: SignInView!
+    var mainView: HomeView!
     
     // MARK: - LIFE CYCLE -
     
@@ -27,24 +27,18 @@ class SignInViewController: UIViewController {
         
         setupView()
         
-        config.configure(with: self)
+        configurator.configure(with: self)
         
     }
-
+    
     // MARK: - ACTION -
     
-    @objc private func signInButtonAction() {
+    @objc private func signOutAction() {
         
-        presenter.signIn()
+        presenter.signOut()
         
     }
     
-    @objc private func googleSignInAction() {
-        
-        presenter.signInWithGoogle()
-        
-    }
-
     // MARK: - SETUP VIEW -
     
     private func setupView() {
@@ -67,12 +61,10 @@ class SignInViewController: UIViewController {
         
         navBar.barTintColor = .mainGreen()
         
-        navBar.tintColor = UIColor.hexStringToUIColor(hex: "#4D7E8D")
-        
         let attributes = [NSAttributedString.Key.font: UIFont.futuraBoldWithSize(24),
                           NSAttributedString.Key.foregroundColor: UIColor.mainPink()]
         
-        let title = NSAttributedString(string: "Authorization", attributes: attributes)
+        let title = NSAttributedString(string: "Home Screen", attributes: attributes)
         
         let navTitleLabel = UILabel()
         
@@ -80,21 +72,20 @@ class SignInViewController: UIViewController {
         
         navigationItem.titleView = navTitleLabel
         
+        let signOutButton = UIBarButtonItem(title: "Sign Out",
+                                            style: .plain,
+                                            target: self,
+                                            action: #selector(signOutAction))
+        
+        navigationItem.leftBarButtonItem = signOutButton
+        
     }
     
     private func setupMainView() {
         
-        mainView = SignInView()
+        mainView = HomeView()
         
         view.addSubview(mainView)
-        
-        mainView.signInButton.addTarget(self,
-                                        action: #selector(signInButtonAction),
-                                        for: .touchUpInside)
-        
-        mainView.googleSignInButton.addTarget(self,
-                                              action: #selector(googleSignInAction),
-                                              for: .touchUpInside)
         
     }
     
@@ -108,12 +99,6 @@ class SignInViewController: UIViewController {
     
 }
 
-extension SignInViewController: SignInViewProtocol {
-    
-    func hideGoogleSignInButton() {
-        
-        mainView.googleSignInButton.isHidden = true
-        
-    }
+extension HomeViewController: HomeViewProtocol {
     
 }
