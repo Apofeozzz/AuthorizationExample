@@ -28,6 +28,18 @@ class SignInPresenter: SignInPresenterProtocol {
     
     // MARK: - ACTION -
     
+    // MARK: - SIGN UP WITH EMAIL -
+    
+    func signUpWithEmail() {
+        
+        let signUpVC = Builder.loginBuilder().signUpController()
+        
+        router.pushController(signUpVC)
+        
+    }
+    
+    // MARK: - SIGN IN WITH EMAIL -
+    
     func signIn() {
         
         let logInController = Builder.loginBuilder().loginController()
@@ -35,6 +47,8 @@ class SignInPresenter: SignInPresenterProtocol {
         router.pushController(logInController)
         
     }
+    
+    // MARK: - GOOGLE SIGN IN -
     
     func signInWithGoogle() {
         
@@ -45,8 +59,12 @@ class SignInPresenter: SignInPresenterProtocol {
     func signedInWithGoogle(error: Error?) {
         
         if let err = error {
-            print(err.localizedDescription)
+            
+            router.showAlert(title: "Error",
+                             message: err.localizedDescription)
+            
             return
+            
         }
         
         homeController()

@@ -11,8 +11,6 @@ import UIKit
 class LaunchViewController: UIViewController, LaunchViewProtocol {
 	
 	// MARK: - PRESENTER -
-    
-    let configurator: LaunchConfiguratorProtocol = LaunchConfigurator()
 	
 	var presenter: LaunchViewPresenterProtocol!
 	
@@ -26,8 +24,6 @@ class LaunchViewController: UIViewController, LaunchViewProtocol {
 		super.viewDidLoad()
 		
 		setupView()
-        
-        configurator.configure(with: self)
 		
 	}
 	

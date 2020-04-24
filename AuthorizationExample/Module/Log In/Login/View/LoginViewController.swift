@@ -13,9 +13,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 	// MARK: - PRESENTER -
 	
 	var presenter: LoginPresenterProtocol!
-    
-    var config: LoginConfiguratorProtocol = LoginConfigurator()
-	
+
 	// MARK: - UIVIEW -
 	
 	var mainView: LoginView!
@@ -26,8 +24,6 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 		super.viewDidLoad()
 		
 		setupView()
-        
-        config.configure(with: self)
         
 	}
 	

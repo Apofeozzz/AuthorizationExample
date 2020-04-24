@@ -9,7 +9,7 @@
 import Firebase
 import GoogleSignIn
 
-class GoogleSignInService: NSObject {
+class GoogleSignInService: NSObject, GoogleSignInProtocol {
     
     var controller: UIViewController
     

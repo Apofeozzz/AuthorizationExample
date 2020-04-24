@@ -12,7 +12,12 @@ class LaunchBuilder {
 	
 	func launchController() -> UIViewController {
 		
-		return LaunchViewController()
+        let launchVC = LaunchViewController()
+        
+        let configurator: LaunchConfiguratorProtocol = LaunchConfigurator()
+        configurator.configure(with: launchVC)
+        
+		return launchVC
 		
 	}
 	

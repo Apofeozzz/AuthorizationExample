@@ -42,6 +42,8 @@ protocol SignInPresenterProtocol: class {
     
     init(view: SignInViewProtocol)
     
+    func signUpWithEmail()
+    
     func signIn()
     
     func signInWithGoogle()

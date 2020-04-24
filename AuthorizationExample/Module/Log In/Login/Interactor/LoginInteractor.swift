@@ -8,13 +8,21 @@
 
 import Foundation
 
+protocol LoginWithEmailProtocol: class {
+    
+    var signInResponse: ((Error?) -> Void)? { get set }
+    
+    func signInWith(email: String, and password: String)
+    
+}
+
 class LoginInteractor: LoginInteractorProtocol {
     
     // MARK: - PRESENTER -
     
     weak var presenter: LoginPresenterProtocol!
     
-    var firebaseSignInService: FirebaseSignInService?
+    var firebaseSignInService: LoginWithEmailProtocol?
     
     // MARK: - INIT -
     

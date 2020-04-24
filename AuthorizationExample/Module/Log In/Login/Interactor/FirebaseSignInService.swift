@@ -8,7 +8,7 @@
 
 import FirebaseAuth
 
-class FirebaseSignInService {
+class FirebaseSignInService: LoginWithEmailProtocol {
     
     var signInResponse: ((Error?) -> Void)?
     

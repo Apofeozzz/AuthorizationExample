@@ -14,8 +14,6 @@ class SignInViewController: UIViewController {
     
     var presenter: SignInPresenterProtocol!
     
-    let config: SignInConfiguratorProtocol = SignInConfigurator()
-    
     // MARK: - UIVIEW -
     
     var mainView: SignInView!
@@ -27,22 +25,20 @@ class SignInViewController: UIViewController {
         
         setupView()
         
-        config.configure(with: self)
-        
     }
 
     // MARK: - ACTION -
     
+    @objc private func signUpButtonAction() {
+        presenter.signUpWithEmail()
+    }
+    
     @objc private func signInButtonAction() {
-        
         presenter.signIn()
-        
     }
     
     @objc private func googleSignInAction() {
-        
         presenter.signInWithGoogle()
-        
     }
 
     // MARK: - SETUP VIEW -
@@ -64,9 +60,7 @@ class SignInViewController: UIViewController {
         guard let navBar = navigationController?.navigationBar else { return }
         
         navBar.isTranslucent = false
-        
         navBar.barTintColor = .mainGreen()
-        
         navBar.tintColor = UIColor.hexStringToUIColor(hex: "#4D7E8D")
         
         let attributes = [NSAttributedString.Key.font: UIFont.futuraBoldWithSize(24),
@@ -75,7 +69,6 @@ class SignInViewController: UIViewController {
         let title = NSAttributedString(string: "Authorization", attributes: attributes)
         
         let navTitleLabel = UILabel()
-        
         navTitleLabel.attributedText = title
         
         navigationItem.titleView = navTitleLabel
@@ -87,6 +80,10 @@ class SignInViewController: UIViewController {
         mainView = SignInView()
         
         view.addSubview(mainView)
+        
+        mainView.signUpButton.addTarget(self,
+                                        action: #selector(signUpButtonAction),
+                                        for: .touchUpInside)
         
         mainView.signInButton.addTarget(self,
                                         action: #selector(signInButtonAction),
@@ -101,9 +98,7 @@ class SignInViewController: UIViewController {
     // MARK: - SETUP CONSTRAINTS -
     
     private func setupConstraints() {
-        
         view.fillScreenWithSubview(mainView)
-        
     }
     
 }
@@ -111,9 +106,7 @@ class SignInViewController: UIViewController {
 extension SignInViewController: SignInViewProtocol {
     
     func hideGoogleSignInButton() {
-        
         mainView.googleSignInButton.isHidden = true
-        
     }
     
 }

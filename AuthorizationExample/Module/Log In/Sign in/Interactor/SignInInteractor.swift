@@ -8,13 +8,19 @@
 
 import Foundation
 
+protocol GoogleSignInProtocol: class {
+    
+    func signIn()
+    
+}
+
 class SignInInteractor: SignInInteractorProtocol {
     
     // MARK: - PRESENTER -
     
     weak var presenter: SignInPresenterProtocol!
     
-    var googleService: GoogleSignInService?
+    var googleService: GoogleSignInProtocol?
     
     // MARK: - INIT -
     

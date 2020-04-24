@@ -1,22 +1,26 @@
 //
-//  HomeViewController.swift
+//  SignUpViewController.swift
 //  AuthorizationExample
 //
-//  Created by Denis Grishchenko on 4/24/20.
+//  Created by Denis Grishchenko on 4/25/20.
 //  Copyright © 2020 Denis Grishchenko. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+protocol SignUpViewLayout: UIView {
+    
+}
+
+class SignUpViewController: UIViewController {
     
     // MARK: - PRESENTER -
     
-    var presenter: HomePresenterProtocol!
+    weak var presenter: SignUpPresenterProtocol!
     
-    // MARK: - UIVIEW -
+    // MARK: - UIVEW -
     
-    var mainView: HomeView!
+    var mainView: SignUpViewLayout!
     
     // MARK: - LIFE CYCLE -
     
@@ -24,14 +28,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
-        
-    }
-    
-    // MARK: - ACTION -
-    
-    @objc private func signOutAction() {
-        
-        presenter.signOut()
         
     }
     
@@ -54,32 +50,24 @@ class HomeViewController: UIViewController {
         guard let navBar = navigationController?.navigationBar else { return }
         
         navBar.isTranslucent = false
-        
         navBar.barTintColor = .mainGreen()
+        navBar.tintColor = UIColor.hexStringToUIColor(hex: "#4D7E8D")
         
         let attributes = [NSAttributedString.Key.font: UIFont.futuraBoldWithSize(24),
                           NSAttributedString.Key.foregroundColor: UIColor.mainPink()]
         
-        let title = NSAttributedString(string: "Home Screen", attributes: attributes)
+        let title = NSAttributedString(string: "Sign Up", attributes: attributes)
         
         let navTitleLabel = UILabel()
-        
         navTitleLabel.attributedText = title
         
         navigationItem.titleView = navTitleLabel
-        
-        let signOutButton = UIBarButtonItem(title: "Sign Out",
-                                            style: .plain,
-                                            target: self,
-                                            action: #selector(signOutAction))
-        
-        navigationItem.leftBarButtonItem = signOutButton
         
     }
     
     private func setupMainView() {
         
-        mainView = HomeView()
+        mainView = SignUpView()
         
         view.addSubview(mainView)
         
@@ -88,13 +76,11 @@ class HomeViewController: UIViewController {
     // MARK: - SETUP CONSTRAINTS -
     
     private func setupConstraints() {
-        
         view.fillScreenWithSubview(mainView)
-        
     }
     
 }
 
-extension HomeViewController: HomeViewProtocol {
+extension SignUpViewController: SignUpViewProtocol {
     
 }

@@ -12,19 +12,37 @@ class LoginBuilder {
     
     func signInController() -> UIViewController {
         
-        let signInController = SignInViewController()
+        let signInVC = SignInViewController()
         
-        let navigationController = UINavigationController(rootViewController: signInController)
+        let configurator: SignInConfiguratorProtocol = SignInConfigurator()
+        configurator.configure(with: signInVC)
         
+        let navigationController = UINavigationController(rootViewController: signInVC)
         navigationController.modalPresentationStyle = .fullScreen
         
         return navigationController
         
     }
 	
+    func signUpController() -> UIViewController {
+        
+        let signUpVC = SignUpViewController()
+        
+        let configurator: SignUpConfiguratorProtocol = SignUpConfigurator()
+        configurator.configure(with: signUpVC)
+        
+        return signUpVC
+        
+    }
+    
 	func loginController() -> UIViewController {
 
-		LoginViewController()
+        let loginVC = LoginViewController()
+        
+        let configurator: LoginConfiguratorProtocol = LoginConfigurator()
+        configurator.configure(with: loginVC)
+        
+		return loginVC
 
 	}
 	
