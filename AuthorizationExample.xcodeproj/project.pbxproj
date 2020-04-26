@@ -22,6 +22,10 @@
 		4B136B002455ED1C00F803C1 /* AddViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136AFF2455ED1C00F803C1 /* AddViewProtocol.swift */; };
 		4B136B022455EDE500F803C1 /* AddViewConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136B012455EDE500F803C1 /* AddViewConfigurator.swift */; };
 		4B136B042455EF0800F803C1 /* AddBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136B032455EF0800F803C1 /* AddBuilder.swift */; };
+		4B136B062455FCDA00F803C1 /* AddViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136B052455FCDA00F803C1 /* AddViewPresenter.swift */; };
+		4B136B082455FDF600F803C1 /* AddViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136B072455FDF600F803C1 /* AddViewInteractor.swift */; };
+		4B136B0A2455FFA900F803C1 /* AddViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136B092455FFA800F803C1 /* AddViewRouter.swift */; };
+		4B136B0C2456014A00F803C1 /* ImagePickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136B0B2456014A00F803C1 /* ImagePickerService.swift */; };
 		4B45AB3924539FF6004A6B4E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45AB3824539FF6004A6B4E /* SignUpView.swift */; };
 		4B5B84112455AF3E0003AD06 /* FirebaseSignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5B84102455AF3E0003AD06 /* FirebaseSignUpService.swift */; };
 		4B84AD01244DDCA30040B4BD /* LaunchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84AD00244DDCA30040B4BD /* LaunchProtocol.swift */; };
@@ -31,6 +35,7 @@
 		4BA455AC244C4C0D004D7F06 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA455AB244C4C0D004D7F06 /* SignInPresenter.swift */; };
 		4BA455AE244C4CF9004D7F06 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA455AD244C4CF9004D7F06 /* SignInViewController.swift */; };
 		4BA455B0244C4DAD004D7F06 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA455AF244C4DAD004D7F06 /* SignInView.swift */; };
+		4BB3894C24563F240062DF5C /* RateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB3894B24563F240062DF5C /* RateCollectionViewCell.swift */; };
 		4BCBFCB1244E31FE00BA6244 /* SignInProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCB0244E31FE00BA6244 /* SignInProtocol.swift */; };
 		4BCBFCB4244E345200BA6244 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCB3244E345200BA6244 /* SignInInteractor.swift */; };
 		4BCBFCB7244E35BD00BA6244 /* SignInConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCB6244E35BD00BA6244 /* SignInConfigurator.swift */; };
@@ -101,6 +106,10 @@
 		4B136AFF2455ED1C00F803C1 /* AddViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewProtocol.swift; sourceTree = "<group>"; };
 		4B136B012455EDE500F803C1 /* AddViewConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewConfigurator.swift; sourceTree = "<group>"; };
 		4B136B032455EF0800F803C1 /* AddBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBuilder.swift; sourceTree = "<group>"; };
+		4B136B052455FCDA00F803C1 /* AddViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewPresenter.swift; sourceTree = "<group>"; };
+		4B136B072455FDF600F803C1 /* AddViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewInteractor.swift; sourceTree = "<group>"; };
+		4B136B092455FFA800F803C1 /* AddViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewRouter.swift; sourceTree = "<group>"; };
+		4B136B0B2456014A00F803C1 /* ImagePickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerService.swift; sourceTree = "<group>"; };
 		4B45AB3824539FF6004A6B4E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4B5B84102455AF3E0003AD06 /* FirebaseSignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSignUpService.swift; sourceTree = "<group>"; };
 		4B84AD00244DDCA30040B4BD /* LaunchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchProtocol.swift; sourceTree = "<group>"; };
@@ -110,6 +119,7 @@
 		4BA455AB244C4C0D004D7F06 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
 		4BA455AD244C4CF9004D7F06 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		4BA455AF244C4DAD004D7F06 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		4BB3894B24563F240062DF5C /* RateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCollectionViewCell.swift; sourceTree = "<group>"; };
 		4BCBFCB0244E31FE00BA6244 /* SignInProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInProtocol.swift; sourceTree = "<group>"; };
 		4BCBFCB3244E345200BA6244 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		4BCBFCB6244E35BD00BA6244 /* SignInConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInConfigurator.swift; sourceTree = "<group>"; };
@@ -250,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				4B136B012455EDE500F803C1 /* AddViewConfigurator.swift */,
+				4B136B092455FFA800F803C1 /* AddViewRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -264,6 +275,7 @@
 		4B136AF72455EC6D00F803C1 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				4B136B052455FCDA00F803C1 /* AddViewPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -271,6 +283,8 @@
 		4B136AF82455EC7900F803C1 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				4B136B0D24560B4000F803C1 /* Service */,
+				4B136B072455FDF600F803C1 /* AddViewInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -279,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				4B136AFA2455EC8700F803C1 /* AddView.swift */,
+				4BB3894B24563F240062DF5C /* RateCollectionViewCell.swift */,
 				4B136AFC2455EC9000F803C1 /* AddViewController.swift */,
 			);
 			path = View;
@@ -290,6 +305,14 @@
 				4B136AFF2455ED1C00F803C1 /* AddViewProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		4B136B0D24560B4000F803C1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4B136B0B2456014A00F803C1 /* ImagePickerService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		4B5B84132455B50C0003AD06 /* Protocol */ = {
@@ -875,6 +898,7 @@
 				92F02096244AF6BA00B1D6AC /* LoginViewController.swift in Sources */,
 				4B84AD01244DDCA30040B4BD /* LaunchProtocol.swift in Sources */,
 				92CD9D0B244ADBAB000EF227 /* AppDelegate.swift in Sources */,
+				4B136B0C2456014A00F803C1 /* ImagePickerService.swift in Sources */,
 				4BFC5BA12453943D003DBD57 /* SignUpViewController.swift in Sources */,
 				4BFC5B9424538E3F003DBD57 /* FirebaseSignInService.swift in Sources */,
 				4B007A3C245310EA0063939B /* HomeBuilder.swift in Sources */,
@@ -883,6 +907,7 @@
 				4BFC5BA924539898003DBD57 /* SignUpConfigurator.swift in Sources */,
 				4BCBFCB7244E35BD00BA6244 /* SignInConfigurator.swift in Sources */,
 				4BCBFCB9244E362300BA6244 /* SignInRouter.swift in Sources */,
+				4B136B062455FCDA00F803C1 /* AddViewPresenter.swift in Sources */,
 				92CD9D43244AE18A000EF227 /* LaunchView.swift in Sources */,
 				92F02098244AF74300B1D6AC /* LoginView.swift in Sources */,
 				4BCBFCB4244E345200BA6244 /* SignInInteractor.swift in Sources */,
@@ -894,6 +919,7 @@
 				4B136AFD2455EC9000F803C1 /* AddViewController.swift in Sources */,
 				4BCBFCC6244E3FCF00BA6244 /* CheckEmailResult.swift in Sources */,
 				4B136B042455EF0800F803C1 /* AddBuilder.swift in Sources */,
+				4B136B0A2455FFA900F803C1 /* AddViewRouter.swift in Sources */,
 				92CD9D45244AE2DF000EF227 /* UIColor+Extension.swift in Sources */,
 				92F02091244AE9F500B1D6AC /* LaunchBuilder.swift in Sources */,
 				4B007A442453152B0063939B /* HomePresenter.swift in Sources */,
@@ -918,10 +944,12 @@
 				4B007A462453177C0063939B /* HomeRouter.swift in Sources */,
 				92CD9D3C244ADE3F000EF227 /* NavigationProtocol.swift in Sources */,
 				92F0208B244AE75400B1D6AC /* UIFont+Extension.swift in Sources */,
+				4B136B082455FDF600F803C1 /* AddViewInteractor.swift in Sources */,
 				4B45AB3924539FF6004A6B4E /* SignUpView.swift in Sources */,
 				4BCBFCBB244E39E000BA6244 /* LoginProtocol.swift in Sources */,
 				4BCBFCBE244E3B9F00BA6244 /* LoginInteractor.swift in Sources */,
 				92F0208E244AE97700B1D6AC /* Builder.swift in Sources */,
+				4BB3894C24563F240062DF5C /* RateCollectionViewCell.swift in Sources */,
 				4B136B002455ED1C00F803C1 /* AddViewProtocol.swift in Sources */,
 				92F0209C244AF9F700B1D6AC /* LoginBuilder.swift in Sources */,
 			);

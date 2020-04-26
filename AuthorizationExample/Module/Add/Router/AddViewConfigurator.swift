@@ -10,10 +10,24 @@ import Foundation
 
 class AddViewConfigurator: AddViewConfiguratorProtocol {
     
-    func configure(with controller: AddViewController, and view: AddView) {
+    func configure(with controller: AddViewController) {
         
-        controller.mainView = view
+        let presenter = AddViewPresenter(view: controller)
         
+        let interactor = AddViewInteractor(presenter: presenter)
+        
+        let router = AddViewRouter(controller: controller)
+        
+        controller.presenter = presenter
+        
+        presenter.interactor = interactor
+        
+        presenter.router = router
+        
+    }
+    
+    deinit {
+        print("AddViewConfigurator deinit")
     }
     
 }

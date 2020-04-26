@@ -18,6 +18,16 @@ class AddView: UIView, AddViewLayoutProtocol {
     
     var chooseFromGalleryButton: UIButton!
     
+    var resetPhotoButton: UIButton!
+    
+    var rateCollectionView: UICollectionView!
+    
+    var nameTextField: UITextField!
+    
+    var descriptionTextView: UITextView!
+    
+    var underView: UIView!
+    
     // MARK: - INIT -
     
     init() {
@@ -42,6 +52,16 @@ class AddView: UIView, AddViewLayoutProtocol {
         setupTakeAShotButton()
         
         setupChooseFromGalleryButton()
+        
+        setupResetPhotoButton()
+        
+        setupRateCollectionView()
+        
+        setupNameTextField()
+        
+        setupUnderView()
+        
+        setupDescriptionTextView()
         
         setupConstraints()
         
@@ -100,13 +120,110 @@ class AddView: UIView, AddViewLayoutProtocol {
         
     }
     
+    private func setupResetPhotoButton() {
+        
+        resetPhotoButton = UIButton(type: .system)
+        
+        resetPhotoButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        resetPhotoButton.tintColor = .appPlaceholderColor()
+        
+        let attributes = [NSAttributedString.Key.font: UIFont.futuraMediumWithSize(16),
+                          NSAttributedString.Key.foregroundColor: UIColor.appPlaceholderColor()]
+        
+        let title = NSAttributedString(string: "Reset photo", attributes: attributes)
+        
+        resetPhotoButton.setAttributedTitle(title, for: .normal)
+        
+        resetPhotoButton.isHidden = true
+        
+        addSubview(resetPhotoButton)
+        
+    }
+    
+    private func setupRateCollectionView() {
+        
+        let layout = UICollectionViewFlowLayout()
+        
+        layout.scrollDirection = .horizontal
+        
+        layout.minimumLineSpacing = 1
+        
+        rateCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        rateCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        rateCollectionView.backgroundColor = .clear
+        
+        rateCollectionView.register(RateCollectionViewCell.self, forCellWithReuseIdentifier: RateCollectionViewCell.id)
+        
+        addSubview(rateCollectionView)
+        
+    }
+    
+    private func setupNameTextField() {
+        
+        nameTextField = UITextField()
+        
+        nameTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        nameTextField.font = .futuraMediumWithSize(17)
+        
+        nameTextField.textColor = .mainPink()
+        
+        nameTextField.paddingLeftCustom = 5
+        
+        let placeholderAttributes = [NSAttributedString.Key.font: UIFont.futuraMediumWithSize(16),
+                                     NSAttributedString.Key.foregroundColor: UIColor.appPlaceholderColor()]
+        
+        nameTextField.attributedPlaceholder = NSAttributedString(string: "Enter title",
+                                                                 attributes: placeholderAttributes)
+        
+        addSubview(nameTextField)
+        
+    }
+    
+    private func setupUnderView() {
+        
+        underView = UIView()
+        
+        underView.translatesAutoresizingMaskIntoConstraints = false
+        
+        underView.backgroundColor = .appPlaceholderColor()
+        
+        addSubview(underView)
+        
+    }
+    
+    private func setupDescriptionTextView() {
+        
+        descriptionTextView = UITextView()
+        
+        descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
+        
+        descriptionTextView.backgroundColor = .clear
+        
+        descriptionTextView.font = .futuraMediumWithSize(16)
+        
+        descriptionTextView.textColor = .white
+        
+        descriptionTextView.layer.cornerRadius = 5
+        
+        descriptionTextView.layer.borderColor = UIColor.appPlaceholderColor().cgColor
+        
+        descriptionTextView.layer.borderWidth = 1
+        
+        addSubview(descriptionTextView)
+        
+    }
+    
     // MARK: - SETUP CONSTRAINTS -
     
     private func setupConstraints() {
         
         NSLayoutConstraint.activate([
         
-            uploadImageView.topAnchor       .constraint(equalTo: topAnchor, constant: 20),
+            uploadImageView.topAnchor       .constraint(equalTo: topAnchor, constant: 5),
             uploadImageView.leadingAnchor   .constraint(equalTo: leadingAnchor, constant: 20),
             uploadImageView.trailingAnchor  .constraint(equalTo: trailingAnchor, constant: -20),
             uploadImageView.heightAnchor    .constraint(equalToConstant: UIScreen.main.bounds.width - 40)
@@ -124,11 +241,58 @@ class AddView: UIView, AddViewLayoutProtocol {
         
         NSLayoutConstraint.activate([
         
-            chooseFromGalleryButton.topAnchor.constraint(equalTo: takeAShotButton.bottomAnchor),
-            chooseFromGalleryButton.centerXAnchor.constraint(equalTo: takeAShotButton.centerXAnchor)
+            chooseFromGalleryButton.topAnchor       .constraint(equalTo: takeAShotButton.bottomAnchor),
+            chooseFromGalleryButton.centerXAnchor   .constraint(equalTo: takeAShotButton.centerXAnchor)
         
         ])
         
+        NSLayoutConstraint.activate([
+        
+            resetPhotoButton.topAnchor      .constraint(equalTo: uploadImageView.bottomAnchor, constant: 5),
+            resetPhotoButton.centerXAnchor  .constraint(equalTo: centerXAnchor)
+        
+        ])
+        
+        NSLayoutConstraint.activate([
+        
+            rateCollectionView.topAnchor        .constraint(equalTo: resetPhotoButton.bottomAnchor),
+            rateCollectionView.leadingAnchor    .constraint(equalTo: leadingAnchor, constant: 20),
+            rateCollectionView.trailingAnchor   .constraint(equalTo: trailingAnchor, constant: -20),
+            rateCollectionView.heightAnchor     .constraint(equalToConstant: 50)
+        
+        ])
+        
+        NSLayoutConstraint.activate([
+        
+            nameTextField.topAnchor     .constraint(equalTo: rateCollectionView.bottomAnchor),
+            nameTextField.leadingAnchor .constraint(equalTo: leadingAnchor, constant: 20),
+            nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            nameTextField.heightAnchor  .constraint(equalToConstant: 40)
+        
+        ])
+        
+        NSLayoutConstraint.activate([
+        
+            underView.topAnchor     .constraint(equalTo: nameTextField.bottomAnchor, constant: 1),
+            underView.leadingAnchor .constraint(equalTo: leadingAnchor, constant: 20),
+            underView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            underView.heightAnchor  .constraint(equalToConstant: 1)
+        
+        ])
+        
+        NSLayoutConstraint.activate([
+        
+            descriptionTextView.topAnchor       .constraint(equalTo: underView.bottomAnchor, constant: 5),
+            descriptionTextView.leadingAnchor   .constraint(equalTo: leadingAnchor, constant: 20),
+            descriptionTextView.trailingAnchor  .constraint(equalTo: trailingAnchor, constant: -20),
+            descriptionTextView.bottomAnchor    .constraint(equalTo: bottomAnchor, constant: -5)
+        
+        ])
+        
+    }
+    
+    deinit {
+        print("AddView deinit")
     }
     
 }
