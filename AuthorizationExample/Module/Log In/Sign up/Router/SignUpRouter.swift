@@ -1,18 +1,18 @@
 //
-//  LaunchRouter.swift
+//  SignUpRouter.swift
 //  AuthorizationExample
 //
-//  Created by Denis Grishchenko on 4/20/20.
+//  Created by Denis Grishchenko on 4/25/20.
 //  Copyright © 2020 Denis Grishchenko. All rights reserved.
 //
 
 import UIKit
 
-class LaunchRouter: LaunchRouterProtocol {
+class SignUpRouter: SignUpRouterProtocol {
     
-    // MARK: - CONTROLLER -
+    // MARK: - DATA SOURCE -
     
-    weak var controller: UIViewController!
+    let controller: UIViewController!
     
     // MARK: - INIT -
     

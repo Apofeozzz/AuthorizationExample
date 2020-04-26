@@ -18,7 +18,7 @@ protocol LoginWithEmailProtocol: class {
 
 class LoginInteractor: LoginInteractorProtocol {
     
-    // MARK: - PRESENTER -
+    // MARK: - DATA SOURCE -
     
     weak var presenter: LoginPresenterProtocol!
     
@@ -65,6 +65,8 @@ class LoginInteractor: LoginInteractorProtocol {
         return CheckEmailResult()
         
     }
+    
+    // MARK: - LOGIN -
     
     func loginWith(email: String, and password: String) {
         

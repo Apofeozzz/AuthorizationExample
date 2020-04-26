@@ -42,6 +42,8 @@ class SignUpPresenter: SignUpPresenterProtocol {
         
     }
     
+    // MARK: - SIGN UP -
+    
     func signUp(email: String?, password: String?) {
         
         let checkInput = interactor.checkEmailAndPassword(email: email, password: password)
@@ -76,6 +78,8 @@ class SignUpPresenter: SignUpPresenterProtocol {
         homeController()
         
     }
+    
+    // MARK: - NAVIGATION -
     
     func homeController() {
         

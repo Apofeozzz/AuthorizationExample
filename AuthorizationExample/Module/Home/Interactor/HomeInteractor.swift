@@ -11,7 +11,7 @@ import FirebaseAuth
 
 class HomeInteractor: HomeInteractorProtocol {
     
-    // MARK: - PRESENTER -
+    // MARK: - DATA SOURCE -
     
     weak var presenter: HomePresenterProtocol!
     

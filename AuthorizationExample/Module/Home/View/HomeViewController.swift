@@ -95,6 +95,8 @@ class HomeViewController: UIViewController {
     
 }
 
+// MARK: - HOME VIEW PROTOCOL -
+
 extension HomeViewController: HomeViewProtocol {
     
 }

@@ -223,6 +223,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4B5B84132455B50C0003AD06 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				4B84AD00244DDCA30040B4BD /* LaunchProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		4B84AD02244DDD710040B4BD /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,7 +521,7 @@
 		92CD9D35244ADDA1000EF227 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				4B84AD00244DDCA30040B4BD /* LaunchProtocol.swift */,
+				4B5B84132455B50C0003AD06 /* Protocol */,
 				92CD9D37244ADDAD000EF227 /* View */,
 				4B84AD05244DDEDC0040B4BD /* Interactor */,
 				92CD9D36244ADDA8000EF227 /* Presenter */,

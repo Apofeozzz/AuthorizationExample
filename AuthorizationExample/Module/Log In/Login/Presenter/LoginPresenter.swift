@@ -27,6 +27,23 @@ class LoginPresenter: LoginPresenterProtocol {
 	}
 	
 	// MARK: - ACTION -
+    
+    func checkTextFields(email: String?, password: String?) {
+        
+        guard
+            let email = email,
+            let password = password
+            else { return }
+        
+        if !email.isEmpty && !password.isEmpty && password.count > 5 {
+            
+            view?.activateLoginButton()
+            
+        } else { view?.disactivateLoginButton() }
+        
+    }
+    
+    // MARK: - LOGIN -
 	
 	func login(email: String?, password: String?) {
         
@@ -48,21 +65,6 @@ class LoginPresenter: LoginPresenterProtocol {
         }
 		
 	}
-    
-    func checkTextFields(email: String?, password: String?) {
-        
-        guard
-            let email = email,
-            let password = password
-            else { return }
-        
-        if !email.isEmpty && !password.isEmpty && password.count > 5 {
-            
-            view?.activateLoginButton()
-            
-        } else { view?.disactivateLoginButton() }
-        
-    }
 	
     func userLoggedIn(error: Error?) {
         
@@ -78,6 +80,8 @@ class LoginPresenter: LoginPresenterProtocol {
         homeController()
         
     }
+    
+    // MARK: - NAVIGATION -
     
     func homeController() {
         

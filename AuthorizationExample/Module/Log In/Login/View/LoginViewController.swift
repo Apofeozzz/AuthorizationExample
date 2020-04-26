@@ -95,16 +95,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 		presenter.login(email: mainView.emailTextField.text,
 						password: mainView.passwordTextField.text)
 		
-	}
-	
-	// MARK: - TEXT FIELDS ACTION -
-	
-	@objc private func textFieldDidChangeValue(_ textField: UITextField) {
-		
-        presenter.checkTextFields(email: mainView.emailTextField.text,
-                                  password: mainView.passwordTextField.text)
-		
-	}
+    }
 	
 	func activateLoginButton() {
 		
@@ -138,6 +129,8 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 	
 }
 
+// MARK: - UITEXTFIELD DELEGATE -
+
 extension LoginViewController: UITextFieldDelegate {
 	
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -145,5 +138,12 @@ extension LoginViewController: UITextFieldDelegate {
 		textField.resignFirstResponder()
 		
 	}
+    
+    @objc private func textFieldDidChangeValue(_ textField: UITextField) {
+        
+        presenter.checkTextFields(email: mainView.emailTextField.text,
+                                  password: mainView.passwordTextField.text)
+        
+    }
 	
 }

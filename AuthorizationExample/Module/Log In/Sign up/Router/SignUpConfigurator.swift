@@ -21,6 +21,7 @@ class SignUpConfigurator: SignUpConfiguratorProtocol {
         controller.presenter = presenter
         
         presenter.interactor = interactor
+        
         presenter.router = router
         
     }

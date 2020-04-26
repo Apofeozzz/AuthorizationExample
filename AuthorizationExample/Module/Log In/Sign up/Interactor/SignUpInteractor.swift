@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: - PROTOCOL -
+
 protocol SignUpWithEmailProtocol: class {
     
     var signUpResponse: ((Error?) -> Void)? { get set }
@@ -15,6 +17,8 @@ protocol SignUpWithEmailProtocol: class {
     func signUpWith(email: String, and password: String)
     
 }
+
+// MARK: - INTERACTOR -
 
 class SignUpInteractor: SignUpInteractorProtocol {
     
@@ -65,6 +69,8 @@ class SignUpInteractor: SignUpInteractorProtocol {
         return CheckEmailResult()
         
     }
+    
+    // MARK: - SIGN UP -
     
     func signUp(email: String, password: String) {
         

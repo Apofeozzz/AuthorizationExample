@@ -10,7 +10,11 @@ import UIKit
 
 class HomeRouter: HomeRouterProtocol {
     
+    // MARK: - DATA SOURCE -
+    
     weak var controller: UIViewController!
+    
+    // MARK: - INIT -
     
     required init(controller: UIViewController) {
         

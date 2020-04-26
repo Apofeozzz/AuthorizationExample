@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - LAYOUT PROTOCOL -
+
 protocol SignUpViewLayout: UIView {
     
     var signUpButton: UIButton! { get set }
@@ -19,6 +21,8 @@ protocol SignUpViewLayout: UIView {
     var confirmPasswordTextField: UITextField! { set get }
     
 }
+
+// MARK: - CONTROLLER -
 
 class SignUpViewController: UIViewController {
     
@@ -125,6 +129,8 @@ class SignUpViewController: UIViewController {
     
 }
 
+// MARK: - SIGN UP VIEW PROTOCOL -
+
 extension SignUpViewController: SignUpViewProtocol {
     
     func activateSignUpButton() {
@@ -158,6 +164,8 @@ extension SignUpViewController: SignUpViewProtocol {
     }
     
 }
+
+// MARK: - UITEXTFIELD DELEGATE -
 
 extension SignUpViewController: UITextFieldDelegate {
     

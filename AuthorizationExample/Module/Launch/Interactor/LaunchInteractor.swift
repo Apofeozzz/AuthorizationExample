@@ -27,9 +27,7 @@ class LaunchInteractor: LaunchInteractorProtocol {
     
     func checkIfUserLoggedIn() -> Bool {
         
-        if let _ = Auth.auth().currentUser {
-            return true
-        }
+        if let _ = Auth.auth().currentUser { return true }
         
         return false
         
