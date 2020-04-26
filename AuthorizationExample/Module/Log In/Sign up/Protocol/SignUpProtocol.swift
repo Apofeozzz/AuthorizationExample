@@ -18,6 +18,10 @@ protocol SignUpConfiguratorProtocol: class {
 
 protocol SignUpViewProtocol: class {
     
+    func activateSignUpButton()
+    
+    func disactivateSignUpButton()
+    
 }
 
 // MARK: - INTERACTOR -
@@ -26,6 +30,10 @@ protocol SignUpInteractorProtocol: class {
     
     init(presenter: SignUpPresenterProtocol)
     
+    func checkEmailAndPassword(email: String?, password: String?) -> CheckEmailResult
+    
+    func signUp(email: String, password: String)
+    
 }
 
 // MARK: - PRESENTER -
@@ -33,6 +41,12 @@ protocol SignUpInteractorProtocol: class {
 protocol SignUpPresenterProtocol: class {
     
     init(view: SignUpViewProtocol)
+    
+    func checkTextFields(email: String?, password: String?, confirmation: String?)
+    
+    func signUp(email: String?, password: String?)
+    
+    func userCreated(error: Error?)
     
 }
 

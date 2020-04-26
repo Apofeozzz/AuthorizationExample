@@ -67,9 +67,11 @@ class LoginViewController: UIViewController, LoginViewProtocol {
 		mainView = LoginView()
 		
 		mainView.emailTextField.delegate = self
+        
 		mainView.emailTextField.addTarget(self, action: #selector(textFieldDidChangeValue), for: .editingChanged)
 		
 		mainView.passwordTextField.delegate = self
+        
 		mainView.passwordTextField.addTarget(self, action: #selector(textFieldDidChangeValue), for: .editingChanged)
 		
 		mainView.loginButton.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)

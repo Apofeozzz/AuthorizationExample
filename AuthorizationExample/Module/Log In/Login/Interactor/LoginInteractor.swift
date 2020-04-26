@@ -70,7 +70,7 @@ class LoginInteractor: LoginInteractorProtocol {
         
         firebaseSignInService = FirebaseSignInService()
         
-        firebaseSignInService?.signInResponse = {[weak self] (error) in
+        firebaseSignInService?.signInResponse = { [weak self] (error) in
             
             self?.presenter.userLoggedIn(error: error)
             

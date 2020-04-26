@@ -50,7 +50,7 @@ class LoginView: UIView {
 	
 	private func setupEmailTextField() {
 		
-		emailTextField = setupTextfield(placeholder: "Email")
+		emailTextField = UITextField.authTextField(placeholder: "Email")
 		
 		emailTextField.autocapitalizationType = .none
 		
@@ -62,7 +62,7 @@ class LoginView: UIView {
 	
 	private func setupPasswordTextField() {
 		
-		passwordTextField = setupTextfield(placeholder: "Password")
+        passwordTextField =  UITextField.authTextField(placeholder: "Password")
 		
 		passwordTextField.autocapitalizationType = .none
 		
@@ -72,49 +72,9 @@ class LoginView: UIView {
 		
 	}
 	
-	private func setupTextfield(placeholder: String) -> UITextField {
-		
-		let textField = UITextField()
-		
-		textField.translatesAutoresizingMaskIntoConstraints = false
-		
-		textField.backgroundColor = .hexStringToUIColor(hex: "#1D2D31")
-		
-		textField.paddingLeftCustom = 10
-		
-		textField.layer.cornerRadius = 10
-		
-		textField.textColor = .white
-		
-		textField.font = .futuraMediumWithSize(17)
-		
-		let placeholderAttributes = [NSAttributedString.Key.font: UIFont.futuraMediumWithSize(16),
-									 NSAttributedString.Key.foregroundColor: UIColor.hexStringToUIColor(hex: "#4D7E8D")]
-		
-		textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: placeholderAttributes)
-		
-		return textField
-		
-	}
-	
 	private func setupLoginButton() {
 		
-		loginButton = UIButton(type: .system)
-		
-		loginButton.translatesAutoresizingMaskIntoConstraints = false
-		
-		loginButton.isUserInteractionEnabled = false
-		
-		let attributes = [NSAttributedString.Key.font: UIFont.futuraMediumWithSize(20),
-									 NSAttributedString.Key.foregroundColor: UIColor.hexStringToUIColor(hex: "#4D7E8D")]
-		
-		let title = NSAttributedString(string: "Login", attributes: attributes)
-		
-		loginButton.setAttributedTitle(title, for: .normal)
-		
-		loginButton.backgroundColor = .hexStringToUIColor(hex: "#1D2D31")
-		
-		loginButton.layer.cornerRadius = 10
+        loginButton = UIButton.authButton(title: "Login")
 		
 		addSubview(loginButton)
 		

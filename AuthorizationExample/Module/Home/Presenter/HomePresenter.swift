@@ -32,7 +32,9 @@ class HomePresenter: HomePresenterProtocol {
         
         interactor.signOut()
         
-        router.dismissController()
+        let signInVC = Builder.loginBuilder().signInController()
+        
+        router.changeRootController(signInVC)
         
     }
     

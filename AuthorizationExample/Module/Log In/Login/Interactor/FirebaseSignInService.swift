@@ -16,7 +16,7 @@ class FirebaseSignInService: LoginWithEmailProtocol {
         
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] (authResult, error) in
             
-            print(authResult?.description)
+//            print(authResult?.description)
             
             self?.signInResponse?(error)
             

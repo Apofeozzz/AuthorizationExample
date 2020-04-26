@@ -16,7 +16,13 @@ class SignUpView: UIView, SignUpViewLayout {
     
     var contentScrollView: UIView!
     
-    var signUpLabel: UILabel!
+    var emailTextField: UITextField!
+    
+    var passwordTextField: UITextField!
+    
+    var confirmPasswordTextField: UITextField!
+    
+    var signUpButton: UIButton!
     
     // MARK: - INIT -
     
@@ -46,6 +52,7 @@ class SignUpView: UIView, SignUpViewLayout {
     private func setupScrollView() {
         
         scrollView = UIScrollView()
+        
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(scrollView)
@@ -57,9 +64,54 @@ class SignUpView: UIView, SignUpViewLayout {
     private func setupContentScrollView() {
         
         contentScrollView =  UIView()
+        
         contentScrollView.translatesAutoresizingMaskIntoConstraints = false
         
         scrollView.addSubview(contentScrollView)
+        
+        setupEmailTextField()
+        
+        setupPasswordTextField()
+        
+        setupConfirmPasswordTextField()
+        
+        setupSignUpButton()
+        
+    }
+    
+    private func setupEmailTextField() {
+        
+        emailTextField = UITextField.authTextField(placeholder: "Email")
+        
+        contentScrollView.addSubview(emailTextField)
+        
+    }
+    
+    private func setupPasswordTextField() {
+        
+        passwordTextField = UITextField.authTextField(placeholder: "Password")
+        
+        passwordTextField.isSecureTextEntry = true
+        
+        contentScrollView.addSubview(passwordTextField)
+        
+    }
+    
+    private func setupConfirmPasswordTextField() {
+        
+        confirmPasswordTextField = UITextField.authTextField(placeholder: "Confirm password")
+        
+        confirmPasswordTextField.isSecureTextEntry = true
+        
+        contentScrollView.addSubview(confirmPasswordTextField)
+        
+    }
+    
+    private func setupSignUpButton() {
+        
+        signUpButton = UIButton.authButton(title: "Sign Up")
+        
+        contentScrollView.addSubview(signUpButton)
         
     }
     
@@ -80,6 +132,14 @@ class SignUpView: UIView, SignUpViewLayout {
             contentScrollView.heightAnchor  .constraint(equalToConstant: 500)
         
         ])
+        
+        pinToEdgesWithHeight(48, top: 50, leading: 16, trailing: -16, view: self, subview: emailTextField)
+
+        pinToEdgesWithHeight(48, top: 72, view: emailTextField, subview: passwordTextField)
+        
+        pinToEdgesWithHeight(48, top: 72, view: passwordTextField, subview: confirmPasswordTextField)
+        
+        pinToEdgesWithHeight(48, top: 48+100, view: confirmPasswordTextField, subview: signUpButton)
         
     }
     

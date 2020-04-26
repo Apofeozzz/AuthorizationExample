@@ -30,7 +30,7 @@ extension NavigationProtocol {
 		
 	}
 	
-	func popController(_ controller: UIViewController) {
+	func popController() {
 		
         self.controller.navigationController?.popViewController(animated: true)
 		
@@ -41,6 +41,18 @@ extension NavigationProtocol {
         self.controller.dismiss(animated: true, completion: nil)
 		
 	}
+    
+    func changeControllerStack(stack: [UIViewController]) {
+        
+        self.controller.navigationController?.viewControllers = stack
+        
+    }
+    
+    func changeRootController(_ controller: UIViewController) {
+        
+        UIApplication.shared.windows.first?.rootViewController = controller
+        
+    }
     
     // MARK: - SHOW ALERT -
     
