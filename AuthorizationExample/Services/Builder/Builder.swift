@@ -28,4 +28,10 @@ class Builder {
         
     }
     
+    static func addBuilder() -> AddBuilder {
+        
+        AddBuilder()
+        
+    }
+    
 }

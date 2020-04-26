@@ -15,9 +15,11 @@ class LoginBuilder {
         let signInVC = SignInViewController()
         
         let configurator: SignInConfiguratorProtocol = SignInConfigurator()
+        
         configurator.configure(with: signInVC)
         
         let navigationController = UINavigationController(rootViewController: signInVC)
+        
         navigationController.modalPresentationStyle = .fullScreen
         
         return navigationController
@@ -29,6 +31,7 @@ class LoginBuilder {
         let signUpVC = SignUpViewController()
         
         let configurator: SignUpConfiguratorProtocol = SignUpConfigurator()
+        
         configurator.configure(with: signUpVC)
         
         return signUpVC
@@ -40,6 +43,7 @@ class LoginBuilder {
         let loginVC = LoginViewController()
         
         let configurator: LoginConfiguratorProtocol = LoginConfigurator()
+        
         configurator.configure(with: loginVC)
         
 		return loginVC

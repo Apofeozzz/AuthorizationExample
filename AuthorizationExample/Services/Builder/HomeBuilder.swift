@@ -15,9 +15,11 @@ class HomeBuilder {
         let homeVC = HomeViewController()
         
         let configurator: HomeConfiguratorProtocol = HomeConfigurator()
+        
         configurator.configure(with: homeVC)
         
         let navigationController = UINavigationController(rootViewController: homeVC)
+        
         navigationController.modalPresentationStyle = .fullScreen
         
         return navigationController

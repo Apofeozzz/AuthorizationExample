@@ -15,6 +15,7 @@ class LaunchBuilder {
         let launchVC = LaunchViewController()
         
         let configurator: LaunchConfiguratorProtocol = LaunchConfigurator()
+        
         configurator.configure(with: launchVC)
         
 		return launchVC

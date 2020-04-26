@@ -38,4 +38,20 @@ class HomePresenter: HomePresenterProtocol {
         
     }
     
+    func add() {
+        
+        addController()
+        
+    }
+    
+    // MARK: - NAVIGATION -
+    
+    private func addController() {
+        
+        let addVC = Builder.addBuilder().addController()
+        
+        router.pushController(addVC)
+        
+    }
+    
 }

@@ -42,6 +42,8 @@ protocol HomePresenterProtocol: class {
     
     func signOut()
     
+    func add()
+    
 }
 
 // MARK: - ROUTER -

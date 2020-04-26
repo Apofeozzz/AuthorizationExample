@@ -60,7 +60,7 @@ extension UITextField {
         textField.font = .futuraMediumWithSize(17)
         
         let placeholderAttributes = [NSAttributedString.Key.font: UIFont.futuraMediumWithSize(16),
-                                     NSAttributedString.Key.foregroundColor: UIColor.hexStringToUIColor(hex: "#4D7E8D")]
+                                     NSAttributedString.Key.foregroundColor: UIColor.appPlaceholderColor()]
         
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: placeholderAttributes)
         
