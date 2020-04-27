@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CheckEmailResult {
+struct CheckForm {
     
     var result = true
     

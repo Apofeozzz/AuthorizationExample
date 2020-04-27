@@ -30,7 +30,7 @@ protocol SignUpInteractorProtocol: class {
     
     init(presenter: SignUpPresenterProtocol)
     
-    func checkEmailAndPassword(email: String?, password: String?) -> CheckEmailResult
+    func checkEmailAndPassword(email: String?, password: String?) -> CheckForm
     
     func signUp(email: String, password: String)
     

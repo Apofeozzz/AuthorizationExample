@@ -34,35 +34,35 @@ class LoginInteractor: LoginInteractorProtocol {
  
     // MARK: - ACTION -
     
-    func checkEmailAndPassword(email: String?, password: String?) -> CheckEmailResult {
+    func checkEmailAndPassword(email: String?, password: String?) -> CheckForm {
         
         guard let email = email, let password = password
             
             else {
                 
-                return CheckEmailResult(result: false, message: "Textfields are empty")
+                return CheckForm(result: false, message: "Textfields are empty")
                 
         }
         
         if !email.isValidEmail() {
             
-            return CheckEmailResult(result: false, message: "Please enter correct email address")
+            return CheckForm(result: false, message: "Please enter correct email address")
             
         }
         
         if email.isEmpty {
             
-            return CheckEmailResult(result: false, message: "Please enter your email")
+            return CheckForm(result: false, message: "Please enter your email")
             
         }
         
         if password.isEmpty {
             
-            return CheckEmailResult(result: false, message: "Please enter your password")
+            return CheckForm(result: false, message: "Please enter your password")
             
         }
         
-        return CheckEmailResult()
+        return CheckForm()
         
     }
     

@@ -30,11 +30,17 @@ protocol AddViewLayoutProtocol: UIView {
     
     var rateCollectionView: UICollectionView! { set get }
     
+    var nameTextField: UITextField! { set get }
+    
+    var descriptionTextView: UITextView! { set get }
+    
 }
 
 // MARK: - VIEW -
 
 protocol AddViewProtocol: class {
+    
+    func reloadRateView()
     
     func setUploadedImage(image: UIImage)
     
@@ -49,6 +55,15 @@ protocol AddViewInteractorProtocol: class {
     func takePhotoFrom(source: UIImagePickerController.SourceType,
                        router: AddViewRouterProtocol)
     
+    func fillRateArrayWithEmptyStars() -> [UIImage]
+    
+    func fillArrayWithRateStars(rate: Int) -> [UIImage]
+    
+    func createItem(image: UIImage?,
+                    title: String?,
+                    description: String?,
+                    rate: Int) -> (Vine?, CheckForm?)
+    
 }
 
 // MARK: - PRESENTER -
@@ -61,7 +76,15 @@ protocol AddViewPresenterProtocol: class {
     
     func chooseFromGallery()
     
+    func setupRate(_ rate: Int)
+    
+    func fillRateArrayWithEmptyStars()
+    
     func setUploadedImage(image: UIImage)
+
+    func imageForIndex(_ index: Int) -> UIImage
+    
+    func save(image: UIImage?, title: String?, description: String?)
     
 }
 

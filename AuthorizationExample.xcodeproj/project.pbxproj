@@ -17,6 +17,7 @@
 		4B007A442453152B0063939B /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A432453152B0063939B /* HomePresenter.swift */; };
 		4B007A462453177C0063939B /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A452453177C0063939B /* HomeRouter.swift */; };
 		4B062B1B2455A64200BA6C32 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B062B1A2455A64200BA6C32 /* UIButton+Extension.swift */; };
+		4B0765182456F82C00ACDC10 /* Vine,.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0765172456F82C00ACDC10 /* Vine,.swift */; };
 		4B136AFB2455EC8700F803C1 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136AFA2455EC8700F803C1 /* AddView.swift */; };
 		4B136AFD2455EC9000F803C1 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136AFC2455EC9000F803C1 /* AddViewController.swift */; };
 		4B136B002455ED1C00F803C1 /* AddViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136AFF2455ED1C00F803C1 /* AddViewProtocol.swift */; };
@@ -44,7 +45,7 @@
 		4BCBFCBE244E3B9F00BA6244 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCBD244E3B9F00BA6244 /* LoginInteractor.swift */; };
 		4BCBFCC1244E3C7200BA6244 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC0244E3C7200BA6244 /* LoginRouter.swift */; };
 		4BCBFCC3244E3CBB00BA6244 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC2244E3CBA00BA6244 /* LoginConfigurator.swift */; };
-		4BCBFCC6244E3FCF00BA6244 /* CheckEmailResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC5244E3FCF00BA6244 /* CheckEmailResult.swift */; };
+		4BCBFCC6244E3FCF00BA6244 /* CheckForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC5244E3FCF00BA6244 /* CheckForm.swift */; };
 		4BDFFBDC24519E9B007753B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFFBDB24519E9B007753B0 /* GoogleService-Info.plist */; };
 		4BFC5B9424538E3F003DBD57 /* FirebaseSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC5B9324538E3F003DBD57 /* FirebaseSignInService.swift */; };
 		4BFC5B9F245393C9003DBD57 /* SignUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC5B9E245393C9003DBD57 /* SignUpProtocol.swift */; };
@@ -101,6 +102,7 @@
 		4B007A432453152B0063939B /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		4B007A452453177C0063939B /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		4B062B1A2455A64200BA6C32 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		4B0765172456F82C00ACDC10 /* Vine,.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vine,.swift"; sourceTree = "<group>"; };
 		4B136AFA2455EC8700F803C1 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		4B136AFC2455EC9000F803C1 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		4B136AFF2455ED1C00F803C1 /* AddViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewProtocol.swift; sourceTree = "<group>"; };
@@ -128,7 +130,7 @@
 		4BCBFCBD244E3B9F00BA6244 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		4BCBFCC0244E3C7200BA6244 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		4BCBFCC2244E3CBA00BA6244 /* LoginConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfigurator.swift; sourceTree = "<group>"; };
-		4BCBFCC5244E3FCF00BA6244 /* CheckEmailResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailResult.swift; sourceTree = "<group>"; };
+		4BCBFCC5244E3FCF00BA6244 /* CheckForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckForm.swift; sourceTree = "<group>"; };
 		4BDFFBDB24519E9B007753B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4BFC5B9324538E3F003DBD57 /* FirebaseSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSignInService.swift; sourceTree = "<group>"; };
 		4BFC5B9E245393C9003DBD57 /* SignUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocol.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 		4B136AF62455EC6600F803C1 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				4B0765172456F82C00ACDC10 /* Vine,.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -408,7 +411,7 @@
 		4BCBFCC4244E3FB000BA6244 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				4BCBFCC5244E3FCF00BA6244 /* CheckEmailResult.swift */,
+				4BCBFCC5244E3FCF00BA6244 /* CheckForm.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -917,7 +920,7 @@
 				4BFC5B9F245393C9003DBD57 /* SignUpProtocol.swift in Sources */,
 				4BA455AE244C4CF9004D7F06 /* SignInViewController.swift in Sources */,
 				4B136AFD2455EC9000F803C1 /* AddViewController.swift in Sources */,
-				4BCBFCC6244E3FCF00BA6244 /* CheckEmailResult.swift in Sources */,
+				4BCBFCC6244E3FCF00BA6244 /* CheckForm.swift in Sources */,
 				4B136B042455EF0800F803C1 /* AddBuilder.swift in Sources */,
 				4B136B0A2455FFA900F803C1 /* AddViewRouter.swift in Sources */,
 				92CD9D45244AE2DF000EF227 /* UIColor+Extension.swift in Sources */,
@@ -944,6 +947,7 @@
 				4B007A462453177C0063939B /* HomeRouter.swift in Sources */,
 				92CD9D3C244ADE3F000EF227 /* NavigationProtocol.swift in Sources */,
 				92F0208B244AE75400B1D6AC /* UIFont+Extension.swift in Sources */,
+				4B0765182456F82C00ACDC10 /* Vine,.swift in Sources */,
 				4B136B082455FDF600F803C1 /* AddViewInteractor.swift in Sources */,
 				4B45AB3924539FF6004A6B4E /* SignUpView.swift in Sources */,
 				4BCBFCBB244E39E000BA6244 /* LoginProtocol.swift in Sources */,

@@ -49,6 +49,93 @@ class AddViewInteractor: AddViewInteractorProtocol {
         
     }
     
+    // MARK: - RATE -
+    
+    func fillRateArrayWithEmptyStars() -> [UIImage] {
+        
+        var starsArray = [UIImage]()
+        
+        for _ in 0...9 {
+            
+            if let emptyStar = UIImage(named: "star_empty") {
+                
+                starsArray.append(emptyStar)
+                
+            }
+            
+        }
+        
+        return starsArray
+        
+    }
+    
+    func fillArrayWithRateStars(rate: Int) -> [UIImage] {
+        
+        var starsArray = [UIImage]()
+        
+        for _ in 0...rate {
+            
+            if let fillStar = UIImage(named: "star_fill") {
+                
+                starsArray.append(fillStar)
+                
+            }
+            
+        }
+        
+        for _ in rate ..< 9 {
+            
+            if let emptyStar = UIImage(named: "star_empty") {
+                
+                starsArray.append(emptyStar)
+                
+            }
+            
+        }
+        
+        return starsArray
+        
+    }
+    
+    // MARK: - SAVE -
+    
+    func createItem(image: UIImage?,
+                    title: String?,
+                    description: String?,
+                    rate: Int) -> (Vine?, CheckForm?) {
+        
+        guard let image = image else {
+            
+            return (nil, CheckForm(result: false, message: "Please choose image"))
+            
+        }
+        
+        guard let title = title else {
+            
+            return (nil, CheckForm(result: false, message: "Please enter title"))
+            
+        }
+        
+        guard let description = description else {
+            
+            return (nil, CheckForm(result: false, message: "Please enter description"))
+            
+        }
+        
+        if rate == 0 {
+            
+          return (nil, CheckForm(result: false, message: "Please enter rate"))
+            
+        }
+        
+        let vine = Vine(image: image, description: description, title: title, rate: rate)
+        
+        return (vine, nil)
+        
+    }
+    
+    // MARK: - DEINIT -
+    
     deinit {
         print("AddViewInteractor destroyed")
     }

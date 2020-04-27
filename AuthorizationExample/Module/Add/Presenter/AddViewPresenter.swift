@@ -19,6 +19,10 @@ class AddViewPresenter: AddViewPresenterProtocol {
     
     var router: AddViewRouterProtocol!
     
+    var rate: Int = 0
+    
+    var rateImageArray: [UIImage]!
+    
     // MARK: - INIT -
     
     required init(view: AddViewProtocol) {
@@ -43,11 +47,70 @@ class AddViewPresenter: AddViewPresenterProtocol {
         
     }
     
+    // MARK: - RATE COLLECTION VIEW -
+    
+    func fillRateArrayWithEmptyStars() {
+        
+        rateImageArray = interactor.fillRateArrayWithEmptyStars()
+        
+    }
+    
     func setUploadedImage(image: UIImage) {
         
         view.setUploadedImage(image: image)
         
     }
+    
+    func setupRate(_ rate: Int) {
+        
+        self.rate = rate
+        
+        rateImageArray = interactor.fillArrayWithRateStars(rate: rate)
+        
+        view.reloadRateView()
+        
+    }
+    
+    func imageForIndex(_ index: Int) -> UIImage {
+            
+        rateImageArray[index]
+            
+    }
+    
+    // MARK: - SAVE -
+    
+    func save(image: UIImage?, title: String?, description: String?) {
+        
+        let result = interactor.createItem(image: image,
+                                         title: title,
+                                         description: description,
+                                         rate: rate)
+        
+        if let error = result.1 {
+            
+            if let message = error.message {
+                
+                router.showAlert(title: error.title,
+                                 message: message)
+                
+                return
+                
+            }
+            
+        }
+        
+        if let item = result.0 {
+            
+            print(item.title)
+            print(item.description)
+            
+        }
+        
+        router.popController()
+        
+    }
+    
+    // MARK: - DEINIT -
     
     deinit {
         print("AddViewPresenter deinit")

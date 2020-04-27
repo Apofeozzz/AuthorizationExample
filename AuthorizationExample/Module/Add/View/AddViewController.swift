@@ -27,6 +27,12 @@ class AddViewController: UIViewController {
         
     }
     
+    override func viewWillLayoutSubviews() {
+        
+        presenter.fillRateArrayWithEmptyStars()
+        
+    }
+    
     deinit {
         print("Add view controller deinit")
     }
@@ -34,6 +40,10 @@ class AddViewController: UIViewController {
     // MARK: - ACTION -
     
     @objc private func saveButtonAction() {
+        
+        presenter.save(image: mainView.uploadImageView.image,
+                       title: mainView.nameTextField.text,
+                       description: mainView.descriptionTextView.text)
         
     }
     
@@ -58,7 +68,6 @@ class AddViewController: UIViewController {
         mainView.takeAShotButton.isHidden = false
         
         mainView.resetPhotoButton.isHidden = true
-        
         
     }
     
@@ -154,6 +163,18 @@ class AddViewController: UIViewController {
 
 extension AddViewController: AddViewProtocol {
     
+    func reloadRateView() {
+        
+        DispatchQueue.main.async { [weak self] in
+            
+            guard let ss = self else { return }
+            
+            ss.mainView.rateCollectionView.reloadData()
+            
+        }
+
+    }
+    
 }
 
 extension AddViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -169,6 +190,8 @@ extension AddViewController: UICollectionViewDataSource, UICollectionViewDelegat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RateCollectionViewCell.id,
                                                       for: indexPath) as! RateCollectionViewCell
         
+        cell.rateImageView.image = presenter.imageForIndex(indexPath.row)
+       
         return cell
         
     }
@@ -183,25 +206,7 @@ extension AddViewController: UICollectionViewDataSource, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        for item in 0...indexPath.row {
-         
-            let cell = collectionView.cellForItem(at: IndexPath(item: item, section: 0)) as! RateCollectionViewCell
-            
-            cell.rateImageView.image = UIImage(named: "star_fill")
-            
-        }
-        
-        if indexPath.row != 9 {
-            
-            for item in (indexPath.row + 1)...9 {
-                
-                let cell = collectionView.cellForItem(at: IndexPath(item: item, section: 0)) as! RateCollectionViewCell
-                
-                cell.rateImageView.image = UIImage(named: "star_empty")
-                
-            }
-            
-        }
+        presenter.setupRate(indexPath.row)
         
     }
     

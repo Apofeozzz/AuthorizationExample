@@ -34,7 +34,7 @@ protocol LoginInteractorProtocol: class {
     
     init(presenter: LoginPresenterProtocol)
     
-    func checkEmailAndPassword(email: String?, password: String?) -> CheckEmailResult
+    func checkEmailAndPassword(email: String?, password: String?) -> CheckForm
     
     func loginWith(email: String, and password: String)
     
