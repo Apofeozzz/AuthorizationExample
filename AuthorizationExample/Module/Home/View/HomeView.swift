@@ -12,6 +12,8 @@ class HomeView: UIView {
     
     // MARK: - UIVIEW -
     
+    var vineTableView: UITableView!
+    
     // MARK: - INIT -
     
     init() {
@@ -31,7 +33,25 @@ class HomeView: UIView {
     
     private func setupView() {
         
+        setupVineTableView()
+        
         setupConstraints()
+        
+    }
+    
+    private func setupVineTableView() {
+        
+        vineTableView = UITableView()
+        
+        vineTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        vineTableView.register(HomeViewCell.self, forCellReuseIdentifier: HomeViewCell.identifier)
+        
+        vineTableView.separatorStyle = .none
+        
+        vineTableView.backgroundColor = .clear
+        
+        addSubview(vineTableView)
         
     }
     
@@ -41,7 +61,10 @@ class HomeView: UIView {
         
         NSLayoutConstraint.activate([
             
-            
+            vineTableView.topAnchor     .constraint(equalTo: topAnchor),
+            vineTableView.leadingAnchor .constraint(equalTo: leadingAnchor),
+            vineTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            vineTableView.bottomAnchor  .constraint(equalTo: bottomAnchor)
         
         ])
         

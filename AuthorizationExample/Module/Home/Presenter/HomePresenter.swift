@@ -38,9 +38,13 @@ class HomePresenter: HomePresenterProtocol {
         
     }
     
-    func add() {
+    func add() { addController() }
+    
+    func numberOfRows() -> Int { interactor.numberOfRows() }
+    
+    func dataForRow(_ row: Int) -> Vine {
         
-        addController()
+        interactor.dataForRow(row)
         
     }
     

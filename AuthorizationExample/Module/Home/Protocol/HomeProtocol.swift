@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - CONFIGURATOR -
 
@@ -16,9 +17,19 @@ protocol HomeConfiguratorProtocol: class {
     
 }
 
+// MARK: - LAYOUT -
+
+protocol HomeViewLayoutProtocol: UIView {
+    
+    var vineTableView: UITableView! { get set }
+    
+}
+
 // MARK: - VIEW -
 
 protocol HomeViewProtocol: class {
+    
+    func reloadTableView()
     
 }
 
@@ -28,9 +39,15 @@ protocol HomeInteractorProtocol: class {
     
     var presenter: HomePresenterProtocol! { get set }
     
+    var dataSource: DataSource! { get set }
+    
     init(presenter: HomePresenterProtocol)
     
     func signOut()
+    
+    func numberOfRows() -> Int
+    
+    func dataForRow(_ row: Int) -> Vine
     
 }
 
@@ -43,6 +60,10 @@ protocol HomePresenterProtocol: class {
     func signOut()
     
     func add()
+    
+    func numberOfRows() -> Int
+    
+    func dataForRow(_ row: Int) -> Vine
     
 }
 

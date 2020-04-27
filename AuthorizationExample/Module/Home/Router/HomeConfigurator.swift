@@ -18,6 +18,7 @@ class HomeConfigurator: HomeConfiguratorProtocol {
         
         let router = HomeRouter(controller: controller)
         
+        interactor.dataSource = DataSource.shared
         
         controller.presenter = presenter
         

@@ -50,6 +50,8 @@ protocol AddViewProtocol: class {
 
 protocol AddViewInteractorProtocol: class {
     
+    var dataSource: DataSource! { get set }
+    
     init(presenter: AddViewPresenterProtocol)
     
     func takePhotoFrom(source: UIImagePickerController.SourceType,
@@ -62,7 +64,7 @@ protocol AddViewInteractorProtocol: class {
     func createItem(image: UIImage?,
                     title: String?,
                     description: String?,
-                    rate: Int) -> (Vine?, CheckForm?)
+                    rate: Int) -> CheckForm
     
 }
 

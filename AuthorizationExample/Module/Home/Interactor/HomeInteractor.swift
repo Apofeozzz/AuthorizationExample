@@ -15,6 +15,8 @@ class HomeInteractor: HomeInteractorProtocol {
     
     weak var presenter: HomePresenterProtocol!
     
+    var dataSource: DataSource!
+    
     // MARK: - INIT -
     
     required init(presenter: HomePresenterProtocol) {
@@ -27,7 +29,28 @@ class HomeInteractor: HomeInteractorProtocol {
     
     func signOut() {
         
-        try? Auth.auth().signOut()
+        do { try Auth.auth().signOut() }
+        
+        catch let err {
+            
+            print(err.localizedDescription)
+            
+        }
+            
+        
+    }
+    
+    func numberOfRows() -> Int { dataSource.vines.count }
+    
+    func dataForRow(_ row: Int) -> Vine {
+        
+        if dataSource.vines.count > row {
+            
+            return dataSource.vines[row]
+            
+        }
+        
+        fatalError("Home interactor doesn't have so many objects")
         
     }
     

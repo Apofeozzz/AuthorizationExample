@@ -18,6 +18,8 @@ class AddViewConfigurator: AddViewConfiguratorProtocol {
         
         let router = AddViewRouter(controller: controller)
         
+        interactor.dataSource = DataSource.shared
+        
         controller.presenter = presenter
         
         presenter.interactor = interactor

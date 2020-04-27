@@ -27,6 +27,13 @@ class HomeViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        mainView.vineTableView.reloadData()
+        
+    }
+    
     // MARK: - ACTION -
     
     @objc private func signOutAction() {
@@ -95,6 +102,10 @@ class HomeViewController: UIViewController {
         
         mainView = HomeView()
         
+        mainView.vineTableView.dataSource = self
+        
+        mainView.vineTableView.delegate = self
+        
         view.addSubview(mainView)
         
     }
@@ -112,5 +123,39 @@ class HomeViewController: UIViewController {
 // MARK: - HOME VIEW PROTOCOL -
 
 extension HomeViewController: HomeViewProtocol {
+    
+}
+
+// MARK: - UITABLEVIEW DELEGATE -
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return presenter.numberOfRows()
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewCell.identifier, for: indexPath) as! HomeViewCell
+            
+        cell.vine = presenter.dataForRow(indexPath.row)
+
+        return cell
+        
+    }
+    
+    func reloadTableView() {
+        
+        DispatchQueue.main.async { [weak self] in
+            
+            guard let ss = self else { return }
+            
+            ss.mainView.vineTableView.reloadData()
+            
+        }
+        
+    }
     
 }

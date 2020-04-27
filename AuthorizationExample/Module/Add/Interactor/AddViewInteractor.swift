@@ -25,6 +25,8 @@ class AddViewInteractor: AddViewInteractorProtocol {
     
     var imagePickerService: ImagePickerServiceProtocol!
     
+    var dataSource: DataSource!
+    
     // MARK: - INIT -
     
     required init(presenter: AddViewPresenterProtocol) {
@@ -102,35 +104,37 @@ class AddViewInteractor: AddViewInteractorProtocol {
     func createItem(image: UIImage?,
                     title: String?,
                     description: String?,
-                    rate: Int) -> (Vine?, CheckForm?) {
+                    rate: Int) -> CheckForm {
         
         guard let image = image else {
             
-            return (nil, CheckForm(result: false, message: "Please choose image"))
+            return CheckForm(result: false, message: "Please choose image")
             
         }
         
         guard let title = title else {
             
-            return (nil, CheckForm(result: false, message: "Please enter title"))
+            return CheckForm(result: false, message: "Please enter title")
             
         }
         
         guard let description = description else {
             
-            return (nil, CheckForm(result: false, message: "Please enter description"))
+            return CheckForm(result: false, message: "Please enter description")
             
         }
         
         if rate == 0 {
             
-          return (nil, CheckForm(result: false, message: "Please enter rate"))
+          return CheckForm(result: false, message: "Please enter rate")
             
         }
         
         let vine = Vine(image: image, description: description, title: title, rate: rate)
         
-        return (vine, nil)
+        dataSource.vines.append(vine)
+        
+        return CheckForm(result: true)
         
     }
     

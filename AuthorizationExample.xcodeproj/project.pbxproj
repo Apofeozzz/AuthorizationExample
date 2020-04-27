@@ -17,7 +17,7 @@
 		4B007A442453152B0063939B /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A432453152B0063939B /* HomePresenter.swift */; };
 		4B007A462453177C0063939B /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B007A452453177C0063939B /* HomeRouter.swift */; };
 		4B062B1B2455A64200BA6C32 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B062B1A2455A64200BA6C32 /* UIButton+Extension.swift */; };
-		4B0765182456F82C00ACDC10 /* Vine,.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0765172456F82C00ACDC10 /* Vine,.swift */; };
+		4B0765182456F82C00ACDC10 /* Vine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0765172456F82C00ACDC10 /* Vine.swift */; };
 		4B136AFB2455EC8700F803C1 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136AFA2455EC8700F803C1 /* AddView.swift */; };
 		4B136AFD2455EC9000F803C1 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136AFC2455EC9000F803C1 /* AddViewController.swift */; };
 		4B136B002455ED1C00F803C1 /* AddViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136AFF2455ED1C00F803C1 /* AddViewProtocol.swift */; };
@@ -27,6 +27,7 @@
 		4B136B082455FDF600F803C1 /* AddViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136B072455FDF600F803C1 /* AddViewInteractor.swift */; };
 		4B136B0A2455FFA900F803C1 /* AddViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136B092455FFA800F803C1 /* AddViewRouter.swift */; };
 		4B136B0C2456014A00F803C1 /* ImagePickerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B136B0B2456014A00F803C1 /* ImagePickerService.swift */; };
+		4B280D93245791BE0082BF1E /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280D92245791BE0082BF1E /* HomeViewCell.swift */; };
 		4B45AB3924539FF6004A6B4E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45AB3824539FF6004A6B4E /* SignUpView.swift */; };
 		4B5B84112455AF3E0003AD06 /* FirebaseSignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5B84102455AF3E0003AD06 /* FirebaseSignUpService.swift */; };
 		4B84AD01244DDCA30040B4BD /* LaunchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84AD00244DDCA30040B4BD /* LaunchProtocol.swift */; };
@@ -47,6 +48,7 @@
 		4BCBFCC3244E3CBB00BA6244 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC2244E3CBA00BA6244 /* LoginConfigurator.swift */; };
 		4BCBFCC6244E3FCF00BA6244 /* CheckForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC5244E3FCF00BA6244 /* CheckForm.swift */; };
 		4BDFFBDC24519E9B007753B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFFBDB24519E9B007753B0 /* GoogleService-Info.plist */; };
+		4BE84669245763390095ABE8 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE84668245763390095ABE8 /* DataSource.swift */; };
 		4BFC5B9424538E3F003DBD57 /* FirebaseSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC5B9324538E3F003DBD57 /* FirebaseSignInService.swift */; };
 		4BFC5B9F245393C9003DBD57 /* SignUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC5B9E245393C9003DBD57 /* SignUpProtocol.swift */; };
 		4BFC5BA12453943D003DBD57 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC5BA02453943D003DBD57 /* SignUpViewController.swift */; };
@@ -102,7 +104,7 @@
 		4B007A432453152B0063939B /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		4B007A452453177C0063939B /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		4B062B1A2455A64200BA6C32 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
-		4B0765172456F82C00ACDC10 /* Vine,.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vine,.swift"; sourceTree = "<group>"; };
+		4B0765172456F82C00ACDC10 /* Vine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vine.swift; sourceTree = "<group>"; };
 		4B136AFA2455EC8700F803C1 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		4B136AFC2455EC9000F803C1 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		4B136AFF2455ED1C00F803C1 /* AddViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewProtocol.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		4B136B072455FDF600F803C1 /* AddViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewInteractor.swift; sourceTree = "<group>"; };
 		4B136B092455FFA800F803C1 /* AddViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewRouter.swift; sourceTree = "<group>"; };
 		4B136B0B2456014A00F803C1 /* ImagePickerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerService.swift; sourceTree = "<group>"; };
+		4B280D92245791BE0082BF1E /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		4B45AB3824539FF6004A6B4E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4B5B84102455AF3E0003AD06 /* FirebaseSignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSignUpService.swift; sourceTree = "<group>"; };
 		4B84AD00244DDCA30040B4BD /* LaunchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchProtocol.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 		4BCBFCC2244E3CBA00BA6244 /* LoginConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfigurator.swift; sourceTree = "<group>"; };
 		4BCBFCC5244E3FCF00BA6244 /* CheckForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckForm.swift; sourceTree = "<group>"; };
 		4BDFFBDB24519E9B007753B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4BE84668245763390095ABE8 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		4BFC5B9324538E3F003DBD57 /* FirebaseSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSignInService.swift; sourceTree = "<group>"; };
 		4BFC5B9E245393C9003DBD57 /* SignUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocol.swift; sourceTree = "<group>"; };
 		4BFC5BA02453943D003DBD57 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				4B007A3624530F410063939B /* View */,
 				4B007A3524530F3B0063939B /* Interactor */,
 				4B007A3424530F360063939B /* Presenter */,
+				4BE84667245763210095ABE8 /* Entity */,
 				4B007A3324530F2E0063939B /* Router */,
 			);
 			path = Home;
@@ -240,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				4B007A3924530FC70063939B /* HomeView.swift */,
+				4B280D92245791BE0082BF1E /* HomeViewCell.swift */,
 				4B007A3724530F6A0063939B /* HomeViewController.swift */,
 			);
 			path = View;
@@ -252,7 +258,6 @@
 				4B136AF92455EC7F00F803C1 /* View */,
 				4B136AF82455EC7900F803C1 /* Interactor */,
 				4B136AF72455EC6D00F803C1 /* Presenter */,
-				4B136AF62455EC6600F803C1 /* Entity */,
 				4B136AF52455EC5F00F803C1 /* Router */,
 			);
 			path = Add;
@@ -265,14 +270,6 @@
 				4B136B092455FFA800F803C1 /* AddViewRouter.swift */,
 			);
 			path = Router;
-			sourceTree = "<group>";
-		};
-		4B136AF62455EC6600F803C1 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				4B0765172456F82C00ACDC10 /* Vine,.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		4B136AF72455EC6D00F803C1 /* Presenter */ = {
@@ -412,6 +409,15 @@
 			isa = PBXGroup;
 			children = (
 				4BCBFCC5244E3FCF00BA6244 /* CheckForm.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		4BE84667245763210095ABE8 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				4BE84668245763390095ABE8 /* DataSource.swift */,
+				4B0765172456F82C00ACDC10 /* Vine.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -895,7 +901,9 @@
 				4B5B84112455AF3E0003AD06 /* FirebaseSignUpService.swift in Sources */,
 				4BFC5BA32453976D003DBD57 /* SignUpInteractor.swift in Sources */,
 				4B136AFB2455EC8700F803C1 /* AddView.swift in Sources */,
+				4BE84669245763390095ABE8 /* DataSource.swift in Sources */,
 				92F0209A244AF91900B1D6AC /* LoginPresenter.swift in Sources */,
+				4B280D93245791BE0082BF1E /* HomeViewCell.swift in Sources */,
 				4BCBFCB1244E31FE00BA6244 /* SignInProtocol.swift in Sources */,
 				4B84AD04244DDD7F0040B4BD /* LaunchConfigurator.swift in Sources */,
 				92F02096244AF6BA00B1D6AC /* LoginViewController.swift in Sources */,
@@ -947,7 +955,7 @@
 				4B007A462453177C0063939B /* HomeRouter.swift in Sources */,
 				92CD9D3C244ADE3F000EF227 /* NavigationProtocol.swift in Sources */,
 				92F0208B244AE75400B1D6AC /* UIFont+Extension.swift in Sources */,
-				4B0765182456F82C00ACDC10 /* Vine,.swift in Sources */,
+				4B0765182456F82C00ACDC10 /* Vine.swift in Sources */,
 				4B136B082455FDF600F803C1 /* AddViewInteractor.swift in Sources */,
 				4B45AB3924539FF6004A6B4E /* SignUpView.swift in Sources */,
 				4BCBFCBB244E39E000BA6244 /* LoginProtocol.swift in Sources */,

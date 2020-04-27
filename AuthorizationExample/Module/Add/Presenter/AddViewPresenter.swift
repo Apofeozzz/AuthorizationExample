@@ -63,7 +63,7 @@ class AddViewPresenter: AddViewPresenterProtocol {
     
     func setupRate(_ rate: Int) {
         
-        self.rate = rate
+        self.rate = rate + 1
         
         rateImageArray = interactor.fillArrayWithRateStars(rate: rate)
         
@@ -81,28 +81,21 @@ class AddViewPresenter: AddViewPresenterProtocol {
     
     func save(image: UIImage?, title: String?, description: String?) {
         
-        let result = interactor.createItem(image: image,
-                                         title: title,
-                                         description: description,
-                                         rate: rate)
+        let check = interactor.createItem(image: image,
+                                          title: title,
+                                          description: description,
+                                          rate: rate)
         
-        if let error = result.1 {
+        if !check.result {
             
-            if let message = error.message {
+            if let message = check.message {
                 
-                router.showAlert(title: error.title,
+                router.showAlert(title: check.title,
                                  message: message)
                 
                 return
                 
             }
-            
-        }
-        
-        if let item = result.0 {
-            
-            print(item.title)
-            print(item.description)
             
         }
         
