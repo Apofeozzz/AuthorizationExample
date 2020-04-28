@@ -39,9 +39,10 @@ protocol HomeInteractorProtocol: class {
     
     var presenter: HomePresenterProtocol! { get set }
     
-    var dataSource: DataSource! { get set }
+    var dataSource: DataSourceServiceProtocol! { get set }
     
-    init(presenter: HomePresenterProtocol)
+    init(presenter: HomePresenterProtocol,
+         dataSource: DataSourceServiceProtocol)
     
     func signOut()
     

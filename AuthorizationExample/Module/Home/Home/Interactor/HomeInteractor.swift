@@ -15,13 +15,16 @@ class HomeInteractor: HomeInteractorProtocol {
     
     weak var presenter: HomePresenterProtocol!
     
-    var dataSource: DataSource!
+    var dataSource: DataSourceServiceProtocol!
     
     // MARK: - INIT -
     
-    required init(presenter: HomePresenterProtocol) {
+    required init(presenter: HomePresenterProtocol,
+                  dataSource: DataSourceServiceProtocol) {
         
         self.presenter = presenter
+        
+        self.dataSource = dataSource
         
     }
     
@@ -40,13 +43,13 @@ class HomeInteractor: HomeInteractorProtocol {
         
     }
     
-    func numberOfRows() -> Int { dataSource.vines.count }
+    func numberOfRows() -> Int { dataSource.returnData().count }
     
     func dataForRow(_ row: Int) -> Vine {
         
-        if dataSource.vines.count > row {
+        if dataSource.returnData().count > row {
             
-            return dataSource.vines[row]
+            return dataSource.returnData()[row]
             
         }
         

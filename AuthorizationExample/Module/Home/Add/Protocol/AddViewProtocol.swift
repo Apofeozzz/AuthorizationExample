@@ -12,7 +12,8 @@ import UIKit
 
 protocol AddViewConfiguratorProtocol: class {
     
-    func configure(with controller: AddViewController)
+    func configure(with controller: AddViewController,
+                   dataSource: DataSourceServiceProtocol)
     
 }
 
@@ -50,9 +51,8 @@ protocol AddViewProtocol: class {
 
 protocol AddViewInteractorProtocol: class {
     
-    var dataSource: DataSource! { get set }
-    
-    init(presenter: AddViewPresenterProtocol)
+    init(presenter: AddViewPresenterProtocol,
+         dataSource: DataSourceServiceProtocol)
     
     func takePhotoFrom(source: UIImagePickerController.SourceType,
                        router: AddViewRouterProtocol)

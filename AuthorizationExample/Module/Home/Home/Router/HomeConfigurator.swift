@@ -14,11 +14,13 @@ class HomeConfigurator: HomeConfiguratorProtocol {
         
         let presenter = HomePresenter(view: controller)
         
-        let interactor = HomeInteractor(presenter: presenter)
+        let dataSourceService = DataSourceService()
+        
+        let interactor = HomeInteractor(presenter: presenter, dataSource: dataSourceService)
         
         let router = HomeRouter(controller: controller)
         
-        interactor.dataSource = DataSource.shared
+//        interactor.dataSource = DataSource.shared
         
         controller.presenter = presenter
         

@@ -25,13 +25,15 @@ class AddViewInteractor: AddViewInteractorProtocol {
     
     var imagePickerService: ImagePickerServiceProtocol!
     
-    var dataSource: DataSource!
+    var dataSource: DataSourceServiceProtocol!
     
     // MARK: - INIT -
     
-    required init(presenter: AddViewPresenterProtocol) {
+    required init(presenter: AddViewPresenterProtocol, dataSource: DataSourceServiceProtocol) {
         
         self.presenter = presenter
+        
+        self.dataSource = dataSource
         
     }
     
@@ -132,7 +134,7 @@ class AddViewInteractor: AddViewInteractorProtocol {
         
         let vine = Vine(image: image, description: description, title: title, rate: rate)
         
-        dataSource.vines.append(vine)
+        dataSource.appendNewItem(vine)
         
         return CheckForm(result: true)
         

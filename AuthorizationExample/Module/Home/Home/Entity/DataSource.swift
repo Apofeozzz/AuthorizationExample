@@ -10,8 +10,6 @@ import Foundation
 
 class DataSource {
     
-    static let shared = DataSource()
-    
-    var vines = [Vine]()
+    var items = [Vine]()
     
 }

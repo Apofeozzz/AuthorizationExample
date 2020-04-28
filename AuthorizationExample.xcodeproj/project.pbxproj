@@ -30,6 +30,8 @@
 		4B280D93245791BE0082BF1E /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B280D92245791BE0082BF1E /* HomeViewCell.swift */; };
 		4B45AB3924539FF6004A6B4E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45AB3824539FF6004A6B4E /* SignUpView.swift */; };
 		4B5B84112455AF3E0003AD06 /* FirebaseSignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5B84102455AF3E0003AD06 /* FirebaseSignUpService.swift */; };
+		4B5FF74A245817F900F3986B /* DataSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FF749245817F900F3986B /* DataSourceService.swift */; };
+		4B5FF74E24581CA500F3986B /* DataSourceServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5FF74D24581CA500F3986B /* DataSourceServiceProtocol.swift */; };
 		4B84AD01244DDCA30040B4BD /* LaunchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84AD00244DDCA30040B4BD /* LaunchProtocol.swift */; };
 		4B84AD04244DDD7F0040B4BD /* LaunchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84AD03244DDD7F0040B4BD /* LaunchConfigurator.swift */; };
 		4B84AD07244DDEF10040B4BD /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84AD06244DDEF10040B4BD /* LaunchInteractor.swift */; };
@@ -117,6 +119,8 @@
 		4B280D92245791BE0082BF1E /* HomeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		4B45AB3824539FF6004A6B4E /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		4B5B84102455AF3E0003AD06 /* FirebaseSignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSignUpService.swift; sourceTree = "<group>"; };
+		4B5FF749245817F900F3986B /* DataSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceService.swift; sourceTree = "<group>"; };
+		4B5FF74D24581CA500F3986B /* DataSourceServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataSourceServiceProtocol.swift; path = ../../../../../../DataSourceServiceProtocol.swift; sourceTree = "<group>"; };
 		4B84AD00244DDCA30040B4BD /* LaunchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchProtocol.swift; sourceTree = "<group>"; };
 		4B84AD03244DDD7F0040B4BD /* LaunchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchConfigurator.swift; sourceTree = "<group>"; };
 		4B84AD06244DDEF10040B4BD /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
@@ -321,6 +325,25 @@
 				4B84AD00244DDCA30040B4BD /* LaunchProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		4B5FF74B24581BC600F3986B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4B5FF74C24581C8800F3986B /* DataSourceService */,
+				4B007A3224530F210063939B /* Home */,
+				4B136AF42455EC5400F803C1 /* Add */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4B5FF74C24581C8800F3986B /* DataSourceService */ = {
+			isa = PBXGroup;
+			children = (
+				4B5FF749245817F900F3986B /* DataSourceService.swift */,
+				4B5FF74D24581CA500F3986B /* DataSourceServiceProtocol.swift */,
+			);
+			path = DataSourceService;
 			sourceTree = "<group>";
 		};
 		4B84AD02244DDD710040B4BD /* Router */ = {
@@ -580,8 +603,7 @@
 				92CD9D3A244ADE30000EF227 /* Navigation Protocol */,
 				92CD9D35244ADDA1000EF227 /* Launch */,
 				4BFC5B9624539368003DBD57 /* Log In */,
-				4B007A3224530F210063939B /* Home */,
-				4B136AF42455EC5400F803C1 /* Add */,
+				4B5FF74B24581BC600F3986B /* Home */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -906,6 +928,7 @@
 				4B280D93245791BE0082BF1E /* HomeViewCell.swift in Sources */,
 				4BCBFCB1244E31FE00BA6244 /* SignInProtocol.swift in Sources */,
 				4B84AD04244DDD7F0040B4BD /* LaunchConfigurator.swift in Sources */,
+				4B5FF74E24581CA500F3986B /* DataSourceServiceProtocol.swift in Sources */,
 				92F02096244AF6BA00B1D6AC /* LoginViewController.swift in Sources */,
 				4B84AD01244DDCA30040B4BD /* LaunchProtocol.swift in Sources */,
 				92CD9D0B244ADBAB000EF227 /* AppDelegate.swift in Sources */,
@@ -954,6 +977,7 @@
 				4BFC5BA5245397CB003DBD57 /* SignUpPresenter.swift in Sources */,
 				4B007A462453177C0063939B /* HomeRouter.swift in Sources */,
 				92CD9D3C244ADE3F000EF227 /* NavigationProtocol.swift in Sources */,
+				4B5FF74A245817F900F3986B /* DataSourceService.swift in Sources */,
 				92F0208B244AE75400B1D6AC /* UIFont+Extension.swift in Sources */,
 				4B0765182456F82C00ACDC10 /* Vine.swift in Sources */,
 				4B136B082455FDF600F803C1 /* AddViewInteractor.swift in Sources */,

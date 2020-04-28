@@ -10,15 +10,15 @@ import Foundation
 
 class AddViewConfigurator: AddViewConfiguratorProtocol {
     
-    func configure(with controller: AddViewController) {
+    func configure(with controller: AddViewController,
+                   dataSource: DataSourceServiceProtocol) {
         
         let presenter = AddViewPresenter(view: controller)
         
-        let interactor = AddViewInteractor(presenter: presenter)
+        let interactor = AddViewInteractor(presenter: presenter,
+                                           dataSource: dataSource)
         
         let router = AddViewRouter(controller: controller)
-        
-        interactor.dataSource = DataSource.shared
         
         controller.presenter = presenter
         

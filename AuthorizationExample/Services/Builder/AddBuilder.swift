@@ -10,13 +10,13 @@ import UIKit
 
 class AddBuilder {
     
-    func addController() -> UIViewController {
+    func addController(dataSource: DataSourceServiceProtocol) -> UIViewController {
         
         let addVC = AddViewController()
         
         let configurator: AddViewConfigurator = AddViewConfigurator()
         
-        configurator.configure(with: addVC)
+        configurator.configure(with: addVC, dataSource: dataSource)
         
         return addVC
         

@@ -52,7 +52,7 @@ class HomePresenter: HomePresenterProtocol {
     
     private func addController() {
         
-        let addVC = Builder.addBuilder().addController()
+        let addVC = Builder.addBuilder().addController(dataSource: interactor.dataSource)
         
         router.pushController(addVC)
         
