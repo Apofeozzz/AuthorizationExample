@@ -12,21 +12,20 @@ class HomeConfigurator: HomeConfiguratorProtocol {
     
     func configure(with controller: HomeViewController) {
         
-        let presenter = HomePresenter(view: controller)
+        let presenter           = HomePresenter(view: controller)
         
-        let dataSourceService = DataSourceService()
+        let dataSourceService   = DataSourceService()
         
-        let interactor = HomeInteractor(presenter: presenter, dataSource: dataSourceService)
+        let interactor          = HomeInteractor(presenter: presenter,
+                                                 dataSource: dataSourceService)
         
-        let router = HomeRouter(controller: controller)
+        let router              = HomeRouter(controller: controller)
         
-//        interactor.dataSource = DataSource.shared
+        controller.presenter    = presenter
         
-        controller.presenter = presenter
+        presenter.interactor    = interactor
         
-        presenter.interactor = interactor
-        
-        presenter.router = router
+        presenter.router        = router
         
     }
     

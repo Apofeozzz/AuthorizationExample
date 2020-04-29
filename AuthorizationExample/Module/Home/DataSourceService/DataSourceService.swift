@@ -22,6 +22,14 @@ class DataSourceService: DataSourceServiceProtocol {
         
         data.items.append(item)
         
+        saveInCoreData(item)
+        
+    }
+    
+    func saveInCoreData(_ item: Vine) {
+        
+        CoreDataManager.shared.saveInBackground(item)
+        
     }
     
 }

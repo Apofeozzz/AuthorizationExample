@@ -12,7 +12,7 @@ struct Vine {
     
     var image: UIImage
     
-    var description: String
+    var review: String
     
     var title: String
     

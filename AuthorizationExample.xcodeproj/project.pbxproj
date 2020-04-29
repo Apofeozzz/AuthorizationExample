@@ -50,6 +50,9 @@
 		4BCBFCC3244E3CBB00BA6244 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC2244E3CBA00BA6244 /* LoginConfigurator.swift */; };
 		4BCBFCC6244E3FCF00BA6244 /* CheckForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC5244E3FCF00BA6244 /* CheckForm.swift */; };
 		4BDFFBDC24519E9B007753B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFFBDB24519E9B007753B0 /* GoogleService-Info.plist */; };
+		4BE4BFD12459A6B40007BF57 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4BFD02459A6B40007BF57 /* CoreDataManager.swift */; };
+		4BE4BFE22459AA7C0007BF57 /* VineEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4BFE02459AA7C0007BF57 /* VineEntity+CoreDataClass.swift */; };
+		4BE4BFE32459AA7C0007BF57 /* VineEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4BFE12459AA7C0007BF57 /* VineEntity+CoreDataProperties.swift */; };
 		4BE84669245763390095ABE8 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE84668245763390095ABE8 /* DataSource.swift */; };
 		4BFC5B9424538E3F003DBD57 /* FirebaseSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC5B9324538E3F003DBD57 /* FirebaseSignInService.swift */; };
 		4BFC5B9F245393C9003DBD57 /* SignUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC5B9E245393C9003DBD57 /* SignUpProtocol.swift */; };
@@ -139,6 +142,9 @@
 		4BCBFCC2244E3CBA00BA6244 /* LoginConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfigurator.swift; sourceTree = "<group>"; };
 		4BCBFCC5244E3FCF00BA6244 /* CheckForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckForm.swift; sourceTree = "<group>"; };
 		4BDFFBDB24519E9B007753B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4BE4BFD02459A6B40007BF57 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		4BE4BFE02459AA7C0007BF57 /* VineEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VineEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		4BE4BFE12459AA7C0007BF57 /* VineEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VineEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		4BE84668245763390095ABE8 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		4BFC5B9324538E3F003DBD57 /* FirebaseSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSignInService.swift; sourceTree = "<group>"; };
 		4BFC5B9E245393C9003DBD57 /* SignUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocol.swift; sourceTree = "<group>"; };
@@ -436,6 +442,15 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		4BE4BFDF2459AA5A0007BF57 /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				4BE4BFE02459AA7C0007BF57 /* VineEntity+CoreDataClass.swift */,
+				4BE4BFE12459AA7C0007BF57 /* VineEntity+CoreDataProperties.swift */,
+			);
+			path = Properties;
+			sourceTree = "<group>";
+		};
 		4BE84667245763210095ABE8 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,6 +636,8 @@
 		92CD9D32244ADD77000EF227 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				4BE4BFDF2459AA5A0007BF57 /* Properties */,
+				4BE4BFD02459A6B40007BF57 /* CoreDataManager.swift */,
 				92CD9D13244ADBAB000EF227 /* AuthorizationExample.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -974,10 +991,12 @@
 				4BA455B0244C4DAD004D7F06 /* SignInView.swift in Sources */,
 				4B062B1B2455A64200BA6C32 /* UIButton+Extension.swift in Sources */,
 				92CD9D0D244ADBAB000EF227 /* SceneDelegate.swift in Sources */,
+				4BE4BFD12459A6B40007BF57 /* CoreDataManager.swift in Sources */,
 				4BFC5BA5245397CB003DBD57 /* SignUpPresenter.swift in Sources */,
 				4B007A462453177C0063939B /* HomeRouter.swift in Sources */,
 				92CD9D3C244ADE3F000EF227 /* NavigationProtocol.swift in Sources */,
 				4B5FF74A245817F900F3986B /* DataSourceService.swift in Sources */,
+				4BE4BFE32459AA7C0007BF57 /* VineEntity+CoreDataProperties.swift in Sources */,
 				92F0208B244AE75400B1D6AC /* UIFont+Extension.swift in Sources */,
 				4B0765182456F82C00ACDC10 /* Vine.swift in Sources */,
 				4B136B082455FDF600F803C1 /* AddViewInteractor.swift in Sources */,
@@ -985,6 +1004,7 @@
 				4BCBFCBB244E39E000BA6244 /* LoginProtocol.swift in Sources */,
 				4BCBFCBE244E3B9F00BA6244 /* LoginInteractor.swift in Sources */,
 				92F0208E244AE97700B1D6AC /* Builder.swift in Sources */,
+				4BE4BFE22459AA7C0007BF57 /* VineEntity+CoreDataClass.swift in Sources */,
 				4BB3894C24563F240062DF5C /* RateCollectionViewCell.swift in Sources */,
 				4B136B002455ED1C00F803C1 /* AddViewProtocol.swift in Sources */,
 				92F0209C244AF9F700B1D6AC /* LoginBuilder.swift in Sources */,
@@ -1141,6 +1161,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZM4QJK25D;
 				INFOPLIST_FILE = AuthorizationExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1159,6 +1180,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZM4QJK25D;
 				INFOPLIST_FILE = AuthorizationExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
