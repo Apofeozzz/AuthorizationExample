@@ -199,6 +199,7 @@ class AddViewController: UIViewController {
         
         UIView.animate(withDuration: duration) {
             self.view.layoutIfNeeded()
+            self.scrollViewToBottom()
         }
         
     }
@@ -213,6 +214,16 @@ class AddViewController: UIViewController {
         UIView.animate(withDuration: duration) {
             self.view.layoutIfNeeded()
         }
+        
+    }
+    
+    func scrollViewToBottom() {
+        
+        let bottomOffset = CGPoint(x: 0,
+                                   y: mainView.scrollView.contentSize.height - mainView.scrollView.bounds.size.height)
+        
+        mainView.scrollView.setContentOffset(bottomOffset, animated: true)
+        
     }
     
 }

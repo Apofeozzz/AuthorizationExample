@@ -21,6 +21,8 @@ protocol AddViewConfiguratorProtocol: class {
 
 protocol AddViewLayoutProtocol: UIView {
     
+    var scrollView:                 UIScrollView!       { get set }
+    
     var uploadImageView:            UIImageView!        { get set }
     
     var takeAShotButton:            UIButton!           { get set }
