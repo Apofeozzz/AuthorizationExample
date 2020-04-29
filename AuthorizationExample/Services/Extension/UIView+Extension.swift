@@ -10,6 +10,17 @@ import UIKit
 import Foundation
 
 extension UIView {
+    
+    func safeScreenHeight() -> CGFloat {
+        
+       let window = UIApplication.shared.windows[0]
+        let safeFrame = window.safeAreaLayoutGuide.layoutFrame
+        let topSafeAreaHeight = safeFrame.minY
+        let bottomSafeAreaHeight = window.frame.maxY - safeFrame.maxY
+        
+        return safeFrame.height - topSafeAreaHeight - bottomSafeAreaHeight - 25
+        
+    }
 	
 	func fillScreenWithSubview(_ subview: UIView) {
 		

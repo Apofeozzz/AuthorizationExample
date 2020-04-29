@@ -21,19 +21,21 @@ protocol AddViewConfiguratorProtocol: class {
 
 protocol AddViewLayoutProtocol: UIView {
     
-    var uploadImageView: UIImageView! { get set }
+    var uploadImageView:            UIImageView!        { get set }
     
-    var takeAShotButton: UIButton! { get set }
+    var takeAShotButton:            UIButton!           { get set }
     
-    var chooseFromGalleryButton: UIButton! { get set }
+    var chooseFromGalleryButton:    UIButton!           { get set }
     
-    var resetPhotoButton: UIButton! { set get }
+    var resetPhotoButton:           UIButton!           { set get }
     
-    var rateCollectionView: UICollectionView! { set get }
+    var rateCollectionView:         UICollectionView!   { set get }
     
-    var nameTextField: UITextField! { set get }
+    var nameTextField:              UITextField!        { set get }
     
-    var descriptionTextView: UITextView! { set get }
+    var descriptionTextView:        UITextView!         { set get }
+    
+    var scrollBottomConstraint:     NSLayoutConstraint! { get set }
     
 }
 

@@ -25,11 +25,21 @@ class AddViewController: UIViewController {
         
         setupView()
         
+        setupKeyboardNotification()
+        
     }
     
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         
         presenter.fillRateArrayWithEmptyStars()
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        NotificationCenter.default.removeObserver(self)
         
     }
     
@@ -157,6 +167,48 @@ class AddViewController: UIViewController {
         
         view.fillScreenWithSubview(mainView)
         
+    }
+    
+    // MARK: - HANDLE KEYBOARD APPEARANCE -
+    
+    private func setupKeyboardNotification() {
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+        
+    }
+    
+    @objc func keyboardWillShow(notification: Notification) {
+        
+        guard let userInfo = notification.userInfo,
+        let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+        let duration: TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else { return }
+        
+        mainView.scrollBottomConstraint.constant = -keyboardSize.height
+        
+        UIView.animate(withDuration: duration) {
+            self.view.layoutIfNeeded()
+        }
+        
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        
+        guard let userInfo          = notification.userInfo,
+        let duration: TimeInterval  = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue else { return }
+        
+        mainView.scrollBottomConstraint.constant = 0
+        
+        UIView.animate(withDuration: duration) {
+            self.view.layoutIfNeeded()
+        }
     }
     
 }

@@ -12,21 +12,27 @@ class AddView: UIView, AddViewLayoutProtocol {
     
     // MARK: - UIVIEW -
     
-    var uploadImageView: UIImageView!
+    var scrollView:                 UIScrollView!
     
-    var takeAShotButton: UIButton!
+    var contentView:                UIView!
     
-    var chooseFromGalleryButton: UIButton!
+    var uploadImageView:            UIImageView!
     
-    var resetPhotoButton: UIButton!
+    var takeAShotButton:            UIButton!
     
-    var rateCollectionView: UICollectionView!
+    var chooseFromGalleryButton:    UIButton!
     
-    var nameTextField: UITextField!
+    var resetPhotoButton:           UIButton!
     
-    var descriptionTextView: UITextView!
+    var rateCollectionView:         UICollectionView!
     
-    var underView: UIView!
+    var nameTextField:              UITextField!
+    
+    var descriptionTextView:        UITextView!
+    
+    var underView:                  UIView!
+    
+    var scrollBottomConstraint:     NSLayoutConstraint!
     
     // MARK: - INIT -
     
@@ -46,6 +52,10 @@ class AddView: UIView, AddViewLayoutProtocol {
     // MARK: - SETUP VIEW -
     
     private func setupView() {
+        
+        setupScrollView()
+        
+        setupContentView()
         
         setupUploadImageView()
         
@@ -67,6 +77,26 @@ class AddView: UIView, AddViewLayoutProtocol {
         
     }
     
+    private func setupScrollView() {
+        
+        scrollView = UIScrollView()
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(scrollView)
+        
+    }
+    
+    private func setupContentView() {
+        
+        contentView = UIView()
+        
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        scrollView.addSubview(contentView)
+        
+    }
+    
     private func setupUploadImageView() {
         
         uploadImageView = UIImageView()
@@ -77,7 +107,7 @@ class AddView: UIView, AddViewLayoutProtocol {
         
         uploadImageView.layer.borderWidth = 1
         
-        addSubview(uploadImageView)
+        contentView.addSubview(uploadImageView)
         
     }
     
@@ -91,7 +121,7 @@ class AddView: UIView, AddViewLayoutProtocol {
         
         takeAShotButton.tintColor = .appPlaceholderColor()
         
-        addSubview(takeAShotButton)
+        contentView.addSubview(takeAShotButton)
         
     }
     
@@ -116,7 +146,7 @@ class AddView: UIView, AddViewLayoutProtocol {
         
         chooseFromGalleryButton.layer.borderWidth = 1
         
-        addSubview(chooseFromGalleryButton)
+        contentView.addSubview(chooseFromGalleryButton)
         
     }
     
@@ -137,7 +167,7 @@ class AddView: UIView, AddViewLayoutProtocol {
         
         resetPhotoButton.isHidden = true
         
-        addSubview(resetPhotoButton)
+        contentView.addSubview(resetPhotoButton)
         
     }
     
@@ -157,7 +187,7 @@ class AddView: UIView, AddViewLayoutProtocol {
         
         rateCollectionView.register(RateCollectionViewCell.self, forCellWithReuseIdentifier: RateCollectionViewCell.id)
         
-        addSubview(rateCollectionView)
+        contentView.addSubview(rateCollectionView)
         
     }
     
@@ -179,7 +209,7 @@ class AddView: UIView, AddViewLayoutProtocol {
         nameTextField.attributedPlaceholder = NSAttributedString(string: "Enter title",
                                                                  attributes: placeholderAttributes)
         
-        addSubview(nameTextField)
+        contentView.addSubview(nameTextField)
         
     }
     
@@ -191,7 +221,7 @@ class AddView: UIView, AddViewLayoutProtocol {
         
         underView.backgroundColor = .appPlaceholderColor()
         
-        addSubview(underView)
+        contentView.addSubview(underView)
         
     }
     
@@ -213,7 +243,7 @@ class AddView: UIView, AddViewLayoutProtocol {
         
         descriptionTextView.layer.borderWidth = 1
         
-        addSubview(descriptionTextView)
+        contentView.addSubview(descriptionTextView)
         
     }
     
@@ -221,11 +251,33 @@ class AddView: UIView, AddViewLayoutProtocol {
     
     private func setupConstraints() {
         
+        scrollBottomConstraint = scrollView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        
         NSLayoutConstraint.activate([
         
-            uploadImageView.topAnchor       .constraint(equalTo: topAnchor, constant: 5),
-            uploadImageView.leadingAnchor   .constraint(equalTo: leadingAnchor, constant: 20),
-            uploadImageView.trailingAnchor  .constraint(equalTo: trailingAnchor, constant: -20),
+            scrollView.topAnchor        .constraint(equalTo: topAnchor),
+            scrollBottomConstraint,
+            scrollView.leadingAnchor    .constraint(equalTo: leadingAnchor),
+            scrollView.trailingAnchor   .constraint(equalTo: trailingAnchor)
+            
+        ])
+        
+        NSLayoutConstraint.activate([
+        
+            contentView.topAnchor       .constraint(equalTo: scrollView.topAnchor),
+            contentView.bottomAnchor    .constraint(equalTo: scrollView.bottomAnchor),
+            contentView.leadingAnchor   .constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor  .constraint(equalTo: scrollView.trailingAnchor),
+            contentView.widthAnchor     .constraint(equalToConstant: UIScreen.main.bounds.width),
+            contentView.heightAnchor    .constraint(equalToConstant: safeScreenHeight())
+        
+        ])
+        
+        NSLayoutConstraint.activate([
+        
+            uploadImageView.topAnchor       .constraint(equalTo: contentView.topAnchor, constant: 5),
+            uploadImageView.leadingAnchor   .constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            uploadImageView.trailingAnchor  .constraint(equalTo: contentView.trailingAnchor, constant: -20),
             uploadImageView.heightAnchor    .constraint(equalToConstant: UIScreen.main.bounds.width - 40)
         
         ])
@@ -256,8 +308,8 @@ class AddView: UIView, AddViewLayoutProtocol {
         NSLayoutConstraint.activate([
         
             rateCollectionView.topAnchor        .constraint(equalTo: resetPhotoButton.bottomAnchor),
-            rateCollectionView.leadingAnchor    .constraint(equalTo: leadingAnchor, constant: 20),
-            rateCollectionView.trailingAnchor   .constraint(equalTo: trailingAnchor, constant: -20),
+            rateCollectionView.leadingAnchor    .constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            rateCollectionView.trailingAnchor   .constraint(equalTo: contentView.trailingAnchor, constant: -20),
             rateCollectionView.heightAnchor     .constraint(equalToConstant: 50)
         
         ])
@@ -265,8 +317,8 @@ class AddView: UIView, AddViewLayoutProtocol {
         NSLayoutConstraint.activate([
         
             nameTextField.topAnchor     .constraint(equalTo: rateCollectionView.bottomAnchor),
-            nameTextField.leadingAnchor .constraint(equalTo: leadingAnchor, constant: 20),
-            nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            nameTextField.leadingAnchor .constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            nameTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             nameTextField.heightAnchor  .constraint(equalToConstant: 40)
         
         ])
@@ -274,8 +326,8 @@ class AddView: UIView, AddViewLayoutProtocol {
         NSLayoutConstraint.activate([
         
             underView.topAnchor     .constraint(equalTo: nameTextField.bottomAnchor, constant: 1),
-            underView.leadingAnchor .constraint(equalTo: leadingAnchor, constant: 20),
-            underView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            underView.leadingAnchor .constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            underView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             underView.heightAnchor  .constraint(equalToConstant: 1)
         
         ])
@@ -283,9 +335,9 @@ class AddView: UIView, AddViewLayoutProtocol {
         NSLayoutConstraint.activate([
         
             descriptionTextView.topAnchor       .constraint(equalTo: underView.bottomAnchor, constant: 5),
-            descriptionTextView.leadingAnchor   .constraint(equalTo: leadingAnchor, constant: 20),
-            descriptionTextView.trailingAnchor  .constraint(equalTo: trailingAnchor, constant: -20),
-            descriptionTextView.bottomAnchor    .constraint(equalTo: bottomAnchor, constant: -5)
+            descriptionTextView.leadingAnchor   .constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            descriptionTextView.trailingAnchor  .constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            descriptionTextView.bottomAnchor    .constraint(equalTo: contentView.bottomAnchor, constant: -5)
         
         ])
         
