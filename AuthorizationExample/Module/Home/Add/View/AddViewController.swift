@@ -139,9 +139,13 @@ class AddViewController: UIViewController {
         
         mainView = AddView()
         
-        mainView.rateCollectionView.dataSource = self
+        mainView.rateCollectionView.dataSource  = self
         
-        mainView.rateCollectionView.delegate = self
+        mainView.rateCollectionView.delegate    = self
+        
+        mainView.descriptionTextView.delegate   = self
+        
+        mainView.nameTextField.delegate         = self
         
         mainView.takeAShotButton.addTarget(self,
                                            action: #selector(takeAShotButtonAction),
@@ -225,6 +229,34 @@ extension AddViewController: AddViewProtocol {
             
         }
 
+    }
+    
+}
+
+extension AddViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        
+    }
+    
+}
+
+extension AddViewController: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if text == "\n" {
+            
+            textView.resignFirstResponder()
+            
+            return false
+            
+        }
+        
+        return true
+        
     }
     
 }
