@@ -38,11 +38,11 @@ class CoreDataManager {
     
     // MARK: - FETCH DATA -
     
-    func fetchInBackgroundContext(completion: @escaping (_ vine: [VineEntity]) -> ()) {
+    func fetchInBackgroundContext(completion: @escaping (_ vine: [ItemEntity]) -> ()) {
         
         let backgroundContext = persistentContainer.newBackgroundContext()
         
-        let fetchRequest = NSFetchRequest<VineEntity>(entityName: "VineEntity")
+        let fetchRequest = NSFetchRequest<ItemEntity>(entityName: "ItemEntity")
         
         let asynchFetchRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) { (fetchResult) in
             
@@ -66,11 +66,11 @@ class CoreDataManager {
     
     // MARK: - SAVE -
     
-    func saveInBackground(_ vine: Vine) {
+    func saveInBackground(_ vine: Item) {
         
         persistentContainer.performBackgroundTask { (context) in
             
-            let vineEntity = VineEntity(context: context)
+            let vineEntity = ItemEntity(context: context)
             
             vineEntity.title = vine.title
             

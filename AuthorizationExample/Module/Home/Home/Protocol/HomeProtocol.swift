@@ -48,7 +48,7 @@ protocol HomeInteractorProtocol: class {
     
     func numberOfRows() -> Int
     
-    func dataForRow(_ row: Int) -> Vine
+    func dataForRow(_ row: Int) -> Item
     
 }
 
@@ -64,7 +64,7 @@ protocol HomePresenterProtocol: class {
     
     func numberOfRows() -> Int
     
-    func dataForRow(_ row: Int) -> Vine
+    func dataForRow(_ row: Int) -> Item
     
 }
 

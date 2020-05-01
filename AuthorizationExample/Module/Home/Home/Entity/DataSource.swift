@@ -11,7 +11,7 @@ import UIKit
 
 class DataSource {
     
-    var items = [Vine]()
+    var items = [Item]()
     
     init() {
         
@@ -28,14 +28,17 @@ class DataSource {
                         assertionFailure("Can't create image")
                         
                         return
+                        
                 }
                 
-                let vine = Vine(image: image,
-                                review: entity.review!,
-                                title: entity.title!,
-                                rate: Int(entity.rate))
+                let item = Item(image:      image,
+                                review:     entity.review!,
+                                title:      entity.title!,
+                                rate:       Int(entity.rate),
+                                category:   .Alcohol,
+                                subcategory: "Vine")
                 
-                ss.items.append(vine)
+                ss.items.append(item)
                 
             }
             

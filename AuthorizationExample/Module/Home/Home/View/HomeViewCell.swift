@@ -16,7 +16,7 @@ class HomeViewCell: UITableViewCell {
     
     // MARK: - DATA SOURCE -
     
-    var vine: Vine? {
+    var vine: Item? {
         
         willSet { setupData(vine: newValue) }
         
@@ -47,7 +47,7 @@ class HomeViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupData(vine: Vine?) {
+    private func setupData(vine: Item?) {
         
         guard let vine = vine else { return }
         

@@ -12,13 +12,13 @@ class DataSourceService: DataSourceServiceProtocol {
     
     var data = DataSource()
     
-    func returnData() -> [Vine] {
+    func returnData() -> [Item] {
         
         data.items
         
     }
     
-    func appendNewItem(_ item: Vine) {
+    func appendNewItem(_ item: Item) {
         
         data.items.append(item)
         
@@ -26,7 +26,7 @@ class DataSourceService: DataSourceServiceProtocol {
         
     }
     
-    func saveInCoreData(_ item: Vine) {
+    func saveInCoreData(_ item: Item) {
         
         CoreDataManager.shared.saveInBackground(item)
         

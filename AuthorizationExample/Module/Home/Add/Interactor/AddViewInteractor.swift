@@ -132,7 +132,12 @@ class AddViewInteractor: AddViewInteractorProtocol {
             
         }
         
-        let vine = Vine(image: image, review: description, title: title, rate: rate)
+        let vine = Item(image: image,
+                        review: description,
+                        title: title,
+                        rate: rate,
+                        category: .Alcohol,
+                        subcategory: "Vine")
         
         dataSource.appendNewItem(vine)
         

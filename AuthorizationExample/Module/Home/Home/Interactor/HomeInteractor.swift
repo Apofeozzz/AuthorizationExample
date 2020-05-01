@@ -45,7 +45,7 @@ class HomeInteractor: HomeInteractorProtocol {
     
     func numberOfRows() -> Int { dataSource.returnData().count }
     
-    func dataForRow(_ row: Int) -> Vine {
+    func dataForRow(_ row: Int) -> Item {
         
         if dataSource.returnData().count > row {
             

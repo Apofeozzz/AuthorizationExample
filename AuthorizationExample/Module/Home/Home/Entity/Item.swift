@@ -8,14 +8,26 @@
 
 import UIKit
 
-struct Vine {
+struct Item {
     
     var image: UIImage
-    
+
     var review: String
     
     var title: String
     
     var rate: Int
+    
+    var category: Category
+    
+    var subcategory: String
+    
+}
+
+enum Category: String, Codable {
+    
+    case Alcohol
+    
+    case Other
     
 }

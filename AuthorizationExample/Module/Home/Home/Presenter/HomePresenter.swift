@@ -42,7 +42,7 @@ class HomePresenter: HomePresenterProtocol {
     
     func numberOfRows() -> Int { interactor.numberOfRows() }
     
-    func dataForRow(_ row: Int) -> Vine {
+    func dataForRow(_ row: Int) -> Item {
         
         interactor.dataForRow(row)
         
