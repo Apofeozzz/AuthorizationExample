@@ -58,8 +58,11 @@
 		4BCBFCC1244E3C7200BA6244 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC0244E3C7200BA6244 /* LoginRouter.swift */; };
 		4BCBFCC3244E3CBB00BA6244 /* LoginConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC2244E3CBA00BA6244 /* LoginConfigurator.swift */; };
 		4BCBFCC6244E3FCF00BA6244 /* CheckForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCBFCC5244E3FCF00BA6244 /* CheckForm.swift */; };
+		4BD3CF11245DF75700D62F4A /* DetailRateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD3CF10245DF75700D62F4A /* DetailRateTableViewCell.swift */; };
+		4BD3CF13245E089000D62F4A /* DetailReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD3CF12245E089000D62F4A /* DetailReviewTableViewCell.swift */; };
+		4BD3CF15245E109500D62F4A /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD3CF14245E109500D62F4A /* PaddingLabel.swift */; };
 		4BDFFBDC24519E9B007753B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDFFBDB24519E9B007753B0 /* GoogleService-Info.plist */; };
-		4BE45FDB245DE3160088EDB2 /* DetailImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE45FDA245DE3160088EDB2 /* DetailImageViewCell.swift */; };
+		4BE45FDB245DE3160088EDB2 /* DetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE45FDA245DE3160088EDB2 /* DetailImageTableViewCell.swift */; };
 		4BE4BFD12459A6B40007BF57 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4BFD02459A6B40007BF57 /* CoreDataManager.swift */; };
 		4BE84669245763390095ABE8 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE84668245763390095ABE8 /* DataSource.swift */; };
 		4BEBB3B6245DD15600265A1B /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBB3B5245DD15600265A1B /* DetailBuilder.swift */; };
@@ -159,8 +162,11 @@
 		4BCBFCC0244E3C7200BA6244 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		4BCBFCC2244E3CBA00BA6244 /* LoginConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfigurator.swift; sourceTree = "<group>"; };
 		4BCBFCC5244E3FCF00BA6244 /* CheckForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckForm.swift; sourceTree = "<group>"; };
+		4BD3CF10245DF75700D62F4A /* DetailRateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRateTableViewCell.swift; sourceTree = "<group>"; };
+		4BD3CF12245E089000D62F4A /* DetailReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailReviewTableViewCell.swift; sourceTree = "<group>"; };
+		4BD3CF14245E109500D62F4A /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		4BDFFBDB24519E9B007753B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4BE45FDA245DE3160088EDB2 /* DetailImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageViewCell.swift; sourceTree = "<group>"; };
+		4BE45FDA245DE3160088EDB2 /* DetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageTableViewCell.swift; sourceTree = "<group>"; };
 		4BE4BFD02459A6B40007BF57 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		4BE84668245763390095ABE8 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		4BEBB3B5245DD15600265A1B /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
@@ -412,8 +418,11 @@
 			isa = PBXGroup;
 			children = (
 				4B706859245DCBD3002809D7 /* DetailView.swift */,
-				4BE45FDA245DE3160088EDB2 /* DetailImageViewCell.swift */,
+				4BE45FDA245DE3160088EDB2 /* DetailImageTableViewCell.swift */,
+				4BD3CF10245DF75700D62F4A /* DetailRateTableViewCell.swift */,
+				4BD3CF12245E089000D62F4A /* DetailReviewTableViewCell.swift */,
 				4B70685B245DCBE4002809D7 /* DetailViewController.swift */,
+				4BD3CF14245E109500D62F4A /* PaddingLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1020,6 +1029,7 @@
 				4B280D93245791BE0082BF1E /* HomeViewCell.swift in Sources */,
 				4BCBFCB1244E31FE00BA6244 /* SignInProtocol.swift in Sources */,
 				4B84AD04244DDD7F0040B4BD /* LaunchConfigurator.swift in Sources */,
+				4BD3CF13245E089000D62F4A /* DetailReviewTableViewCell.swift in Sources */,
 				4B5FF74E24581CA500F3986B /* DataSourceServiceProtocol.swift in Sources */,
 				92F02096244AF6BA00B1D6AC /* LoginViewController.swift in Sources */,
 				4B84AD01244DDCA30040B4BD /* LaunchProtocol.swift in Sources */,
@@ -1058,6 +1068,7 @@
 				4B007A3E245312BD0063939B /* HomeProtocol.swift in Sources */,
 				4B136B022455EDE500F803C1 /* AddViewConfigurator.swift in Sources */,
 				9202F596244B9D240024F277 /* String+Extension.swift in Sources */,
+				4BD3CF11245DF75700D62F4A /* DetailRateTableViewCell.swift in Sources */,
 				4B007A422453151F0063939B /* HomeInteractor.swift in Sources */,
 				4B84AD07244DDEF10040B4BD /* LaunchInteractor.swift in Sources */,
 				4B007A3A24530FC70063939B /* HomeView.swift in Sources */,
@@ -1085,11 +1096,12 @@
 				4B706860245DCBFD002809D7 /* DetailPresenter.swift in Sources */,
 				4B136B082455FDF600F803C1 /* AddViewInteractor.swift in Sources */,
 				4B45AB3924539FF6004A6B4E /* SignUpView.swift in Sources */,
+				4BD3CF15245E109500D62F4A /* PaddingLabel.swift in Sources */,
 				4BCBFCBB244E39E000BA6244 /* LoginProtocol.swift in Sources */,
 				4BCBFCBE244E3B9F00BA6244 /* LoginInteractor.swift in Sources */,
 				92F0208E244AE97700B1D6AC /* Builder.swift in Sources */,
 				4BB3894C24563F240062DF5C /* RateCollectionViewCell.swift in Sources */,
-				4BE45FDB245DE3160088EDB2 /* DetailImageViewCell.swift in Sources */,
+				4BE45FDB245DE3160088EDB2 /* DetailImageTableViewCell.swift in Sources */,
 				4B136B002455ED1C00F803C1 /* AddViewProtocol.swift in Sources */,
 				92F0209C244AF9F700B1D6AC /* LoginBuilder.swift in Sources */,
 			);

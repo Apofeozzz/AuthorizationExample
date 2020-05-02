@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DetailImageViewCell: UITableViewCell {
+class DetailImageTableViewCell: UITableViewCell {
     
-    static let id = "DetailImageViewCell"
+    static let id = "DetailImageTableViewCell"
     
     // MARK: - DATA SOURCE -
     
@@ -73,10 +73,11 @@ class DetailImageViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
         
-            itemImageView.topAnchor       .constraint(equalTo: topAnchor, constant: 5),
-            itemImageView.leadingAnchor   .constraint(equalTo: leadingAnchor, constant: 20),
-            itemImageView.trailingAnchor  .constraint(equalTo: trailingAnchor, constant: -20),
-            itemImageView.heightAnchor    .constraint(equalToConstant: UIScreen.main.bounds.width - 40)
+            itemImageView.topAnchor         .constraint(equalTo: topAnchor,     constant: 5),
+            itemImageView.bottomAnchor      .constraint(equalTo: bottomAnchor,  constant: -5),
+            itemImageView.leadingAnchor     .constraint(equalTo: leadingAnchor, constant: 20),
+            itemImageView.trailingAnchor    .constraint(equalTo: trailingAnchor, constant: -20),
+            itemImageView.heightAnchor      .constraint(equalToConstant: UIScreen.main.bounds.width - 40)
         
         ])
         

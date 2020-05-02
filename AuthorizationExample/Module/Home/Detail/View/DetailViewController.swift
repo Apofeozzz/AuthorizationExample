@@ -28,6 +28,13 @@ class DetailViewController: UIViewController {
         
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        presenter.fillRateArrayWithEmptyStars()
+        
+    }
+    
     // MARK: - SETUP VIEW -
     
     private func setupView() {
@@ -91,17 +98,87 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return presenter.itemForCell().review.count + 2
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        if indexPath.row == 0 {
+            
+            let imageCell = tableView.dequeueReusableCell(withIdentifier: DetailImageTableViewCell.id) as! DetailImageTableViewCell
+            
+            imageCell.item = presenter.itemForCell()
+            
+            return imageCell
+            
+        } else if indexPath.row == 1 {
+            
+            let rateCell = tableView.dequeueReusableCell(withIdentifier: DetailRateTableViewCell.id) as! DetailRateTableViewCell
+            
+            rateCell.rateCollectionView.dataSource = self
+            
+            rateCell.rateCollectionView.delegate = self
+            
+            rateCell.rateLabel.text = "Rate: \(presenter.itemForCell().rate)"
+            
+            return rateCell
+            
+        } else {
+            
+            let reviewCell = tableView.dequeueReusableCell(withIdentifier: DetailReviewTableViewCell.id) as! DetailReviewTableViewCell
+            
+            reviewCell.reviewLabel.text = presenter.reviewForCell(indexPath.row)
+            
+            return reviewCell
+            
+        }
         
-        let imageCell = tableView.dequeueReusableCell(withIdentifier: DetailImageViewCell.id) as! DetailImageViewCell
+    }
+    
+    func reloadTableView() {
         
-        imageCell.item = presenter.itemForCell()
+        DispatchQueue.main.async { [weak self] in
+            guard let ss = self else { return }
+            
+            ss.mainView.detailsTableView.reloadData()
+            
+        }
         
-        return imageCell
+    }
+    
+}
+
+extension DetailViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 10
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RateCollectionViewCell.id,
+                                                      for: indexPath) as! RateCollectionViewCell
+        
+        cell.rateImageView.image = presenter.imageForIndex(indexPath.row)
+       
+        return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let size = (UIScreen.main.bounds.width - 50) / 10
+        
+        return CGSize(width: size, height: size)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+//        presenter.setupRate(indexPath.row)
         
     }
     

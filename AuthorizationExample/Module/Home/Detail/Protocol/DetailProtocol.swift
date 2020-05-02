@@ -30,6 +30,8 @@ protocol DetailLayoutProtocol: UIView {
 
 protocol DetailViewProtocol: class {
     
+    func reloadTableView()
+    
 }
 
 // MARK: - INTERACTOR -
@@ -39,6 +41,10 @@ protocol DetailInteractorProtocol: class {
     var presenter: DetailPresenterProtocol! { get set }
     
     init(presenter: DetailPresenterProtocol)
+    
+    func fillRateArrayWithEmptyStars() -> [UIImage]
+    
+    func fillArrayWithRateStars(rate: Int) -> [UIImage]
     
 }
 
@@ -51,6 +57,12 @@ protocol DetailPresenterProtocol: class {
     func navigationTitle() -> String
     
     func itemForCell() -> Item
+    
+    func imageForIndex(_ index: Int) -> UIImage
+    
+    func fillRateArrayWithEmptyStars()
+    
+    func reviewForCell(_ index: Int) -> String
     
 }
 

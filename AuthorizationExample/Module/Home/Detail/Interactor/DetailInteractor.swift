@@ -6,7 +6,7 @@
 //  Copyright © 2020 Denis Grishchenko. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class DetailInteractor: DetailInteractorProtocol {
     
@@ -19,6 +19,54 @@ class DetailInteractor: DetailInteractorProtocol {
     required init(presenter: DetailPresenterProtocol) {
         
         self.presenter = presenter
+        
+    }
+    
+    // MARK: - RATE -
+    
+    func fillRateArrayWithEmptyStars() -> [UIImage] {
+        
+        var starsArray = [UIImage]()
+        
+        for _ in 0...9 {
+            
+            if let emptyStar = UIImage(named: "star_empty") {
+                
+                starsArray.append(emptyStar)
+                
+            }
+            
+        }
+        
+        return starsArray
+        
+    }
+    
+    func fillArrayWithRateStars(rate: Int) -> [UIImage] {
+        
+        var starsArray = [UIImage]()
+        
+        for _ in 0...rate {
+            
+            if let fillStar = UIImage(named: "star_fill") {
+                
+                starsArray.append(fillStar)
+                
+            }
+            
+        }
+        
+        for _ in rate ..< 9 {
+            
+            if let emptyStar = UIImage(named: "star_empty") {
+                
+                starsArray.append(emptyStar)
+                
+            }
+            
+        }
+        
+        return starsArray
         
     }
     

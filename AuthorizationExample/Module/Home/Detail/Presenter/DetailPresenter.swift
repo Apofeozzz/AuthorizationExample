@@ -6,7 +6,7 @@
 //  Copyright © 2020 Denis Grishchenko. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class DetailPresenter: DetailPresenterProtocol {
     
@@ -19,6 +19,10 @@ class DetailPresenter: DetailPresenterProtocol {
     var router: DetailRouterProtocol!
     
     var item: Item!
+    
+    var rateImageArray: [UIImage]!
+    
+    var rate = 0
     
     // MARK: - INIT -
     
@@ -42,6 +46,36 @@ class DetailPresenter: DetailPresenterProtocol {
         
         return item
         
+    }
+    
+    func reviewForCell(_ index: Int) -> String {
+        
+        item.review[index-2]
+        
+    }
+    
+    // MARK: - RATE COLLECTION VIEW -
+    
+    func fillRateArrayWithEmptyStars() {
+        
+        rateImageArray = interactor.fillRateArrayWithEmptyStars()
+        
+    }
+    
+    func setupRate(_ rate: Int) {
+        
+        self.rate = rate + 1
+        
+        rateImageArray = interactor.fillArrayWithRateStars(rate: rate)
+        
+        view.reloadTableView()
+        
+    }
+    
+    func imageForIndex(_ index: Int) -> UIImage {
+            
+        rateImageArray[index]
+            
     }
     
 }

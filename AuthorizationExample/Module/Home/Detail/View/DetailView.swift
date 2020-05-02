@@ -49,8 +49,16 @@ class DetailView: UIView, DetailLayoutProtocol {
         
         detailsTableView.backgroundColor = .clear
         
-        detailsTableView.register(DetailImageViewCell.self, forCellReuseIdentifier: DetailImageViewCell.id)
+        detailsTableView.register(DetailImageTableViewCell.self, forCellReuseIdentifier: DetailImageTableViewCell.id)
         
+        detailsTableView.register(DetailRateTableViewCell.self, forCellReuseIdentifier: DetailRateTableViewCell.id)
+        
+        detailsTableView.register(DetailReviewTableViewCell.self, forCellReuseIdentifier: DetailReviewTableViewCell.id)
+        
+        detailsTableView.estimatedRowHeight = 50
+        
+        detailsTableView.rowHeight = UITableView.automaticDimension
+
         addSubview(detailsTableView)
         
     }
