@@ -31,14 +31,20 @@ class DataSource {
                         
                 }
                 
-                let item = Item(image:      image,
-                                review:     entity.review!,
-                                title:      entity.title!,
-                                rate:       Int(entity.rate),
-                                category:   .Alcohol,
-                                subcategory: "Vine")
+                guard let entityReview = entity.review else { return }
                 
-                ss.items.append(item)
+                if let reviews = try? JSONDecoder().decode([String].self, from: entityReview) {
+                    
+                    let item = Item(image:      image,
+                                    review:     reviews,
+                                    title:      entity.title!,
+                                    rate:       Int(entity.rate),
+                                    category:   .Alcohol,
+                                    subcategory: "Vine")
+                    
+                    ss.items.append(item)
+                    
+                }
                 
             }
             

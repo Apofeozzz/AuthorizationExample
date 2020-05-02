@@ -14,7 +14,7 @@ class AddBuilder {
         
         let addVC = AddViewController()
         
-        let configurator: AddViewConfigurator = AddViewConfigurator()
+        let configurator: AddViewConfiguratorProtocol = AddViewConfigurator()
         
         configurator.configure(with: addVC, dataSource: dataSource)
         

@@ -146,6 +146,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        presenter.selectItem(indexPath.row)
+    }
+    
     func reloadTableView() {
         
         DispatchQueue.main.async { [weak self] in

@@ -48,6 +48,12 @@ class HomePresenter: HomePresenterProtocol {
         
     }
     
+    func selectItem(_ index: Int) {
+        
+        detailController(with: interactor.dataForRow(index))
+        
+    }
+    
     // MARK: - NAVIGATION -
     
     private func addController() {
@@ -55,6 +61,14 @@ class HomePresenter: HomePresenterProtocol {
         let addVC = Builder.addBuilder().addController(dataSource: interactor.dataSource)
         
         router.pushController(addVC)
+        
+    }
+    
+    private func detailController(with item: Item) {
+        
+        let detailVC = Builder.detailBuilder().detailController(with: item)
+        
+        router.pushController(detailVC)
         
     }
     

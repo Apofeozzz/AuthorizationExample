@@ -74,9 +74,13 @@ class CoreDataManager {
             
             vineEntity.title = vine.title
             
-            vineEntity.review = vine.review
+            let reviewData = try? JSONEncoder().encode(vine.review)
+            
+            vineEntity.review = reviewData
             
             vineEntity.rate = Int16(vine.rate)
+            
+            vineEntity.category = vine.category.rawValue
             
             let imageData = vine.image.jpegData(compressionQuality: 1)
                 

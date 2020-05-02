@@ -43,6 +43,8 @@ class HomeInteractor: HomeInteractorProtocol {
         
     }
     
+    // MARK: - SETUP DATA -
+    
     func numberOfRows() -> Int { dataSource.returnData().count }
     
     func dataForRow(_ row: Int) -> Item {

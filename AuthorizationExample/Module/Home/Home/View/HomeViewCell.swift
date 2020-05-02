@@ -55,7 +55,7 @@ class HomeViewCell: UITableViewCell {
         
         titleLabel.text = vine.title
         
-        descriptionLabel.text = vine.review
+        descriptionLabel.text = vine.review.first
         
         rateLabel.text = "\(vine.rate)"
         

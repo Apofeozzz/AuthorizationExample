@@ -133,7 +133,7 @@ class AddViewInteractor: AddViewInteractorProtocol {
         }
         
         let vine = Item(image: image,
-                        review: description,
+                        review: [description],
                         title: title,
                         rate: rate,
                         category: .Alcohol,

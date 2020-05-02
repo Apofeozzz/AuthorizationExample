@@ -2,7 +2,7 @@
 //  ItemEntity+CoreDataClass.swift
 //  AuthorizationExample
 //
-//  Created by Denis Grishchenko on 5/1/20.
+//  Created by Denis Grishchenko on 5/2/20.
 //  Copyright © 2020 Denis Grishchenko. All rights reserved.
 //
 //

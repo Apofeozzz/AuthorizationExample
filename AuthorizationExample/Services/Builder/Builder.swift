@@ -34,4 +34,10 @@ class Builder {
         
     }
     
+    static func detailBuilder() -> DetailBuilder {
+        
+        DetailBuilder()
+        
+    }
+    
 }

@@ -66,6 +66,8 @@ protocol HomePresenterProtocol: class {
     
     func dataForRow(_ row: Int) -> Item
     
+    func selectItem(_ index: Int)
+    
 }
 
 // MARK: - ROUTER -

@@ -12,7 +12,7 @@ struct Item {
     
     var image: UIImage
 
-    var review: String
+    var review: [String]
     
     var title: String
     
