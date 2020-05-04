@@ -15,7 +15,7 @@ class DataSource {
     
     init() {
         
-        CoreDataManager.shared.fetchInBackgroundContext {[weak self] (vineEntities) in
+        CoreDataManager.shared.fetchInBackgroundContext {[weak self] (vineEntities, context) in
             
             guard let ss = self else { return }
             

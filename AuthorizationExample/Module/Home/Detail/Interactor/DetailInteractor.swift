@@ -14,11 +14,26 @@ class DetailInteractor: DetailInteractorProtocol {
     
     weak var presenter: DetailPresenterProtocol!
     
+    var dataSource: DataSourceServiceProtocol
+    
     // MARK: - INIT -
     
-    required init(presenter: DetailPresenterProtocol) {
+    required init(presenter: DetailPresenterProtocol,
+                  dataSource: DataSourceServiceProtocol) {
         
         self.presenter = presenter
+        
+        self.dataSource = dataSource
+        
+    }
+    
+    func updateItem(item: Item) -> Item? {
+        
+        let items = dataSource.returnData()
+        
+        let updated = items.first(where: { item.title == $0.title } )
+        
+        return updated
         
     }
     

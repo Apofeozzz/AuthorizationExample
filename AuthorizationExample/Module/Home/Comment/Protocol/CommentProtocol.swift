@@ -12,7 +12,9 @@ import Foundation
 
 protocol CommentConfiguratorProtocol: class {
     
-    func configure(with controller: CommentViewController)
+    func configure(with controller: CommentViewController,
+                   dataSource: DataSourceServiceProtocol,
+                   and item: Item)
     
 }
 
@@ -32,7 +34,11 @@ protocol CommentViewProtocol: class {
 
 protocol CommentInteractorProtocol: class {
     
-    init(presenter: CommentPresenterProtocol)
+    init(presenter: CommentPresenterProtocol,
+         dataSource: DataSourceServiceProtocol,
+         item: Item)
+    
+    func saveComment(_ comment: String)
     
 }
 
@@ -41,6 +47,10 @@ protocol CommentInteractorProtocol: class {
 protocol CommentPresenterProtocol: class {
     
     init(view: CommentViewProtocol)
+    
+    func save(comment: String)
+    
+    func popController()
     
 }
 

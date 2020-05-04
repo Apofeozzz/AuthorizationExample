@@ -32,4 +32,42 @@ class DataSourceService: DataSourceServiceProtocol {
         
     }
     
+    func saveReview(in item: Item, completion: @escaping () -> Void) {
+        
+        if let index = data.items.firstIndex(where: { $0.title == item.title }) {
+            
+            data.items.remove(at: index)
+            
+            data.items.insert(item, at: index)
+            
+        }
+        
+        CoreDataManager.shared.fetchInBackgroundContext { (entities, context) in
+            
+            for each in entities {
+                
+                if item.title == each.title {
+                    
+                    let reviews = try? JSONEncoder().encode(item.review)
+                    
+                    each.review = reviews
+                    
+                    do {
+                        
+                        try context.save()
+                        
+                        completion()
+                        
+                    } catch let err { assertionFailure(err.localizedDescription) }
+
+                    return
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
 }

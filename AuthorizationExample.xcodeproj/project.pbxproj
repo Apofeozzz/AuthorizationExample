@@ -45,7 +45,6 @@
 		4B84AD04244DDD7F0040B4BD /* LaunchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84AD03244DDD7F0040B4BD /* LaunchConfigurator.swift */; };
 		4B84AD07244DDEF10040B4BD /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84AD06244DDEF10040B4BD /* LaunchInteractor.swift */; };
 		4B84AD09244DE1940040B4BD /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84AD08244DE1940040B4BD /* LaunchRouter.swift */; };
-		4B90EF79245F41D100A159E2 /* CommentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B90EF78245F41D000A159E2 /* CommentProtocol.swift */; };
 		4B90EF7C245F423200A159E2 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B90EF7B245F423200A159E2 /* CommentView.swift */; };
 		4B90EF7E245F423A00A159E2 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B90EF7D245F423A00A159E2 /* CommentViewController.swift */; };
 		4BA455AC244C4C0D004D7F06 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA455AB244C4C0D004D7F06 /* SignInPresenter.swift */; };
@@ -74,6 +73,7 @@
 		4BE9BC772460A029000859EA /* CommentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE9BC762460A029000859EA /* CommentRouter.swift */; };
 		4BE9BC792460A0B8000859EA /* CommentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE9BC782460A0B8000859EA /* CommentBuilder.swift */; };
 		4BEBB3B6245DD15600265A1B /* DetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEBB3B5245DD15600265A1B /* DetailBuilder.swift */; };
+		4BFBADE32460B05600AD8201 /* CommentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFBADE22460B05600AD8201 /* CommentProtocol.swift */; };
 		4BFC5B9424538E3F003DBD57 /* FirebaseSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC5B9324538E3F003DBD57 /* FirebaseSignInService.swift */; };
 		4BFC5B9F245393C9003DBD57 /* SignUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC5B9E245393C9003DBD57 /* SignUpProtocol.swift */; };
 		4BFC5BA12453943D003DBD57 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFC5BA02453943D003DBD57 /* SignUpViewController.swift */; };
@@ -157,7 +157,6 @@
 		4B84AD03244DDD7F0040B4BD /* LaunchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchConfigurator.swift; sourceTree = "<group>"; };
 		4B84AD06244DDEF10040B4BD /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
 		4B84AD08244DE1940040B4BD /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
-		4B90EF78245F41D000A159E2 /* CommentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentProtocol.swift; sourceTree = "<group>"; };
 		4B90EF7B245F423200A159E2 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		4B90EF7D245F423A00A159E2 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		4BA455AB244C4C0D004D7F06 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
@@ -186,6 +185,7 @@
 		4BE9BC762460A029000859EA /* CommentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRouter.swift; sourceTree = "<group>"; };
 		4BE9BC782460A0B8000859EA /* CommentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentBuilder.swift; sourceTree = "<group>"; };
 		4BEBB3B5245DD15600265A1B /* DetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailBuilder.swift; sourceTree = "<group>"; };
+		4BFBADE22460B05600AD8201 /* CommentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentProtocol.swift; sourceTree = "<group>"; };
 		4BFC5B9324538E3F003DBD57 /* FirebaseSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSignInService.swift; sourceTree = "<group>"; };
 		4BFC5B9E245393C9003DBD57 /* SignUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocol.swift; sourceTree = "<group>"; };
 		4BFC5BA02453943D003DBD57 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -484,7 +484,7 @@
 		4B90EF77245F41C200A159E2 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				4B90EF78245F41D000A159E2 /* CommentProtocol.swift */,
+				4BFBADE22460B05600AD8201 /* CommentProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1142,11 +1142,11 @@
 				92CD9D3E244ADF87000EF227 /* LaunchViewController.swift in Sources */,
 				4B007A3E245312BD0063939B /* HomeProtocol.swift in Sources */,
 				4B136B022455EDE500F803C1 /* AddViewConfigurator.swift in Sources */,
-				4B90EF79245F41D100A159E2 /* CommentProtocol.swift in Sources */,
 				9202F596244B9D240024F277 /* String+Extension.swift in Sources */,
 				4BD3CF11245DF75700D62F4A /* DetailRateTableViewCell.swift in Sources */,
 				4B007A422453151F0063939B /* HomeInteractor.swift in Sources */,
 				4B84AD07244DDEF10040B4BD /* LaunchInteractor.swift in Sources */,
+				4BFBADE32460B05600AD8201 /* CommentProtocol.swift in Sources */,
 				4B007A3A24530FC70063939B /* HomeView.swift in Sources */,
 				4B007A3824530F6A0063939B /* HomeViewController.swift in Sources */,
 				92CD9D39244ADDDD000EF227 /* LaunchScreenPresenter.swift in Sources */,

@@ -57,6 +57,8 @@ class DetailReviewTableViewCell: UITableViewCell {
         
         reviewLabel.layer.borderColor = UIColor.appPlaceholderColor().cgColor
         
+        reviewLabel.numberOfLines = 0
+        
         addSubview(reviewLabel)
         
     }

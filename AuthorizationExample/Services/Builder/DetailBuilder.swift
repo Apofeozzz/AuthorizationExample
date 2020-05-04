@@ -10,13 +10,13 @@ import UIKit
 
 class DetailBuilder {
     
-    func detailController(with item: Item) -> UIViewController {
+    func detailController(with dataSource: DataSourceServiceProtocol, and item: Item) -> UIViewController {
         
         let detailVC = DetailViewController()
         
         let configurator: DetailConfiguratorProtocol = DetailConfigurator()
         
-        configurator.configure(with: detailVC, and: item)
+        configurator.configure(with: detailVC, dataSource: dataSource, and: item)
         
         return detailVC
         

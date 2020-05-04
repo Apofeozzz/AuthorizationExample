@@ -10,13 +10,17 @@ import Foundation
 
 class CommentConfigurator: CommentConfiguratorProtocol {
     
-    func configure(with controller: CommentViewController) {
+    func configure(with controller: CommentViewController,
+                   dataSource: DataSourceServiceProtocol,
+                   and item: Item) {
         
         let presenter = CommentPresenter(view: controller)
         
         controller.presenter = presenter
         
-        let interactor = CommentInteractor(presenter: presenter)
+        let interactor = CommentInteractor(presenter: presenter,
+                                           dataSource: dataSource,
+                                           item: item)
         
         let router = CommentRouter(controller: controller)
         

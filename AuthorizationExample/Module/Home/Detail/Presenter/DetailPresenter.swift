@@ -44,6 +44,8 @@ class DetailPresenter: DetailPresenterProtocol {
     
     func itemForCell() -> Item {
         
+        if let updated = interactor.updateItem(item: item) { item = updated }
+        
         return item
         
     }
@@ -56,7 +58,8 @@ class DetailPresenter: DetailPresenterProtocol {
     
     func addCommentAction() {
         
-        moveToCommentController()
+        moveToCommentController(with: interactor.dataSource,
+                                and: item)
         
     }
     
@@ -86,9 +89,9 @@ class DetailPresenter: DetailPresenterProtocol {
     
     // MARK: - NAVIGATION -
     
-    func moveToCommentController() {
+    func moveToCommentController(with dataSource: DataSourceServiceProtocol, and item: Item) {
         
-        let commentController = Builder.commentBuilder().commentController()
+        let commentController = Builder.commentBuilder().commentController(with: dataSource, and: item)
         
         router.pushController(commentController)
         

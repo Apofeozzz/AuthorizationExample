@@ -31,7 +31,7 @@ class CommentViewController: UIViewController {
     
     @objc private func saveButtonAction() {
         
-        
+        presenter.save(comment: mainView.commentTextView.text)
         
     }
     

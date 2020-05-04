@@ -10,11 +10,14 @@ import Foundation
 
 class DetailConfigurator: DetailConfiguratorProtocol {
     
-    func configure(with controller: DetailViewController, and item: Item) {
+    func configure(with controller: DetailViewController,
+                   dataSource: DataSourceServiceProtocol,
+                   and item: Item) {
         
         let presenter = DetailPresenter(view: controller, item: item)
         
-        let interactor = DetailInteractor(presenter: presenter)
+        let interactor = DetailInteractor(presenter: presenter,
+                                          dataSource: dataSource)
         
         let router = DetailRouter(controller: controller)
         

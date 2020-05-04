@@ -28,5 +28,16 @@ class CommentPresenter: CommentPresenterProtocol {
     
     // MARK: - ACTION -
     
+    func save(comment: String) {
+        
+        interactor.saveComment(comment)
+        
+    }
+    
+    func popController() {
+        
+        router.popController()
+        
+    }
 
 }

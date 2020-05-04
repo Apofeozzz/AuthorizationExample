@@ -10,13 +10,13 @@ import UIKit
 
 class CommentBuilder {
     
-    func commentController() -> UIViewController {
+    func commentController(with dataSource: DataSourceServiceProtocol, and item: Item) -> UIViewController {
         
         let vc = CommentViewController()
         
         let configurator = CommentConfigurator()
         
-        configurator.configure(with: vc)
+        configurator.configure(with: vc, dataSource: dataSource, and: item)
         
         return vc
         

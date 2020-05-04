@@ -66,7 +66,10 @@ class HomePresenter: HomePresenterProtocol {
     
     private func detailController(with item: Item) {
         
-        let detailVC = Builder.detailBuilder().detailController(with: item)
+        let detailVC = Builder
+            .detailBuilder()
+            .detailController(with: interactor.dataSource,
+                              and: item)
         
         router.pushController(detailVC)
         

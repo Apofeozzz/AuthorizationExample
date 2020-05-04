@@ -14,6 +14,7 @@ import UIKit
 protocol DetailConfiguratorProtocol: class {
     
     func configure(with controller: DetailViewController,
+                   dataSource: DataSourceServiceProtocol,
                    and item: Item)
     
 }
@@ -40,11 +41,16 @@ protocol DetailInteractorProtocol: class {
     
     var presenter: DetailPresenterProtocol! { get set }
     
-    init(presenter: DetailPresenterProtocol)
+    var dataSource: DataSourceServiceProtocol { get set }
+    
+    init(presenter: DetailPresenterProtocol,
+         dataSource: DataSourceServiceProtocol)
     
     func fillRateArrayWithEmptyStars() -> [UIImage]
     
     func fillArrayWithRateStars(rate: Int) -> [UIImage]
+    
+    func updateItem(item: Item) -> Item?
     
 }
 

@@ -37,6 +37,15 @@ class DetailViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        reloadTableView()
+        
+    }
+    
+    // MARK: - ACTION -
+    
     @objc private func addCommentAction() {
         
         presenter.addCommentAction()
@@ -67,7 +76,7 @@ class DetailViewController: UIViewController {
         
         navBar.tintColor = .appPlaceholderColor()
         
-        let attributes = [NSAttributedString.Key.font: UIFont.futuraBoldWithSize(24),
+        let attributes = [NSAttributedString.Key.font: UIFont.futuraBoldWithSize(20),
                           NSAttributedString.Key.foregroundColor: UIColor.mainPink()]
         
         let title = NSAttributedString(string: presenter.navigationTitle(), attributes: attributes)

@@ -38,7 +38,8 @@ class CoreDataManager {
     
     // MARK: - FETCH DATA -
     
-    func fetchInBackgroundContext(completion: @escaping (_ vine: [ItemEntity]) -> ()) {
+    func fetchInBackgroundContext(completion: @escaping (_ vine: [ItemEntity],
+        _ context: NSManagedObjectContext) -> ()) {
         
         let backgroundContext = persistentContainer.newBackgroundContext()
         
@@ -48,7 +49,7 @@ class CoreDataManager {
             
             guard let vineEntities = fetchResult.finalResult else { return }
             
-            completion(vineEntities)
+            completion(vineEntities, backgroundContext)
             
         }
         
