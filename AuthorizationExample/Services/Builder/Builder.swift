@@ -40,4 +40,10 @@ class Builder {
         
     }
     
+    static func commentBuilder() -> CommentBuilder {
+        
+        CommentBuilder()
+        
+    }
+    
 }

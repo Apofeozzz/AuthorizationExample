@@ -15,6 +15,8 @@ class DetailViewController: UIViewController {
     
     var mainView: DetailLayoutProtocol!
     
+    var rateCollectionView: UICollectionView!
+    
     // MARK: - DATA SOURCE -
     
     var presenter: DetailPresenterProtocol!
@@ -32,6 +34,12 @@ class DetailViewController: UIViewController {
         super.viewWillLayoutSubviews()
         
         presenter.fillRateArrayWithEmptyStars()
+        
+    }
+    
+    @objc private func addCommentAction() {
+        
+        presenter.addCommentAction()
         
     }
     
@@ -69,6 +77,13 @@ class DetailViewController: UIViewController {
         navTitleLabel.attributedText = title
         
         navigationItem.titleView = navTitleLabel
+        
+        let comment = UIBarButtonItem(title: "Comment",
+                                      style: .done,
+                                      target: self,
+                                      action: #selector(addCommentAction))
+        
+        navigationItem.rightBarButtonItem = comment
         
     }
     
@@ -116,6 +131,8 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             
             let rateCell = tableView.dequeueReusableCell(withIdentifier: DetailRateTableViewCell.id) as! DetailRateTableViewCell
             
+            rateCollectionView = rateCell.rateCollectionView
+            
             rateCell.rateCollectionView.dataSource = self
             
             rateCell.rateCollectionView.delegate = self
@@ -142,6 +159,8 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             guard let ss = self else { return }
             
             ss.mainView.detailsTableView.reloadData()
+            
+            ss.rateCollectionView.reloadData()
             
         }
         
@@ -178,7 +197,7 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        presenter.setupRate(indexPath.row)
+        presenter.setupRate(indexPath.row)
         
     }
     

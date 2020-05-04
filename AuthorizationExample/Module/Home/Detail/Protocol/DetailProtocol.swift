@@ -64,6 +64,10 @@ protocol DetailPresenterProtocol: class {
     
     func reviewForCell(_ index: Int) -> String
     
+    func setupRate(_ rate: Int)
+    
+    func addCommentAction()
+    
 }
 
 // MARK: - ROUTER -

@@ -47,6 +47,8 @@ class DetailImageTableViewCell: UITableViewCell {
         
         backgroundColor = .clear
         
+        selectionStyle = .none
+        
         setupItemImageView()
         
         setupConstraints()
@@ -62,6 +64,10 @@ class DetailImageTableViewCell: UITableViewCell {
         itemImageView.layer.borderColor = UIColor.appPlaceholderColor().cgColor
         
         itemImageView.layer.borderWidth = 1
+        
+        itemImageView.layer.cornerRadius = 5
+        
+        itemImageView.clipsToBounds = true
         
         addSubview(itemImageView)
         

@@ -54,6 +54,12 @@ class DetailPresenter: DetailPresenterProtocol {
         
     }
     
+    func addCommentAction() {
+        
+        moveToCommentController()
+        
+    }
+    
     // MARK: - RATE COLLECTION VIEW -
     
     func fillRateArrayWithEmptyStars() {
@@ -76,6 +82,16 @@ class DetailPresenter: DetailPresenterProtocol {
             
         rateImageArray[index]
             
+    }
+    
+    // MARK: - NAVIGATION -
+    
+    func moveToCommentController() {
+        
+        let commentController = Builder.commentBuilder().commentController()
+        
+        router.pushController(commentController)
+        
     }
     
 }
