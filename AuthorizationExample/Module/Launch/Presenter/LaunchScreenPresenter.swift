@@ -32,29 +32,11 @@ class LaunchViewPresenter: LaunchViewPresenterProtocol {
 	
 	func loginController() {
         
-        if interactor.checkIfUserLoggedIn() { homeController() }
+        if interactor.checkIfUserLoggedIn() { router.showHomeController() }
         
-        else { signInController() }
+        else { router.showSignInController() }
 		
 	}
-    
-    // MARK: - NAVIGATION -
-    
-    func signInController() {
-        
-        let signIn = Builder.loginBuilder().signInController()
-        
-        router.presentController(signIn)
-        
-    }
-    
-    func homeController() {
-        
-        let home = Builder.homeBuilder().homeController()
-        
-        router.presentController(home)
-        
-    }
 	
 }
 

@@ -54,5 +54,9 @@ protocol SignInPresenterProtocol: class {
 
 // MARK: - ROUTER -
 
-protocol SignInRouterProtocol: NavigationProtocol { }
+protocol SignInRouterProtocol: NavigationProtocol {
+    
+    func showHomeController()
+    
+}
 

@@ -22,12 +22,6 @@ struct Item {
     
     var subcategory: String
     
-    mutating func addComment(comment: String) {
-        
-        review.append(comment)
-        
-    }
-    
 }
 
 enum Category: String, Codable {

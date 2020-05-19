@@ -27,6 +27,10 @@ class CommentViewController: UIViewController {
         
     }
     
+    deinit {
+        print("CommentViewController deinit")
+    }
+    
     // MARK: - ACTION -
     
     @objc private func saveButtonAction() {

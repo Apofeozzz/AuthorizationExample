@@ -58,8 +58,8 @@ class DetailPresenter: DetailPresenterProtocol {
     
     func addCommentAction() {
         
-        moveToCommentController(with: interactor.dataSource,
-                                and: item)
+        router.showCommentController(with: interactor.dataSource,
+                                     and: item)
         
     }
     
@@ -85,16 +85,6 @@ class DetailPresenter: DetailPresenterProtocol {
             
         rateImageArray[index]
             
-    }
-    
-    // MARK: - NAVIGATION -
-    
-    func moveToCommentController(with dataSource: DataSourceServiceProtocol, and item: Item) {
-        
-        let commentController = Builder.commentBuilder().commentController(with: dataSource, and: item)
-        
-        router.pushController(commentController)
-        
     }
     
 }

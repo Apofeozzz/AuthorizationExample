@@ -22,4 +22,22 @@ class LaunchRouter: LaunchRouterProtocol {
         
     }
     
+    // MARK: - NAVIGATION -
+    
+    func showSignInController() {
+        
+        let signIn = Builder.loginBuilder().signInController()
+        
+        presentController(signIn)
+        
+    }
+    
+    func showHomeController() {
+        
+        let home = Builder.homeBuilder().homeController()
+        
+        presentController(home)
+        
+    }
+    
 }

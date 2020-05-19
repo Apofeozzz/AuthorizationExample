@@ -38,7 +38,7 @@ class HomePresenter: HomePresenterProtocol {
         
     }
     
-    func add() { addController() }
+    func add() { router.showAddController(dataSource: interactor.dataSource) }
     
     func numberOfRows() -> Int { interactor.numberOfRows() }
     
@@ -50,28 +50,8 @@ class HomePresenter: HomePresenterProtocol {
     
     func selectItem(_ index: Int) {
         
-        detailController(with: interactor.dataForRow(index))
-        
-    }
-    
-    // MARK: - NAVIGATION -
-    
-    private func addController() {
-        
-        let addVC = Builder.addBuilder().addController(dataSource: interactor.dataSource)
-        
-        router.pushController(addVC)
-        
-    }
-    
-    private func detailController(with item: Item) {
-        
-        let detailVC = Builder
-            .detailBuilder()
-            .detailController(with: interactor.dataSource,
-                              and: item)
-        
-        router.pushController(detailVC)
+        router.showDetailController(with: interactor.dataSource,
+                                    and: interactor.dataForRow(index))
         
     }
     

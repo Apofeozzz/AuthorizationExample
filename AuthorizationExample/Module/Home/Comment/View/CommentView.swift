@@ -35,6 +35,10 @@ class CommentView: UIView, CommentLayoutProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        print("CommentView deinit")
+    }
+    
     // MARK: - SETUP VIEW -
     
     private func setupView() {

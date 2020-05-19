@@ -78,6 +78,11 @@ protocol DetailPresenterProtocol: class {
 
 // MARK: - ROUTER -
 
-protocol DetailRouterProtocol: NavigationProtocol { }
+protocol DetailRouterProtocol: NavigationProtocol {
+    
+    func showCommentController(with dataSource: DataSourceServiceProtocol,
+                               and item: Item)
+    
+}
 
 

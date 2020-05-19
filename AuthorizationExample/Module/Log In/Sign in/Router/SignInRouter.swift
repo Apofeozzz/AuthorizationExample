@@ -22,5 +22,12 @@ class SignInRouter: SignInRouterProtocol {
         
     }
     
+    func showHomeController() {
+        
+        let home = Builder.homeBuilder().homeController()
+        
+        presentController(home)
+        
+    }
     
 }

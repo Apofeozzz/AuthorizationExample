@@ -60,4 +60,6 @@ protocol LoginRouterProtocol: NavigationProtocol {
     
     func showAlert(title: String, message: String)
     
+    func showHomeController()
+    
 }

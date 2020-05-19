@@ -77,17 +77,7 @@ class LoginPresenter: LoginPresenterProtocol {
             
         }
         
-        homeController()
-        
-    }
-    
-    // MARK: - NAVIGATION -
-    
-    func homeController() {
-        
-        let home = Builder.homeBuilder().homeController()
-        
-        router.presentController(home)
+        router.showHomeController()
         
     }
     

@@ -74,4 +74,9 @@ protocol HomePresenterProtocol: class {
 
 protocol HomeRouterProtocol: NavigationProtocol {
     
+    func showAddController(dataSource: DataSourceServiceProtocol)
+    
+    func showDetailController(with dataSource: DataSourceServiceProtocol,
+                              and item: Item)
+    
 }

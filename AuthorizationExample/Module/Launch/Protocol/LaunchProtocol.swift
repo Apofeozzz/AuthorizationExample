@@ -32,7 +32,13 @@ protocol LaunchViewPresenterProtocol: class {
 
 // MARK: - ROUTER -
 
-protocol LaunchRouterProtocol: NavigationProtocol { }
+protocol LaunchRouterProtocol: NavigationProtocol {
+    
+    func showSignInController()
+    
+    func showHomeController()
+    
+}
 
 // MARK: - CONFIGURATOR -
 

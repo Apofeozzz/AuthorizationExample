@@ -13,7 +13,11 @@ class DataSource {
     
     var items = [Item]()
     
-    init() {
+    init() { fetchData() }
+    
+    func fetchData() {
+        
+        items.removeAll()
         
         CoreDataManager.shared.fetchInBackgroundContext {[weak self] (vineEntities, context) in
             

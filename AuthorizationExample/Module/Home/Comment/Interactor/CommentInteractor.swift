@@ -47,4 +47,8 @@ class CommentInteractor: CommentInteractorProtocol {
         
     }
     
+    deinit {
+        print("CommentInteractor deinit")
+    }
+    
 }

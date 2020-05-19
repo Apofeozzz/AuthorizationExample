@@ -44,25 +44,19 @@ class DataSourceService: DataSourceServiceProtocol {
         
         CoreDataManager.shared.fetchInBackgroundContext { (entities, context) in
             
-            for each in entities {
+            if let match = entities.first(where: { $0.title == item.title } ) {
                 
-                if item.title == each.title {
+                let reviews = try? JSONEncoder().encode(item.review)
+                
+                match.review = reviews
+                
+                do {
                     
-                    let reviews = try? JSONEncoder().encode(item.review)
+                    try context.save()
                     
-                    each.review = reviews
+                    completion()
                     
-                    do {
-                        
-                        try context.save()
-                        
-                        completion()
-                        
-                    } catch let err { assertionFailure(err.localizedDescription) }
-
-                    return
-                    
-                }
+                } catch let err { assertionFailure(err.localizedDescription) }
                 
             }
             

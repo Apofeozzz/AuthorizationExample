@@ -22,4 +22,14 @@ class LoginRouter: LoginRouterProtocol {
         
     }
     
+    // MARK: - NAVIGATION -
+    
+    func showHomeController() {
+        
+        let home = Builder.homeBuilder().homeController()
+        
+        presentController(home)
+        
+    }
+    
 }

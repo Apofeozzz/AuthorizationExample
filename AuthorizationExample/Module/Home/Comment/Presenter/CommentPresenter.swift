@@ -39,5 +39,9 @@ class CommentPresenter: CommentPresenterProtocol {
         router.popController()
         
     }
+    
+    deinit {
+        print("CommentPresenter deinit")
+    }
 
 }

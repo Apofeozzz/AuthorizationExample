@@ -22,4 +22,14 @@ class SignUpRouter: SignUpRouterProtocol {
         
     }
     
+    // MARK: - NAVIGATION -
+    
+    func showHomeController() {
+        
+        let home = Builder.homeBuilder().homeController()
+        
+        presentController(home)
+        
+    }
+    
 }

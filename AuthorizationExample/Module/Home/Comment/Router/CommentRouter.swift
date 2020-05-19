@@ -22,4 +22,8 @@ class CommentRouter: CommentRouterProtocol {
         
     }
     
+    deinit {
+        print("CommentRouter deinit")
+    }
+    
 }

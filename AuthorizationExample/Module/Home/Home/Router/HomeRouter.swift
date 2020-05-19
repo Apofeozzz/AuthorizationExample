@@ -22,4 +22,25 @@ class HomeRouter: HomeRouterProtocol {
         
     }
     
+    // MARK: - NAVIGATION -
+    
+    func showAddController(dataSource: DataSourceServiceProtocol) {
+        
+        let addVC = Builder.addBuilder().addController(dataSource: dataSource)
+        
+        pushController(addVC)
+        
+    }
+    
+    func showDetailController(with dataSource: DataSourceServiceProtocol, and item: Item) {
+        
+        let detailVC = Builder
+            .detailBuilder()
+            .detailController(with: dataSource,
+                              and: item)
+        
+        pushController(detailVC)
+        
+    }
+    
 }

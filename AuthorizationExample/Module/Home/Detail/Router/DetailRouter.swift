@@ -18,4 +18,14 @@ class DetailRouter: DetailRouterProtocol {
         
     }
     
+    // MARK: - NAVIGATION -
+    
+    func showCommentController(with dataSource: DataSourceServiceProtocol, and item: Item) {
+        
+        let commentController = Builder.commentBuilder().commentController(with: dataSource, and: item)
+        
+        pushController(commentController)
+        
+    }
+    
 }

@@ -75,18 +75,8 @@ class SignUpPresenter: SignUpPresenterProtocol {
             
         }
         
-        homeController()
+        router.showHomeController()
         
     }
-    
-    // MARK: - NAVIGATION -
-    
-    func homeController() {
-        
-        let home = Builder.homeBuilder().homeController()
-        
-        router.presentController(home)
-        
-    }
-    
+
 }

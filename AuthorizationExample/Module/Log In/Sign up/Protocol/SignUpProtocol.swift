@@ -54,5 +54,7 @@ protocol SignUpPresenterProtocol: class {
 
 protocol SignUpRouterProtocol: NavigationProtocol {
     
+    func showHomeController()
+    
 }
 

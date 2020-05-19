@@ -30,4 +30,8 @@ class CommentConfigurator: CommentConfiguratorProtocol {
         
     }
     
+    deinit {
+        print("CommentConfigurator deinit")
+    }
+    
 }
