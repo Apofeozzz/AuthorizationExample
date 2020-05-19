@@ -12,8 +12,38 @@ class Builder {
 	
 	static func launchBuilder() -> LaunchBuilder {
 		
-		return LaunchBuilder()
+		LaunchBuilder()
 		
 	}
 	
+	static func loginBuilder() -> LoginBuilder {
+		
+		LoginBuilder()
+		
+	}
+	
+    static func homeBuilder() -> HomeBuilder {
+        
+        HomeBuilder()
+        
+    }
+    
+    static func addBuilder() -> AddBuilder {
+        
+        AddBuilder()
+        
+    }
+    
+    static func detailBuilder() -> DetailBuilder {
+        
+        DetailBuilder()
+        
+    }
+    
+    static func commentBuilder() -> CommentBuilder {
+        
+        CommentBuilder()
+        
+    }
+    
 }

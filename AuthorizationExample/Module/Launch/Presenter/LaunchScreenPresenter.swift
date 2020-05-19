@@ -6,29 +6,17 @@
 //  Copyright © 2020 Denis Grishchenko. All rights reserved.
 //
 
-import UIKit
-
-// MARK: - UIVIEW PROTOCOL -
-
-protocol LaunchViewProtocol: NavigationProtocol {
-	
-}
-
-// MARK: - PRESENTER PROTOCOL -
-
-protocol LaunchViewPresenterProtocol: class {
-	
-	init(view: LaunchViewProtocol)
-	
-}
-
 // MARK: - PRESENTER -
 
 class LaunchViewPresenter: LaunchViewPresenterProtocol {
 	
 	// MARK: - DATA SOURCE -
 	
-	weak var view: LaunchViewProtocol?
+	weak var view: LaunchViewProtocol!
+    
+    var interactor: LaunchInteractorProtocol!
+    
+    var router: LaunchRouterProtocol!
 	
 	// MARK: - INIT -
 	
@@ -39,6 +27,16 @@ class LaunchViewPresenter: LaunchViewPresenterProtocol {
 	}
 	
 	// MARK: - ACTION -
+	
+	func checkLoggedUser() { loginController() }
+	
+	func loginController() {
+        
+        if interactor.checkIfUserLoggedIn() { router.showHomeController() }
+        
+        else { router.showSignInController() }
+		
+	}
 	
 }
 

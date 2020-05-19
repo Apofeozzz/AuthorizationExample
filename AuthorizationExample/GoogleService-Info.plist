@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>297765407130-4qkuo6eduopv2i477f1108ehvtlg9fik.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.297765407130-4qkuo6eduopv2i477f1108ehvtlg9fik</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB1IKjsLRXWpeoZq-0WSMfpKHQ6-w8_kUY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>297765407130</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.grishchenko.denis.AuthorizationExample</string>
+	<key>PROJECT_ID</key>
+	<string>authentication-a7c72</string>
+	<key>STORAGE_BUCKET</key>
+	<string>authentication-a7c72.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:297765407130:ios:8a15750b462bfcfe2e5223</string>
+	<key>DATABASE_URL</key>
+	<string>https://authentication-a7c72.firebaseio.com</string>
+</dict>
+</plist>

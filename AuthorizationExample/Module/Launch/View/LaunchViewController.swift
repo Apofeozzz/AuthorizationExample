@@ -27,6 +27,13 @@ class LaunchViewController: UIViewController, LaunchViewProtocol {
 		
 	}
 	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(true)
+		
+		presenter.checkLoggedUser()
+		
+	}
+	
 	// MARK: - SETUP VIEW -
 	
 	private func setupView() {

@@ -43,5 +43,11 @@ extension UIColor {
 		Self.hexStringToUIColor(hex: "#EB4A60")
 		
 	}
+    
+    static func appPlaceholderColor() -> UIColor {
+        
+        Self.hexStringToUIColor(hex: "#4D7E8D")
+        
+    }
 	
 }

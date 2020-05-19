@@ -8,32 +8,62 @@
 
 import UIKit
 
-protocol NavigationProtocol: UIViewController { }
+protocol NavigationProtocol {
+    
+    var controller: UIViewController! { get }
+    
+    init(controller: UIViewController)
+    
+}
 
 extension NavigationProtocol {
 	
 	func presentController(_ controller: UIViewController) {
 		
-		present(controller, animated: true, completion: nil)
+        self.controller.present(controller, animated: true, completion: nil)
 		
 	}
 	
 	func pushController(_ controller: UIViewController) {
 		
-		navigationController?.pushViewController(controller, animated: true)
+        self.controller.navigationController?.pushViewController(controller, animated: true)
 		
 	}
 	
-	func popController(_ controller: UIViewController) {
+	func popController() {
 		
-		navigationController?.popViewController(animated: true)
+        self.controller.navigationController?.popViewController(animated: true)
 		
 	}
 	
 	func dismissController() {
 		
-		dismiss(animated: true, completion: nil)
+        self.controller.dismiss(animated: true, completion: nil)
 		
 	}
+    
+    func changeControllerStack(stack: [UIViewController]) {
+        
+        self.controller.navigationController?.viewControllers = stack
+        
+    }
+    
+    func changeRootController(_ controller: UIViewController) {
+        
+        UIApplication.shared.windows.first?.rootViewController = controller
+        
+    }
+    
+    // MARK: - SHOW ALERT -
+    
+    func showAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        controller.present(alert, animated: true, completion: nil)
+        
+    }
 	
 }
